@@ -1,4 +1,4 @@
-// Version 0.1.4
+// Version 0.1.6
 /* Declaring Libraries
 These statements up here are for stating what
 Other scripts and libraries this script needs to use.
