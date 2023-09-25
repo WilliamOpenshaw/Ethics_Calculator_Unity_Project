@@ -9,14 +9,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine.Networking;
 using UCharts;
-
-
-
-
-
 
 /* Beginning of the Script or Class
 This is the beginning of the script or “class”
@@ -26,10 +21,6 @@ Controls our CBC survey.
 */
 public class CBCcontroller : MonoBehaviour
 {
-
-
-
-
     /* Unity UI Text GameObjects
     These 9 things are UI text objects in unity.
     They are the 9 boxes of text on the 3 cards
@@ -51,9 +42,6 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI dayZafternoonText;
     public TextMeshProUGUI dayZeveningText;
 
-
-
-
     /* UI Text Objects for Showing number Scores
     These 5 properties or variables are also Text Objects
     In Unity. They are the numbers under the U, NL, K,
@@ -65,9 +53,6 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI kantianNumberDisplay;
     public TextMeshProUGUI virtueethicsNumberDisplay;
     public TextMeshProUGUI rawlsianNumberDisplay;
-
-
-
 
     /* Integer Variables for Storing Numbers
     These 9 properties or variables are integers,
@@ -98,7 +83,7 @@ public class CBCcontroller : MonoBehaviour
     public int dayYeveningCurrentEthicsSchool;
     public int dayZmorningCurrentEthicsSchool;
     public int dayZafternoonCurrentEthicsSchool;
-    public int dayZeveningCurrentEthicsSchool;
+    public int dayZeveningCurrentEthicsSchool;    
 
      public int dayXmorningCurrentChoiceNumber;
     public int dayXafternoonCurrentChoiceNumber;
@@ -112,9 +97,6 @@ public class CBCcontroller : MonoBehaviour
 
     //Example 0.1.4 weight
     public int currentChoiceNumber;
-
-
-
 
     /* String Arrays
     If these variables just said
@@ -132,10 +114,8 @@ public class CBCcontroller : MonoBehaviour
     List[Item number 2]. We do this by later giving
     Each of these arrays 5 empty spots in their list.
     Each of these spots can be any kind of text.
-    If we assign
-rawlsianChoices[3] = “Happy Birthday”,
-And
-rawlsianChoices[4] = “Goodbye”,
+    If we assign rawlsianChoices[3] = “Happy Birthday”,
+    And rawlsianChoices[4] = “Goodbye”,
     Then whenever we use rawlsianChoices[3], it will give
     Use the text “Happy Birthday”.
     */
@@ -144,9 +124,6 @@ rawlsianChoices[4] = “Goodbye”,
     public string[] neoliberalChoices;
     public string[] virtueEthicsChoices;
     public string[] kantianChoices;
-
-
-
 
     /* Ethical School Points Variables
 These 5 integer whole number variables
@@ -158,7 +135,6 @@ for each group.
     public int neoliberalPoints;
     public int virtueEthicsPoints;
     public int kantianPoints;
-
 
     /* Current Ethics Array Number
 We will be giving this integer variable
@@ -173,7 +149,6 @@ Chosen ethics school is.
 */
     public int currentEthicsSchoolNumber;
 
-
     /* Current Ethics Choice Text String
 When we are choosing choices from a school of ethics
 We need to save what the current chosen ethics choice is
@@ -181,83 +156,42 @@ So we can apply it to a TextMeshProUGUI like dayYafternoonText
 */
     public string currentEthicsChoiceTextString;
 
-
     /* Current Round Number
     We will use this integer variable to keep track of how many rounds
     The user has done, or how many Days they have chosen.
     */
     public int currentRoundNumber;
 
-
     /* userName
 When the user enters their name, unity editor has been set to call the
 Method SetName(), which applies the name they entered to this string, userName.
 */
     public string userName;
-
-
     public TextMeshProUGUI userNameTextDisplay;
-
-
     public TextMeshProUGUI weekNumberTextDisplay;
-
-
     public GameObject endScreen;
-
-
     public GameObject cbcCards;
-
-
     public Slider sliderRtoVE;
-
-
     public Slider sliderUtoR;
-
-
     public Slider sliderKtoU;
-
-
     public Slider sliderVEtoNL;
-
-
     public Slider sliderNLtoK;
-
-
     public Slider sliderUtoVE;
     public Slider sliderVEtoK;
-
-
     public Slider sliderKtoR;
     public Slider sliderRtoNL;
-
-
     public Slider sliderNLtoU;
-
-
     public GameObject statPanel;
-
-
     public int lowestEthicsSchoolScore;
-
-
     public TextMeshProUGUI rawlsianPercentage;
     public TextMeshProUGUI utilitarianPercentage;
     public TextMeshProUGUI virtueEthicsPercentage;
     public TextMeshProUGUI neoliberalPercentage;
     public TextMeshProUGUI kantianPercentage;
-
-
     public TextMeshProUGUI numberOfWeeksAtEndTextDisplay;
-
-
     public int totalEthicsSchoolPoints;
-
-
     public RadarChart radarScript;
-
-
     public int highestEthicsSchoolPoints;
-
 
     /* Start()
 This is Unity’s Start() method. Any code we write in here runs one time when
@@ -285,7 +219,6 @@ So we need to give each one the number of spaces it needs, or there will be an e
         virtueEthicsChoices = new string[5];
         kantianChoices = new string[5];
 
-
         /* Starting Points for Ethical Schools
 These integers assign the starting score of each school at the beginning, so
 That they are equal. The number is 0.
@@ -296,14 +229,12 @@ That they are equal. The number is 0.
         virtueEthicsPoints = 0;
         kantianPoints = 0;
 
-
         /* Reset current round number to zero
 Just in case currentRoundNumber is not 1 at the beginning,
 We set it to 1 to make sure it is one, and that it has a value.
 If it does not have a set value, there might be an error.
 */
         currentRoundNumber = 1;
-
 
         /* Calling SetUpStrings() in Start()
 SetUpStrings() is the method at the bottom of the script where
@@ -313,7 +244,6 @@ The string arrays we made.
 */
         SetUpStrings();
 
-
         /* Calling AssignText() in Start()
         This method randomly chooses a school of ethics 
         and a random choice from that school for every 
@@ -321,8 +251,6 @@ The string arrays we made.
         */
         AssignText();
         statPanel.SetActive(false);
-
-
     }
     /* SetName() method
 SetName() takes what the user typed in Unity, 
@@ -334,7 +262,6 @@ Makes userName the same as enteredName
         userName = enteredName;
         userNameTextDisplay.text = userName;
     }
-
 
     /* AssignText() method
 This method refreshes all the choices on the day cards at
@@ -356,13 +283,11 @@ The three day cards.
         dayXmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXmorningCurrentChoiceNumber = currentChoiceNumber;
 
-
         //Day X Afternoon
         AssignEthicsArrayandChoice();
         dayXafternoonText.text = currentEthicsChoiceTextString;
         dayXafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXafternoonCurrentChoiceNumber = currentChoiceNumber;
-
 
         //Day X Evening
         AssignEthicsArrayandChoice();
@@ -370,13 +295,11 @@ The three day cards.
         dayXeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXeveningCurrentChoiceNumber = currentChoiceNumber;
 
-
         //Day Y Morning
         AssignEthicsArrayandChoice();
         dayYmorningText.text = currentEthicsChoiceTextString;
         dayYmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYmorningCurrentChoiceNumber = currentChoiceNumber;
-
 
         //Day Y Afternoon
         AssignEthicsArrayandChoice();
@@ -384,13 +307,11 @@ The three day cards.
         dayYafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYafternoonCurrentChoiceNumber = currentChoiceNumber;
 
-
         //Day Y Evening
         AssignEthicsArrayandChoice();
         dayYeveningText.text = currentEthicsChoiceTextString;
         dayYeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYeveningCurrentChoiceNumber = currentChoiceNumber;
-
 
         //Day Z Morning
         AssignEthicsArrayandChoice();
@@ -398,13 +319,11 @@ The three day cards.
         dayZmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZmorningCurrentChoiceNumber = currentChoiceNumber;
 
-
         //Day Z Afternoon
         AssignEthicsArrayandChoice();
         dayZafternoonText.text = currentEthicsChoiceTextString;
         dayZafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZafternoonCurrentChoiceNumber = currentChoiceNumber;
-
 
         //Day Z Evening
         AssignEthicsArrayandChoice();
@@ -412,14 +331,9 @@ The three day cards.
         dayZeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZeveningCurrentChoiceNumber = currentChoiceNumber;
 
-
         EndScreenCheck();
         RefreshPointDisplay();
     }
-
-
-
-
     public void RefreshPointDisplay()
     {
         utilitarianNumberDisplay.text = utilitarianPoints.ToString();
@@ -430,12 +344,10 @@ The three day cards.
         weekNumberTextDisplay.text = currentRoundNumber.ToString();
     }
 
-
     /* ChooseDayX() method
 This method has been assigned in the Unity Editor to be
 Called when the Day X button is pressed in the program.
 The Day X button is the whole card for Day X.
-
 
 This method sends the current ethics school of each text
 Choice on the Day Z and Day Y cards to the MinusPoints method.
@@ -493,10 +405,6 @@ to them that the user did not pick, because they picked Day X.
 
         AssignText();
     }
-
-
-
-
     /* Method AssignEthicsArrayandChoice()
 This method randomly chooses one of the five ethics schools
 And then randomly chooses one of the text choices from that school.
@@ -504,8 +412,6 @@ And then randomly chooses one of the text choices from that school.
     public void AssignEthicsArrayandChoice()
     {
         currentEthicsSchoolNumber = Random.Range(0, 5);
-
-
         switch (currentEthicsSchoolNumber)
         {
             case 0:
@@ -530,8 +436,6 @@ And then randomly chooses one of the text choices from that school.
                 break;
         }
     }
-
-
     /* PlusPoints() method
 This method adds points to the school’s that the user picks choices of.
 */
@@ -661,9 +565,6 @@ This method adds points to the school’s that the user picks choices of.
                 break;
         }
     }
-
-
-
 
     /* MinusPoints() method
 This method subtracts points from the school’s that the user doesn’t pick the choices of.
@@ -795,10 +696,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
         }
     }
 
-
-
-
-
     //This limits the amount of rounds to 10
     //We decided on 10 rounds because it is enough to give each school justice and still be engaging
     //
@@ -810,8 +707,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
             endScreen.SetActive(true);
             statPanel.SetActive(true);
 
-            lowestEthicsSchoolScore = Mathf.Min(utilitarianPoints, rawlsianPoints, neoliberalPoints, virtueEthicsPoints, kantianPoints);
-
+            lowestEthicsSchoolScore = Mathf.Min(utilitarianPoints, 
+                                                rawlsianPoints, 
+                                                neoliberalPoints, 
+                                                virtueEthicsPoints, 
+                                                kantianPoints);
 
             utilitarianPoints += Mathf.Abs(lowestEthicsSchoolScore);
             rawlsianPoints += Mathf.Abs(lowestEthicsSchoolScore);
@@ -832,8 +732,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
             sliderNLtoU.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
 
 
-            totalEthicsSchoolPoints = utilitarianPoints + rawlsianPoints + neoliberalPoints + virtueEthicsPoints + kantianPoints;
-
+            totalEthicsSchoolPoints =   utilitarianPoints + 
+                                        rawlsianPoints + 
+                                        neoliberalPoints + 
+                                        virtueEthicsPoints + 
+                                        kantianPoints;
 
             utilitarianPercentage.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             rawlsianPercentage.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
@@ -845,15 +748,20 @@ This method subtracts points from the school’s that the user doesn’t pick th
             numberOfWeeksAtEndTextDisplay.text = (currentRoundNumber - 1).ToString();
 
 
-            highestEthicsSchoolPoints = Mathf.Max(utilitarianPoints, rawlsianPoints, neoliberalPoints, virtueEthicsPoints, kantianPoints);
+            highestEthicsSchoolPoints = Mathf.Max(  utilitarianPoints, 
+                                                    rawlsianPoints, 
+                                                    neoliberalPoints, 
+                                                    virtueEthicsPoints, 
+                                                    kantianPoints);
 
-            radarScript.m_Data = new List<float>    {
-                                                        ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints),
-                                                        ((float)utilitarianPoints   /(float)highestEthicsSchoolPoints),
-                                                        ((float)kantianPoints       /(float)highestEthicsSchoolPoints),
-                                                        ((float)neoliberalPoints    /(float)highestEthicsSchoolPoints),
-                                                        ((float)virtueEthicsPoints  /(float)highestEthicsSchoolPoints)
-                                                    };
+            radarScript.m_Data = new List<float>    
+            {
+                ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints),
+                ((float)utilitarianPoints   /(float)highestEthicsSchoolPoints),
+                ((float)kantianPoints       /(float)highestEthicsSchoolPoints),
+                ((float)neoliberalPoints    /(float)highestEthicsSchoolPoints),
+                ((float)virtueEthicsPoints  /(float)highestEthicsSchoolPoints)
+            };
         }
     }
 
@@ -880,71 +788,49 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //UTILITARIAN CHOICES
         //Brendan,Forest
 
-
-
-
         //Everyone wants equal happiness and help others.
         //(Utilitarianism)I help people to push the gold across and she give
         //me some gold and i help her and we are equal happiness.weight 3 //
         utilitarianChoices[0] = "You help an old person push gold across the street. You do it because they will be safe, give you gold, and you will both be happy.";
 
-
-
-
         //Utilitarianism means you do things that make you most happy.weight 4 //
         utilitarianChoices[2] = "You kill 1 person to save 5 people. Because 5 people have more value than 1 person.";
-
-
-
 
         //Even though he might still get hurt, you make sure there’s the least harm possible.weight 3//
         utilitarianChoices[1] = "You save a person by pushing him off his bike when he’s about to be hit by a car.";
 
-
-
-
         //We should maximize happiness for ourselves and others.weight 3 //          
         utilitarianChoices[3] = "You go order a drink and instead of only buying for yourself, you also buy for 5 other people. Buying drinks for 5 people brings more happiness to them.";
-
-
-
 
         //Everyone has the same value, so the more people,
         //the more your actions are worth.weight 5// 
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people’s happiness combined is more important than 100.";
 
-
         //---------------------------------------------------------------------------------------------------------------------------------------
-
 
         //RAWLSIAN CHOICES
         //Choices 1, 2, 4, 5, and 7 of the Rawlsian Liberalism School
         //Fifi, Cooper, Chelsea, and Annie
-
 
         //Your motivation comes from a desire to follow the agreement
         //made by you and your friend based on the Rawlsian liberalism that choices create agreement.
         //weight 1
         rawlsianChoices[0] = "When your friend refuses to lend you her eraser, you respect her choice.";
 
-
         //Your motivation comes from the desire to follow the
         //agreements held by everyone around you based on Rawlsian Liberalism.
         //weight 4
         rawlsianChoices[1] = "In a room of people of whom everyone agrees to not steal the diamond on the pedestal, so you don’t steal it because you respect this agreement.";
-
 
         //Your motivation comes from that all the requirements should be
         //made without considering a specific club member individual’s perspective.
         //weight 3
         rawlsianChoices[2] = "You are a leader of a club, you decide to give each student an equal amount of supplies regardless of each individual.";
 
-
         //Your motivation comes from a desire to follow the
         //agreements of everyone based on Rawlsian Liberalism.
         //weight 2
         rawlsianChoices[3] = "In a room where people agree to speak only English, you only speak English because you respect this agreement.";
-
 
         //Your motivation comes from a desire to follow the law based on the
         //Rawlsian liberalism that law is an agreement and not murder is a requirement.
@@ -961,22 +847,17 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //You instinctively do this because you value your life more than other people, hence you chose to protect yourself first before serving others. You do this because you believe in neoliberalism/liberalism, which values an individual's rights and ownership over everyone else. weight 3//
         neoliberalChoices[0] = "Because you own yourself, and owning yourself gives you importance over others as an individual. You chose to run away from danger instead of putting yourself in it.";
 
-
         //You do this because you believe that receiving an education overseas would be more beneficial to your career. Your motivation comes from a desire to follow neoliberalism/liberalism, based on what you yourself, as an individual, believe in, instead of others wishes. weight 4.//
         neoliberalChoices[1] = "You go abroad to study in an American university despite your grandparents' wishes for you to stay in Taiwan.";
-
 
         //You are tired of renting a flat and depending on the landlord’s decisions. Your motivation comes from a desire to follow neoliberalism/liberalism, causing you to prefer owning things instead of depending on others. weight 4.//
         neoliberalChoices[2] = "You purchased a house along with the basic utilities to be installed.";
 
-
         //You do this because you are hungry and want to eat something. Your motivation comes from a desire to follow neoliberalism/liberalism, which values a person’s freedom to exchange items with others under an agreement, opposed to just stealing items. weight 3 //
         neoliberalChoices[3] = "You pay money to eat at a restaurant, you receive food and catering services in return.";
 
-
         //You do this because you feel an urge to purchase whatever is hyped up. Your motivation comes from a desire to follow neoliberalism/liberalism, which enables a person to make free decisions without external influence. weight 2.//
         neoliberalChoices[4] = "You decided to spend part of your salary this month to buy celebrity endorsed products.";
-
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -989,37 +870,19 @@ This method subtracts points from the school’s that the user doesn’t pick th
         neoliberalChoices[5] = "You wanted to buy his glasses, he decided to sell them to you.";
         //This makes sense to my values because I am in the neoliberalism school, and the glasses belong to him and he decided to sell them to me. weight 5
 
-
-
-
         neoliberalChoices[6] = "He tries to force you to teach him math, You decide not to teach him math.";
         //This makes sense to my values because I am in the neoliberalism school, and I have my own right to decide on my own if I want to teach him or not. weight 4
-
-
-
 
         neoliberalChoices[7] = "She wants to trade her pencil for your Rolex, but you don't think they are the same value. So you denied her trade offer.";
         //This makes sense to my values because I am in the neoliberalism school, and I can decide the value of things I own and if I want to trade them. weight 5
 
-
-
-
         neoliberalChoices[8] = "He tries to force you to trade pencils with him, and you decided that you didn't want to trade pencils with him.";
         //This makes sense to my values because I am in the neoliberalism school, and because we can only trade things if the choice is free I can decide not to trade with him because the trade isn't free. weight 4 
-
-
-
 
         neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don’t go to dinner.";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
 
-
-
-
         //-------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 
         // VIRTUE ETHICS CHOICES
         //Virtue Ethics team: Amber, Anna, Chelsea W, Irene
@@ -1029,19 +892,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
         virtueEthicsChoices[1] = "You help pick up trash from the floor, which keeps the environment clean and pleasant for everyone, because you saw a helpful classmate do this and you want to be helpful like them.";
         //Your motivation comes from a desire to get good grades, based on Confucius’s virtue ethics (孔子 says that it’s fine to be good for the sake of the result and not for goodness). Weight 5
         virtueEthicsChoices[2] = "You become hard-working after noticing the learning habits of a new classmate who always gets good grades. You act like your classmate because you want to get good grades, too.";
-
-
         //Weight 4
         virtueEthicsChoices[3] = "You gave food to a homeless man because you saw Taylor Swift do it and it seems like the right thing to do. So you act like her.";
 
-
-
-
 //Weight 3      
 virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
-
-
-
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
@@ -1049,34 +904,19 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         //Your motivation comes from Kantian Ethics thinking you should always do the right thing.Weight3
         kantianChoices[0] = "You feed a homeless man because he was starving.";
 
-
-
-
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
         kantianChoices[1] = "I kick a kid because he almost got hit by a car.";
-
-
-
 
         //Your motivation comes from .Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
 
-
-
-
         //This is a good choice because everyone makes the same choice. Weight4
         kantianChoices[3] = "The entire class turned their assignments in on time.";
-
-
-
 
         //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
         kantianChoices[4] = "I pulled a guy because he almost fell down.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+        
         ///*
     }
 }
