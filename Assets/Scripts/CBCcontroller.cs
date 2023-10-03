@@ -12,6 +12,8 @@ using UnityEngine.UI;
 //using Unity.VisualScripting;
 using UnityEngine.Networking;
 using UCharts;
+using System;
+using Random = UnityEngine.Random;
 
 /* Beginning of the Script or Class
 This is the beginning of the script or “class”
@@ -193,6 +195,14 @@ Method SetName(), which applies the name they entered to this string, userName.
     public RadarChart radarScript;
     public int highestEthicsSchoolPoints;
 
+    public TextMeshProUGUI resultReferenceDisplayText;
+
+    public int resultNumber;
+
+    public string[] resultStrings;
+
+    public string[] resultTimes;
+
     /* Start()
 This is Unity’s Start() method. Any code we write in here runs one time when
 The program starts. Before this part we have named all the variables above, 
@@ -251,6 +261,11 @@ The string arrays we made.
         */
         AssignText();
         statPanel.SetActive(false);
+
+        resultNumber = 0;
+        resultStrings = new string[10];
+        resultTimes = new string[10];
+
     }
     /* SetName() method
 SetName() takes what the user typed in Unity, 
@@ -731,7 +746,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
             sliderRtoNL.value = Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), neoliberalPoints);
             sliderNLtoU.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
 
-
             totalEthicsSchoolPoints =   utilitarianPoints + 
                                         rawlsianPoints + 
                                         neoliberalPoints + 
@@ -762,9 +776,14 @@ This method subtracts points from the school’s that the user doesn’t pick th
                 ((float)neoliberalPoints    /(float)highestEthicsSchoolPoints),
                 ((float)virtueEthicsPoints  /(float)highestEthicsSchoolPoints)
             };
+
+            resultNumber += 1;
+            resultTimes[resultNumber] = DateTime.Now.ToString();
+            resultStrings[resultNumber] = "Result " + (resultNumber).ToString() + " - " + resultTimes[resultNumber];
+            resultReferenceDisplayText.text = resultStrings[resultNumber];
+            
         }
     }
-
 
     /* SetUpStrings() method 
     This method, when it is called when the program starts, assigns text
