@@ -856,6 +856,19 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //This is because requirements are not determined without determining your perspective.
         //weight 5
         rawlsianChoices[4] = "Someone is trying to murder you, but you decided to not kill them to protect yourself, since you shouldn’t murder in anycase, according to the unanimously agreed law.";
+
+        /*Your motivation comes from a desire to follow the agreed-upon rules, despite what you individually want. 
+        Rawls states, “The veil of ignorance situates the representatives of free and equal citizens fairly 
+        concerning one another. No party can press for agreement on principles that will arbitrarily favor 
+        the particular citizen they represent, because no party knows the specific attributes of the citizen 
+        they represent”(Wenar, “John Rawls”, SEP, 2008 rev. 2021). Since the agreement was from a perspective 
+        with a supposed veil of ignorance (the camp directors/teachers, not the students) they agreed with the 
+        students that everyone should have lights out. As students, we should follow these rules because it was
+         agreed upon.
+        //Weight 3
+        */
+        rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply (field trip, at night, with all the roommates). You do this because you are obligated to follow the rules in the camp, regardless of whether you want to party at night or not.";
+
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*
        NEOLIBERAL CHOICES (Team 1)
