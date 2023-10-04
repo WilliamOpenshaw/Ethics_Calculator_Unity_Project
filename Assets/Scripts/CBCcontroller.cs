@@ -913,9 +913,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
         virtueEthicsChoices[2] = "You become hard-working after noticing the learning habits of a new classmate who always gets good grades. You act like your classmate because you want to get good grades, too.";
         //Weight 4
         virtueEthicsChoices[3] = "You gave food to a homeless man because you saw Taylor Swift do it and it seems like the right thing to do. So you act like her.";
-
-//Weight 3      
-virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
+        //Weight 3      
+        virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
+        virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did."
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
