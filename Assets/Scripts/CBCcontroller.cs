@@ -830,7 +830,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         //Everyone has the same value, so the more people,
         //the more your actions are worth.weight 5// 
-        //other test comment lol
+        //third test comment
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people’s happiness combined is more important than 100.";
 
 
