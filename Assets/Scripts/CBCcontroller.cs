@@ -479,6 +479,7 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 5:
                         utilitarianPoints += 2;
+                        break;
                 }
                 break;
             //rawlsianPoints
@@ -611,6 +612,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 5:
                         utilitarianPoints -= 2;
+                        break;
                 }
                 break;
             //rawlsianPoints
