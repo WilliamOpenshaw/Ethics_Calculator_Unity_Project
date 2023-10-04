@@ -226,7 +226,7 @@ So we need to give each one the number of spaces it needs, or there will be an e
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[5];
         neoliberalChoices = new string[10];
-        virtueEthicsChoices = new string[5];
+        virtueEthicsChoices = new string[6];
         kantianChoices = new string[5];
 
         /* Starting Points for Ethical Schools
@@ -438,7 +438,7 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
                 break;
             case 2:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
                 break;
             case 3:
@@ -557,6 +557,9 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 4:
                         virtueEthicsPoints += 3;
+                        break;
+                    case 5:
+                        virtueEthicsPoints += ;
                         break;
                 }
                 break;
@@ -691,6 +694,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 4:
                         virtueEthicsPoints -= 3;
+                        break;
+                    case 5:
+                        virtueEthicsPoints -= ;
                         break;
                 }
                 break;
@@ -925,9 +931,12 @@ This method subtracts points from the school’s that the user doesn’t pick th
         virtueEthicsChoices[2] = "You become hard-working after noticing the learning habits of a new classmate who always gets good grades. You act like your classmate because you want to get good grades, too.";
         //Weight 4
         virtueEthicsChoices[3] = "You gave food to a homeless man because you saw Taylor Swift do it and it seems like the right thing to do. So you act like her.";
-
-//Weight 3      
-virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
+        //Weight 3      
+        virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
+        
+        //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
+        //Weight
+        virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did."
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
