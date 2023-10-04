@@ -223,7 +223,7 @@ Utilitarian Choice number 2, utilitarianChoices[1],
 but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
-        utilitarianChoices = new string[5];
+        utilitarianChoices = new string[6];
         rawlsianChoices = new string[5];
         neoliberalChoices = new string[10];
         virtueEthicsChoices = new string[5];
@@ -430,7 +430,7 @@ And then randomly chooses one of the text choices from that school.
         switch (currentEthicsSchoolNumber)
         {
             case 0:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
                 break;
             case 1:
@@ -476,6 +476,9 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 4:
                         utilitarianPoints += 5;
+                        break;
+                    case 5:
+                        utilitarianPoints += 2;
                         break;
                 }
                 break;
@@ -589,6 +592,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         switch (schoolToMinusPointsFrom)
         {
             //utilitarianPoints
+            //please
             case 0:
                 switch (unChosenChoiceNumber)
                 {
@@ -607,9 +611,12 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 4:
                         utilitarianPoints -= 5;
                         break;
+                    case 5:
+                        utilitarianPoints -= 2;
+                        break;
                 }
                 break;
-            //rawlsianPoints
+            //rawlsianPoint
             case 1:
                 switch (unChosenChoiceNumber)
                 {
@@ -823,8 +830,13 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         //Everyone has the same value, so the more people,
         //the more your actions are worth.weight 5// 
+        //third test comment
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people’s happiness combined is more important than 100.";
 
+
+
+        //You do this because you want everyone to be happy.
+         utilitarianChoices[5] ="You buy food and share it with people that want it.";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
