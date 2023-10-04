@@ -576,6 +576,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         kantianPoints += 3;
                         break;
+                    case 5:
+                        kantianPoints += 2;
+                        break;
                 }
                 break;
         }
@@ -705,6 +708,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 4:
                         kantianPoints -= 3;
+                        break;
+                    case 5:
+                        kantianPoints -= 2;
                         break;
                 }
                 break;
@@ -934,6 +940,9 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
 
         //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
         kantianChoices[4] = "I pulled a guy because he almost fell down.";
+
+        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
+        kantianChoices[5] = "I clipped my toenails in class.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         
         ///*
