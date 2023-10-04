@@ -592,6 +592,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         switch (schoolToMinusPointsFrom)
         {
             //utilitarianPoints
+            //please
             case 0:
                 switch (unChosenChoiceNumber)
                 {
@@ -615,7 +616,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                 }
                 break;
-            //rawlsianPoints
+            //rawlsianPoint
             case 1:
                 switch (unChosenChoiceNumber)
                 {
