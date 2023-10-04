@@ -873,6 +873,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         students that everyone should have lights out. As students, we should follow these rules because it was
          agreed upon.
         //Weight 3
+        test comment lol
         */
         rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply (field trip, at night, with all the roommates). You do this because you are obligated to follow the rules in the camp, regardless of whether you want to party at night or not.";
 
