@@ -225,7 +225,7 @@ So we need to give each one the number of spaces it needs, or there will be an e
 */
         utilitarianChoices = new string[5];
         rawlsianChoices = new string[5];
-        neoliberalChoices = new string[10];
+        neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[5];
         kantianChoices = new string[5];
 
@@ -442,7 +442,7 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
                 break;
             case 3:
-                currentChoiceNumber = Random.Range(0, 10);
+                currentChoiceNumber = Random.Range(0, 12);
                 currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                 break;
             case 4:
@@ -662,6 +662,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         neoliberalPoints -= 4;
                         break;
                     case 9:
+                        neoliberalPoints -= 3;
+                        break;
+                    case 10:
                         neoliberalPoints -= 3;
                         break;
                 }
@@ -900,6 +903,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don’t go to dinner.";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
+        neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus."
+        //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
