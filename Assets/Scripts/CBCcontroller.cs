@@ -225,7 +225,7 @@ So we need to give each one the number of spaces it needs, or there will be an e
 */
         utilitarianChoices = new string[5];
         rawlsianChoices = new string[5];
-        neoliberalChoices = new string[10];
+        neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[5];
         kantianChoices = new string[5];
 
@@ -442,7 +442,7 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
                 break;
             case 3:
-                currentChoiceNumber = Random.Range(0, 10);
+                currentChoiceNumber = Random.Range(0, 12);
                 currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                 break;
             case 4:
@@ -533,6 +533,9 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 9:
                         neoliberalPoints += 3;
+                        break;
+                    case 11:
+                        neoliberalPoints += 4;
                         break;
                 }
                 break;
@@ -663,6 +666,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 9:
                         neoliberalPoints -= 3;
+                        break;
+                    case 11:
+                        neoliberalPoints -= 4;
                         break;
                 }
                 break;
@@ -878,6 +884,8 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //You do this because you feel an urge to purchase whatever is hyped up. Your motivation comes from a desire to follow neoliberalism/liberalism, which enables a person to make free decisions without external influence. weight 2.//
         neoliberalChoices[4] = "You decided to spend part of your salary this month to buy celebrity endorsed products.";
 
+        //You do this because neoliberalism values the ability for an indivudal to make choices freely, this can be expressed in many ways including the exchange of items.
+        neoliberalChoices [11] = "You trade your BBQ with your friend."
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
         /*
