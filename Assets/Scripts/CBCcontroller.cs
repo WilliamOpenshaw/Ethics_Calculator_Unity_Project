@@ -224,7 +224,7 @@ but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
         utilitarianChoices = new string[5];
-        rawlsianChoices = new string[5];
+        rawlsianChoices = new string[6];
         neoliberalChoices = new string[10];
         virtueEthicsChoices = new string[5];
         kantianChoices = new string[5];
@@ -434,7 +434,7 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
                 break;
             case 1:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
                 break;
             case 2:
@@ -498,6 +498,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         rawlsianPoints += 5;
                         break;
+                    case 5:
+                        rawlsianPoints += 3;
+                    
                 }
                 break;
             //neoliberalPoints    
@@ -628,6 +631,10 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 4:
                         rawlsianPoints -= 5;
                         break;
+                    case 5:
+                        rawlsianPoints -= 3;
+                        break;
+    
                 }
                 break;
             //neoliberalPoints    
@@ -949,7 +956,7 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
         kantianChoices[4] = "I pulled a guy because he almost fell down.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
-        
+        ////test change 2
         ///*
     }
 }
