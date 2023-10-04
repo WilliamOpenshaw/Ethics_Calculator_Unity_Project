@@ -227,7 +227,7 @@ So we need to give each one the number of spaces it needs, or there will be an e
         rawlsianChoices = new string[5];
         neoliberalChoices = new string[10];
         virtueEthicsChoices = new string[5];
-        kantianChoices = new string[5];
+        kantianChoices = new string[6];
 
         /* Starting Points for Ethical Schools
 These integers assign the starting score of each school at the beginning, so
@@ -446,7 +446,7 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                 break;
             case 4:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
                 break;
         }
@@ -575,6 +575,9 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 4:
                         kantianPoints += 3;
+                        break;
+                    case 5:
+                        kantianPoints += 5;
                         break;
                 }
                 break;
@@ -705,6 +708,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 4:
                         kantianPoints -= 3;
+                        break;
+                    case 5:
+                        kantianPoints -= 5;
                         break;
                 }
                 break;
@@ -932,10 +938,10 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         //This is a good choice because everyone makes the same choice. Weight4
         kantianChoices[3] = "The entire class turned their assignments in on time.";
 
-        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
+        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Weight3
         kantianChoices[4] = "You pulled a guy because he almost fell down.";
 
-        //You do this because you don’t want to keep anyone from sitting with who they want. Weight
+        //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
         kantianChoices[5] = "You let others choose seats before yourself.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         
