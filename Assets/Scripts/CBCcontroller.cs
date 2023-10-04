@@ -608,7 +608,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         {
             //utilitarianPoints
             case 0:
-                switch (chosenChoiceNumber)
+                switch (unChosenChoiceNumber)
                 {
                     case 0:
                         utilitarianPoints -= 3;
@@ -632,7 +632,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                 break;
             //rawlsianPoints
             case 1:
-                switch (chosenChoiceNumber)
+                switch (unChosenChoiceNumber)
                 {
                     case 0:
                         rawlsianPoints -= 1;
@@ -656,7 +656,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                 break;
             //neoliberalPoints    
             case 2:
-                switch (chosenChoiceNumber)
+                switch (unChosenChoiceNumber)
                 {
                     case 0:
                         neoliberalPoints -= 3;
@@ -698,7 +698,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                 break;
             //virtueEthicsPoints    
             case 3:
-                switch (chosenChoiceNumber)
+                switch (unChosenChoiceNumber)
                 {
                     case 0:
                         virtueEthicsPoints -= 4;
@@ -722,7 +722,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                 break;
             //kantianPoints    
             case 4:
-                switch (chosenChoiceNumber)
+                switch (unChosenChoiceNumber)
                 {
                     case 0:
                         kantianPoints -= 5;
@@ -959,7 +959,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         
         //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
         //Weight
-        virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did."
+        virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did.";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
