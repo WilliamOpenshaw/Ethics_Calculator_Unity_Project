@@ -498,6 +498,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         rawlsianPoints += 5;
                         break;
+                    case 5:
+                        rawlsianPoints += 3;
+                        break;
                 }
                 break;
             //neoliberalPoints    
@@ -627,6 +630,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 4:
                         rawlsianPoints -= 5;
+                        break;
+                    case 5:
+                        rawlsianPoints -= 3;
                         break;
                 }
                 break;
