@@ -924,7 +924,7 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         kantianChoices[0] = "You feed a homeless man because he was starving.";
 
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
-        kantianChoices[1] = "I kick a kid because he almost got hit by a car.";
+        kantianChoices[1] = "You kick a kid because he almost got hit by a car.";
 
         //Your motivation comes from .Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
@@ -933,7 +933,10 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         kantianChoices[3] = "The entire class turned their assignments in on time.";
 
         //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
-        kantianChoices[4] = "I pulled a guy because he almost fell down.";
+        kantianChoices[4] = "You pulled a guy because he almost fell down.";
+
+        //You do this because you don’t want to keep anyone from sitting with who they want. Weight
+        kantianChoices[5] = "You let others choose seats before yourself.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         
         ///*
