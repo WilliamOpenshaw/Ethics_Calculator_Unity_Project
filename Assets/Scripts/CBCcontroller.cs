@@ -498,8 +498,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         rawlsianPoints += 5;
                         break;
-                    //case 5:
-                      //  rawlsianPoints += 3;
+                    case 5:
+                        rawlsianPoints += 3;
+                        break;
                     
                 }
                 break;
