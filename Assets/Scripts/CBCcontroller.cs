@@ -223,11 +223,13 @@ Utilitarian Choice number 2, utilitarianChoices[1],
 but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
-        utilitarianChoices = new string[5];
+
+        utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
-        neoliberalChoices = new string[10];
-        virtueEthicsChoices = new string[5];
-        kantianChoices = new string[5];
+        neoliberalChoices = new string[12];
+        virtueEthicsChoices = new string[6];
+        kantianChoices = new string[6];
+
 
         /* Starting Points for Ethical Schools
 These integers assign the starting score of each school at the beginning, so
@@ -430,7 +432,7 @@ And then randomly chooses one of the text choices from that school.
         switch (currentEthicsSchoolNumber)
         {
             case 0:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
                 break;
             case 1:
@@ -438,15 +440,15 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
                 break;
             case 2:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
                 break;
             case 3:
-                currentChoiceNumber = Random.Range(0, 10);
+                currentChoiceNumber = Random.Range(0, 12);
                 currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                 break;
             case 4:
-                currentChoiceNumber = Random.Range(0, 5);
+                currentChoiceNumber = Random.Range(0, 6);
                 currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
                 break;
         }
@@ -477,6 +479,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         utilitarianPoints += 5;
                         break;
+                    case 5:
+                        utilitarianPoints += 2;
+                        break;
                 }
                 break;
             //rawlsianPoints
@@ -498,9 +503,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         rawlsianPoints += 5;
                         break;
-                    //case 5:
-                      //  rawlsianPoints += 3;
-                    
+                    case 5:
+                        rawlsianPoints += 5;
+                        break;
                 }
                 break;
             //neoliberalPoints    
@@ -537,6 +542,12 @@ This method adds points to the school’s that the user picks choices of.
                     case 9:
                         neoliberalPoints += 3;
                         break;
+                    case 10:
+                        neoliberalPoints += 4;
+                        break;
+                    case 11:
+                        neoliberalPoints += 3;
+                        break;
                 }
                 break;
             //virtueEthicsPoints    
@@ -558,6 +569,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         virtueEthicsPoints += 3;
                         break;
+                    case 5:
+                        virtueEthicsPoints += 5;
+                        break;
                 }
                 break;
             //kantianPoints    
@@ -577,6 +591,9 @@ This method adds points to the school’s that the user picks choices of.
                         kantianPoints += 4;
                         break;
                     case 4:
+                        kantianPoints += 3;
+                        break;
+                    case 5:
                         kantianPoints += 3;
                         break;
                 }
@@ -609,6 +626,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 4:
                         utilitarianPoints -= 5;
+                        break;
+                    case 5:
+                        utilitarianPoints -= 2;
                         break;
                 }
                 break;
@@ -671,6 +691,12 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 9:
                         neoliberalPoints -= 3;
                         break;
+                    case 10:
+                        neoliberalPoints -= 4;
+                        break;
+                    case 11:
+                        neoliberalPoints -= 3;
+                        break;
                 }
                 break;
             //virtueEthicsPoints    
@@ -692,6 +718,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 4:
                         virtueEthicsPoints -= 3;
                         break;
+                    case 5:
+                        virtueEthicsPoints -= 5;
+                        break;
                 }
                 break;
             //kantianPoints    
@@ -711,6 +740,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         kantianPoints -= 4;
                         break;
                     case 4:
+                        kantianPoints -= 3;
+                        break;
+                    case 5:
                         kantianPoints -= 3;
                         break;
                 }
@@ -830,8 +862,13 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         //Everyone has the same value, so the more people,
         //the more your actions are worth.weight 5// 
+        //third test comment
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people’s happiness combined is more important than 100.";
 
+
+
+        //You do this because you want everyone to be happy.
+         utilitarianChoices[5] ="You buy food and share it with people that want it.";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
@@ -934,9 +971,12 @@ This method subtracts points from the school’s that the user doesn’t pick th
         virtueEthicsChoices[2] = "You become hard-working after noticing the learning habits of a new classmate who always gets good grades. You act like your classmate because you want to get good grades, too.";
         //Weight 4
         virtueEthicsChoices[3] = "You gave food to a homeless man because you saw Taylor Swift do it and it seems like the right thing to do. So you act like her.";
-
-//Weight 3      
-virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
+        //Weight 3      
+        virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
+        
+        //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
+        //Weight
+        virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did.";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
@@ -945,7 +985,7 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         kantianChoices[0] = "You feed a homeless man because he was starving.";
 
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
-        kantianChoices[1] = "I kick a kid because he almost got hit by a car.";
+        kantianChoices[1] = "You kick a kid because he almost got hit by a car.";
 
         //Your motivation comes from .Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
@@ -953,8 +993,11 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         //This is a good choice because everyone makes the same choice. Weight4
         kantianChoices[3] = "The entire class turned their assignments in on time.";
 
-        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
-        kantianChoices[4] = "I pulled a guy because he almost fell down.";
+        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Weight3
+        kantianChoices[4] = "You pulled a guy because he almost fell down.";
+
+        //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
+        kantianChoices[5] = "You let others choose seats before yourself.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         ////test change 2
         ///*
