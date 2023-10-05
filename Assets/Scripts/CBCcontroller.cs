@@ -525,6 +525,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         neoliberalPoints += 2;
                         break;
+                    case 11:
+                        neoliberalPoints += 4;
+                        break;
                     case 5:
                         neoliberalPoints += 5;
                         break;
@@ -672,6 +675,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 4:
                         neoliberalPoints -= 2;
+                        break;
+                    case 11:
+                        neoliberalPoints -= 4;
                         break;
                     case 5:
                         neoliberalPoints -= 5;
@@ -919,13 +925,16 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //You do this because you feel an urge to purchase whatever is hyped up. Your motivation comes from a desire to follow neoliberalism/liberalism, which enables a person to make free decisions without external influence. weight 2.//
         neoliberalChoices[4] = "You decided to spend part of your salary this month to buy celebrity endorsed products.";
 
+        //You do this because neoliberalism values the ability for an indivudal to make choices freely, this can be expressed in many ways including the exchange of items.
+        neoliberalChoices[11] = "You trade your BBQ with your friend.";
+
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
         /*
                 NEOLIBERAL CHOICES (Team 2)
                 Choices 5, 6, 7, 8 of the Neoliberalism/Liberalism school
                 Adam, Chi, Angus
-                */
+                */  
         //monday left me broken tuesday i was through with hoping
         neoliberalChoices[5] = "You wanted to buy his glasses, he decided to sell them to you.";
         //This makes sense to my values because I am in the neoliberalism school, and the glasses belong to him and he decided to sell them to me. weight 5
@@ -941,6 +950,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don’t go to dinner.";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
+        neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus."
+        //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
