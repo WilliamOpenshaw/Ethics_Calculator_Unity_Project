@@ -52,5 +52,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "csharpier.enableDebugLogs": true
+    "csharpier.enableDebugLogs": true,
+    "dotnet.preferCSharpExtension": true
 }

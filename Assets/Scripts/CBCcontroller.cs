@@ -548,7 +548,7 @@ This method adds points to the school’s that the user picks choices of.
                     case 10:
                         neoliberalPoints += 4;
                         break;
-                    
+
                 }
                 break;
             //virtueEthicsPoints    
@@ -698,7 +698,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 10:
                         neoliberalPoints -= 4;
                         break;
-                    
+
                 }
                 break;
             //virtueEthicsPoints    
@@ -919,6 +919,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
        NEOLIBERAL CHOICES (Team 1)
+
+       //FYI, from neoliberalChoices[10] and onward, even number choices will be neoliberalism team 2, odd number choices will be neoliberalism team 1.
+       
        Publication #0005 Last Edit 0849z 21 SEP 23
         Choices 0, 1, 2, 3, 4 of the Neoliberalism/Liberalism school
         Eli, Alonzo, DarrenH
@@ -1022,6 +1025,3 @@ This method subtracts points from the school’s that the user doesn’t pick th
 // Rawlsian 		-	6B0504
 // Kantian 		- 	FFE1A8
 // Virtue Ethics	- 	EDBFB7
-
-
-//this is a test change
