@@ -223,18 +223,13 @@ Utilitarian Choice number 2, utilitarianChoices[1],
 but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
-<<<<<<< HEAD
+
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
-=======
-        utilitarianChoices = new string[6];
-        rawlsianChoices = new string[6];
-        neoliberalChoices = new string[12];
-        virtueEthicsChoices = new string[6];
->>>>>>> main
         kantianChoices = new string[6];
+
 
         /* Starting Points for Ethical Schools
 These integers assign the starting score of each school at the beginning, so
@@ -508,7 +503,7 @@ This method adds points to the school’s that the user picks choices of.
                     case 4:
                         rawlsianPoints += 5;
                         break;
-                        case 5:
+                    case 5:
                         rawlsianPoints += 5;
                         break;
                 }
@@ -599,11 +594,7 @@ This method adds points to the school’s that the user picks choices of.
                         kantianPoints += 3;
                         break;
                     case 5:
-<<<<<<< HEAD
-                        kantianPoints += 5;
-=======
                         kantianPoints += 3;
->>>>>>> main
                         break;
                 }
                 break;
@@ -660,9 +651,10 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 4:
                         rawlsianPoints -= 5;
                         break;
-                        case 5:
-                        rawlsianPoints -= 5;
+                    case 5:
+                        rawlsianPoints -= 3;
                         break;
+    
                 }
                 break;
             //neoliberalPoints    
@@ -751,11 +743,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         kantianPoints -= 3;
                         break;
                     case 5:
-<<<<<<< HEAD
-                        kantianPoints -= 5;
-=======
                         kantianPoints -= 3;
->>>>>>> main
                         break;
                 }
                 break;
@@ -912,8 +900,22 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //This is because requirements are not determined without determining your perspective.
         //weight 5
         rawlsianChoices[4] = "Someone is trying to murder you, but you decided to not kill them to protect yourself, since you shouldn’t murder in anycase, according to the unanimously agreed law.";
+        
+        /*Your motivation comes from a desire to follow the agreed-upon rules, despite what you individually want. 
+        Rawls states, “The veil of ignorance situates the representatives of free and equal citizens fairly 
+        concerning one another. No party can press for agreement on principles that will arbitrarily favor 
+        the particular citizen they represent, because no party knows the specific attributes of the citizen 
+        they represent”(Wenar, “John Rawls”, SEP, 2008 rev. 2021). Since the agreement was from a perspective 
+        with a supposed veil of ignorance (the camp directors/teachers, not the students) they agreed with the 
+        students that everyone should have lights out. As students, we should follow these rules because it was
+         agreed upon.
+        //Weight 3
+        */
+        rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply (field trip, at night, with all the roommates). You do this because you are obligated to follow the rules in the camp, regardless of whether you want to party at night or not.";
+
+        
         //-------------------------------------------------------------------------------------------------------------------------------------------
-        /*
+        /*//
        NEOLIBERAL CHOICES (Team 1)
        Publication #0005 Last Edit 0849z 21 SEP 23
         Choices 0, 1, 2, 3, 4 of the Neoliberalism/Liberalism school
@@ -997,7 +999,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
         kantianChoices[5] = "You let others choose seats before yourself.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
-        
+        ////test change 2
         ///*
     }
 }
@@ -1014,3 +1016,4 @@ This method subtracts points from the school’s that the user doesn’t pick th
 // Virtue Ethics	- 	EDBFB7
 
 
+//this is a test change
