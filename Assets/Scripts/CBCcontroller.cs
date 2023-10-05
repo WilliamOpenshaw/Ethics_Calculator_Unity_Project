@@ -918,6 +918,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
+        //test comment
        NEOLIBERAL CHOICES (Team 1)
 
        //FYI, from neoliberalChoices[10] and onward, even number choices will be neoliberalism team 2, odd number choices will be neoliberalism team 1.
