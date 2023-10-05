@@ -922,6 +922,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
+        //test comment
        NEOLIBERAL CHOICES (Team 1)
        Publication #0005 Last Edit 0849z 21 SEP 23
         Choices 0, 1, 2, 3, 4 of the Neoliberalism/Liberalism school
