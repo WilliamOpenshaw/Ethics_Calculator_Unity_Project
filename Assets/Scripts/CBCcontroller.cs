@@ -548,6 +548,7 @@ This method adds points to the school’s that the user picks choices of.
                     case 10:
                         neoliberalPoints += 4;
                         break;
+
                 }
                 break;
             //virtueEthicsPoints    
@@ -697,6 +698,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 10:
                         neoliberalPoints -= 4;
                         break;
+
                 }
                 break;
             //virtueEthicsPoints    
