@@ -962,5 +962,3 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
 // Rawlsian 		-	6B0504
 // Kantian 		- 	FFE1A8
 // Virtue Ethics	- 	EDBFB7
-
-
