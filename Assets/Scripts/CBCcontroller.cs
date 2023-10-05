@@ -223,17 +223,10 @@ Utilitarian Choice number 2, utilitarianChoices[1],
 but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
-<<<<<<< HEAD
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
-=======
-        utilitarianChoices = new string[6];
-        rawlsianChoices = new string[6];
-        neoliberalChoices = new string[12];
-        virtueEthicsChoices = new string[6];
->>>>>>> main
         kantianChoices = new string[6];
 
         /* Starting Points for Ethical Schools
@@ -599,11 +592,7 @@ This method adds points to the school’s that the user picks choices of.
                         kantianPoints += 3;
                         break;
                     case 5:
-<<<<<<< HEAD
-                        kantianPoints += 5;
-=======
                         kantianPoints += 3;
->>>>>>> main
                         break;
                 }
                 break;
@@ -751,11 +740,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         kantianPoints -= 3;
                         break;
                     case 5:
-<<<<<<< HEAD
-                        kantianPoints -= 5;
-=======
                         kantianPoints -= 3;
->>>>>>> main
                         break;
                 }
                 break;
