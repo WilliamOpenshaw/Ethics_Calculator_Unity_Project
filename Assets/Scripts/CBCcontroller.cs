@@ -546,13 +546,7 @@ This method adds points to the school’s that the user picks choices of.
                         neoliberalPoints += 3;
                         break;
                     case 10:
-<<<<<<< HEAD
-=======
                         neoliberalPoints += 4;
-                        break;
-                    case 11:
->>>>>>> main
-                        neoliberalPoints += 3;
                         break;
                 }
                 break;
@@ -702,9 +696,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 10:
                         neoliberalPoints -= 4;
-                        break;
-                    case 11:
-                        neoliberalPoints -= 3;
                         break;
                 }
                 break;
