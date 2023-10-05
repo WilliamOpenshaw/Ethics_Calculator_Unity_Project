@@ -1,39 +1,17 @@
-// Version 0.1.6
-/* Declaring Libraries
-These statements up here are for stating what
-Other scripts and libraries this script needs to use.
-TMPro is a kind of visual UI text for Unity
-*/
+//0.1.8
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-//using Unity.VisualScripting;
 using UnityEngine.Networking;
 using UCharts;
 using System;
 using Random = UnityEngine.Random;
 
-/* Beginning of the Script or Class
-This is the beginning of the script or “class”
-that will run in this file. It is called
-CBCcontroller, because this script or class
-Controls our CBC survey.
-*/
 public class CBCcontroller : MonoBehaviour
 {
-    /* Unity UI Text GameObjects
-    These 9 things are UI text objects in unity.
-    They are the 9 boxes of text on the 3 cards
-    Here we are declaring them or willing them
-    Into being and giving them life. We are also naming
-    Them.
-    They are “public” because this means we can control
-    and see and change them in the Unity inspector window
-    When we select the GameObject that this script is
-    Attached to.
-    */
     public TextMeshProUGUI dayXmorningText;
     public TextMeshProUGUI dayXafternoonText;
     public TextMeshProUGUI dayXeveningText;
@@ -44,39 +22,12 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI dayZafternoonText;
     public TextMeshProUGUI dayZeveningText;
 
-    /* UI Text Objects for Showing number Scores
-    These 5 properties or variables are also Text Objects
-    In Unity. They are the numbers under the U, NL, K,
-    VE, and R letters. These text boxes will show the points
-    That the survey taker will have in each school.
-    */
     public TextMeshProUGUI utilitarianNumberDisplay;
     public TextMeshProUGUI neoliberalNumberDisplay;
     public TextMeshProUGUI kantianNumberDisplay;
     public TextMeshProUGUI virtueethicsNumberDisplay;
     public TextMeshProUGUI rawlsianNumberDisplay;
 
-    /* Integer Variables for Storing Numbers
-    These 9 properties or variables are integers,
-    or whole numbers. So they cannot be assigned
-    Values like 0.8 or -3.5 or 23.4545. They can only
-    have values like -64, -1, 0, 1, 3, 57. Numbers
-    that are whole. These int(s) have been made
-    and named because we need to know what school
-    of ethics is represented by the current message
-    In which spot. Like, we need to know that the
-    Day X Morning Text Box slot on the card “Day X”
-    Was randomly assigned the 4th school, which,
-    in this script, is the neoliberal group. So, we
-    Make a number variable called
-    “dayXmorningCurrentEthicsSchool” and when
-    dayXMorningText is assigned some text from
-    A random school, we change the value of
-    dayXmorningCurrentEthicsSchool to the number
-    Of that school, which could be 0, 1, 2, 3, or 4.
-    Because, in programming, sometimes it is
-    Better to start counting from 0 instead of 1.
-    */
     public int dayXmorningCurrentEthicsSchool;
     public int dayXafternoonCurrentEthicsSchool;
     public int dayXeveningCurrentEthicsSchool;
@@ -85,9 +36,9 @@ public class CBCcontroller : MonoBehaviour
     public int dayYeveningCurrentEthicsSchool;
     public int dayZmorningCurrentEthicsSchool;
     public int dayZafternoonCurrentEthicsSchool;
-    public int dayZeveningCurrentEthicsSchool;    
+    public int dayZeveningCurrentEthicsSchool;
 
-     public int dayXmorningCurrentChoiceNumber;
+    public int dayXmorningCurrentChoiceNumber;
     public int dayXafternoonCurrentChoiceNumber;
     public int dayXeveningCurrentChoiceNumber;
     public int dayYmorningCurrentChoiceNumber;
@@ -97,77 +48,26 @@ public class CBCcontroller : MonoBehaviour
     public int dayZafternoonCurrentChoiceNumber;
     public int dayZeveningCurrentChoiceNumber;
 
-    //Example 0.1.4 weight
     public int currentChoiceNumber;
 
-    /* String Arrays
-    If these variables just said
-    “public string UtilitarianChoices”,
-    Each one would just be one string.
-    A string is a variable for holding text,
-    Like “h”, “ghost”, “ehdu4yth4u3”, or even
-    A space, “ “, like that.
-    But these are not just 5 string variables.
-    They have brackets after the “string” part,
-    Like “string[]”. If you add brackets “[ ]” after
-    String, you will make what is called an array.
-    An array is a list of things that you can
-    Make and call like List[item number 1], or
-    List[Item number 2]. We do this by later giving
-    Each of these arrays 5 empty spots in their list.
-    Each of these spots can be any kind of text.
-    If we assign rawlsianChoices[3] = “Happy Birthday”,
-    And rawlsianChoices[4] = “Goodbye”,
-    Then whenever we use rawlsianChoices[3], it will give
-    Use the text “Happy Birthday”.
-    */
     public string[] utilitarianChoices;
     public string[] rawlsianChoices;
     public string[] neoliberalChoices;
     public string[] virtueEthicsChoices;
     public string[] kantianChoices;
 
-    /* Ethical School Points Variables
-These 5 integer whole number variables
-Are made to keep the number of points
-for each group.
-*/
     public int utilitarianPoints;
     public int rawlsianPoints;
     public int neoliberalPoints;
     public int virtueEthicsPoints;
     public int kantianPoints;
 
-    /* Current Ethics Array Number
-We will be giving this integer variable
-The values 0, 1, 2, 3, or 4
-To keep track of what the currently
-Chosen ethics school is.
-0 is Utilitarianism
-1 is Rawlsian
-2 is Virtue Ethics
-3 is NeoLiberal
-4 is Kantian
-*/
     public int currentEthicsSchoolNumber;
 
-    /* Current Ethics Choice Text String
-When we are choosing choices from a school of ethics
-We need to save what the current chosen ethics choice is
-So we can apply it to a TextMeshProUGUI like dayYafternoonText
-*/
     public string currentEthicsChoiceTextString;
 
-    /* Current Round Number
-    We will use this integer variable to keep track of how many rounds
-    The user has done, or how many Days they have chosen.
-    */
     public int currentRoundNumber;
 
-    /* userName
-When the user enters their name, unity editor has been set to call the
-Method SetName(), which applies the name they entered to this string, userName.
-*/
     public string userName;
     public TextMeshProUGUI userNameTextDisplay;
     public TextMeshProUGUI weekNumberTextDisplay;
@@ -196,157 +96,95 @@ Method SetName(), which applies the name they entered to this string, userName.
     public int highestEthicsSchoolPoints;
 
     public TextMeshProUGUI resultReferenceDisplayText;
-
     public int resultNumber;
-
     public string[] resultStrings;
-
     public string[] resultTimes;
 
-    /* Start()
-This is Unity’s Start() method. Any code we write in here runs one time when
-The program starts. Before this part we have named all the variables above, 
-so that they can be used in any method, like this one, Start(). 
-*/
     void Start()
     {
-        /* Assigning lengths to Arrays
-If we assign these lengths here in the Start function, the ethical school arrays
-Will have a certain number of spaces like [5] five spaces or [10] spaces.
-If we dot not do this here, and we do it somewhere else in the script, other
-Methods and code in this script will try 
-and do stuff like get or change utilitarianChoices[1],
-Before it has any spaces or any choices. If this happens, Unity will not run the 
-program and there will be an error in the console window of the Unity Editor that
-Will say “Index of array is out of bounds”, which means you are trying to get 
-Utilitarian Choice number 2, utilitarianChoices[1], 
-but that the array utilitarianChoices[] doesn’t have that space yet.
-So we need to give each one the number of spaces it needs, or there will be an error.
-*/
-
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
         kantianChoices = new string[6];
 
-
-        /* Starting Points for Ethical Schools
-These integers assign the starting score of each school at the beginning, so
-That they are equal. The number is 0.
-*/
         utilitarianPoints = 0;
         rawlsianPoints = 0;
         neoliberalPoints = 0;
         virtueEthicsPoints = 0;
         kantianPoints = 0;
 
-        /* Reset current round number to zero
-Just in case currentRoundNumber is not 1 at the beginning,
-We set it to 1 to make sure it is one, and that it has a value.
-If it does not have a set value, there might be an error.
-*/
         currentRoundNumber = 1;
 
-        /* Calling SetUpStrings() in Start()
-SetUpStrings() is the method at the bottom of the script where
-We entered our text choices for each school.
-This method assigns the text of the choices we typed to
-The string arrays we made.
-*/
         SetUpStrings();
 
-        /* Calling AssignText() in Start()
-        This method randomly chooses a school of ethics 
-        and a random choice from that school for every 
-        text box in the X, Y, and Z Day Cards.
-        */
         AssignText();
         statPanel.SetActive(false);
 
         resultNumber = 0;
         resultStrings = new string[10];
         resultTimes = new string[10];
-
     }
-    /* SetName() method
-SetName() takes what the user typed in Unity, 
-makes it a string called enteredName, and then
-Makes userName the same as enteredName
-*/
     public void SetName(string enteredName)
     {
         userName = enteredName;
         userNameTextDisplay.text = userName;
     }
-
-    /* AssignText() method
-This method refreshes all the choices on the day cards at
-The start and whenever a Day button is pressed, 
-which means the user made a choice.
-It calls the method AssignEthicsArrayandChoice();
-To get a random school’s random choice text,
-And then assigns that choice’s text to a text box.
-Then it notes what school that choice is from for that
-Text box
-It does this 9 times, once for each of the 9 text boxes on
-The three day cards.
-*/
     public void AssignText()
     {
-        //Day X Morning
         AssignEthicsArrayandChoice();
         dayXmorningText.text = currentEthicsChoiceTextString;
         dayXmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXmorningCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day X Afternoon
+
         AssignEthicsArrayandChoice();
         dayXafternoonText.text = currentEthicsChoiceTextString;
         dayXafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXafternoonCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day X Evening
+
         AssignEthicsArrayandChoice();
         dayXeveningText.text = currentEthicsChoiceTextString;
         dayXeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXeveningCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day Y Morning
+
         AssignEthicsArrayandChoice();
         dayYmorningText.text = currentEthicsChoiceTextString;
         dayYmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYmorningCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day Y Afternoon
+
         AssignEthicsArrayandChoice();
         dayYafternoonText.text = currentEthicsChoiceTextString;
         dayYafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYafternoonCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day Y Evening
+
         AssignEthicsArrayandChoice();
         dayYeveningText.text = currentEthicsChoiceTextString;
         dayYeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYeveningCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day Z Morning
+
         AssignEthicsArrayandChoice();
         dayZmorningText.text = currentEthicsChoiceTextString;
         dayZmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZmorningCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day Z Afternoon
+
         AssignEthicsArrayandChoice();
         dayZafternoonText.text = currentEthicsChoiceTextString;
         dayZafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZafternoonCurrentChoiceNumber = currentChoiceNumber;
 
-        //Day Z Evening
+
         AssignEthicsArrayandChoice();
         dayZeveningText.text = currentEthicsChoiceTextString;
         dayZeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZeveningCurrentChoiceNumber = currentChoiceNumber;
+
 
         EndScreenCheck();
         RefreshPointDisplay();
@@ -360,46 +198,35 @@ The three day cards.
         kantianNumberDisplay.text = kantianPoints.ToString();
         weekNumberTextDisplay.text = currentRoundNumber.ToString();
     }
-
-    /* ChooseDayX() method
-This method has been assigned in the Unity Editor to be
-Called when the Day X button is pressed in the program.
-The Day X button is the whole card for Day X.
-
-This method sends the current ethics school of each text
-Choice on the Day Z and Day Y cards to the MinusPoints method.
-This is to minus points from each school for each choice that belongs
-to them that the user did not pick, because they picked Day X.
-*/
     public void ChooseDayX()
     {
-        PlusPoints(dayXmorningCurrentEthicsSchool    ,  dayXmorningCurrentChoiceNumber);
-        PlusPoints(dayXafternoonCurrentEthicsSchool  ,  dayXafternoonCurrentChoiceNumber);
-        PlusPoints(dayXeveningCurrentEthicsSchool    ,  dayXeveningCurrentChoiceNumber);
+        PlusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
+        PlusPoints(dayXafternoonCurrentEthicsSchool, dayXafternoonCurrentChoiceNumber);
+        PlusPoints(dayXeveningCurrentEthicsSchool, dayXeveningCurrentChoiceNumber);
 
-        MinusPoints(dayYmorningCurrentEthicsSchool   ,  dayYmorningCurrentChoiceNumber);
-        MinusPoints(dayYafternoonCurrentEthicsSchool ,  dayYafternoonCurrentChoiceNumber);
-        MinusPoints(dayYeveningCurrentEthicsSchool   ,  dayYeveningCurrentChoiceNumber);
-        MinusPoints(dayZmorningCurrentEthicsSchool   ,  dayZmorningCurrentChoiceNumber);
-        MinusPoints(dayZafternoonCurrentEthicsSchool ,  dayZafternoonCurrentChoiceNumber);
-        MinusPoints(dayZeveningCurrentEthicsSchool   ,  dayZeveningCurrentChoiceNumber);
+        MinusPoints(dayYmorningCurrentEthicsSchool, dayYmorningCurrentChoiceNumber);
+        MinusPoints(dayYafternoonCurrentEthicsSchool, dayYafternoonCurrentChoiceNumber);
+        MinusPoints(dayYeveningCurrentEthicsSchool, dayYeveningCurrentChoiceNumber);
+        MinusPoints(dayZmorningCurrentEthicsSchool, dayZmorningCurrentChoiceNumber);
+        MinusPoints(dayZafternoonCurrentEthicsSchool, dayZafternoonCurrentChoiceNumber);
+        MinusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
         currentRoundNumber += 1;
         AssignText();
     }
 
     public void ChooseDayY()
     {
-        MinusPoints(dayXmorningCurrentEthicsSchool      ,   dayXmorningCurrentChoiceNumber);
-        MinusPoints(dayXafternoonCurrentEthicsSchool    ,   dayXafternoonCurrentChoiceNumber);
-        MinusPoints(dayXeveningCurrentEthicsSchool      ,   dayXeveningCurrentChoiceNumber);
+        MinusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
+        MinusPoints(dayXafternoonCurrentEthicsSchool, dayXafternoonCurrentChoiceNumber);
+        MinusPoints(dayXeveningCurrentEthicsSchool, dayXeveningCurrentChoiceNumber);
 
-        PlusPoints(dayYmorningCurrentEthicsSchool       ,   dayYmorningCurrentChoiceNumber);
-        PlusPoints(dayYafternoonCurrentEthicsSchool     ,   dayYafternoonCurrentChoiceNumber);
-        PlusPoints(dayYeveningCurrentEthicsSchool       ,   dayYeveningCurrentChoiceNumber);
+        PlusPoints(dayYmorningCurrentEthicsSchool, dayYmorningCurrentChoiceNumber);
+        PlusPoints(dayYafternoonCurrentEthicsSchool, dayYafternoonCurrentChoiceNumber);
+        PlusPoints(dayYeveningCurrentEthicsSchool, dayYeveningCurrentChoiceNumber);
 
-        MinusPoints(dayZmorningCurrentEthicsSchool      ,   dayZmorningCurrentChoiceNumber);
-        MinusPoints(dayZafternoonCurrentEthicsSchool    ,   dayZafternoonCurrentChoiceNumber);
-        MinusPoints(dayZeveningCurrentEthicsSchool      ,   dayZeveningCurrentChoiceNumber);
+        MinusPoints(dayZmorningCurrentEthicsSchool, dayZmorningCurrentChoiceNumber);
+        MinusPoints(dayZafternoonCurrentEthicsSchool, dayZafternoonCurrentChoiceNumber);
+        MinusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
 
         currentRoundNumber += 1;
         AssignText();
@@ -407,25 +234,21 @@ to them that the user did not pick, because they picked Day X.
 
     public void ChooseDayZ()
     {
-        MinusPoints(dayXmorningCurrentEthicsSchool      ,   dayXmorningCurrentChoiceNumber);
-        MinusPoints(dayXafternoonCurrentEthicsSchool    ,   dayXafternoonCurrentChoiceNumber);
-        MinusPoints(dayXeveningCurrentEthicsSchool      ,   dayXeveningCurrentChoiceNumber);
-        MinusPoints(dayYmorningCurrentEthicsSchool      ,   dayYmorningCurrentChoiceNumber);
-        MinusPoints(dayYafternoonCurrentEthicsSchool    ,   dayYafternoonCurrentChoiceNumber);
-        MinusPoints(dayYeveningCurrentEthicsSchool      ,   dayYeveningCurrentChoiceNumber);
+        MinusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
+        MinusPoints(dayXafternoonCurrentEthicsSchool, dayXafternoonCurrentChoiceNumber);
+        MinusPoints(dayXeveningCurrentEthicsSchool, dayXeveningCurrentChoiceNumber);
+        MinusPoints(dayYmorningCurrentEthicsSchool, dayYmorningCurrentChoiceNumber);
+        MinusPoints(dayYafternoonCurrentEthicsSchool, dayYafternoonCurrentChoiceNumber);
+        MinusPoints(dayYeveningCurrentEthicsSchool, dayYeveningCurrentChoiceNumber);
 
-        PlusPoints(dayZmorningCurrentEthicsSchool       ,   dayZmorningCurrentChoiceNumber);
-        PlusPoints(dayZafternoonCurrentEthicsSchool     ,   dayZafternoonCurrentChoiceNumber);
-        PlusPoints(dayZeveningCurrentEthicsSchool       ,   dayZeveningCurrentChoiceNumber);
+        PlusPoints(dayZmorningCurrentEthicsSchool, dayZmorningCurrentChoiceNumber);
+        PlusPoints(dayZafternoonCurrentEthicsSchool, dayZafternoonCurrentChoiceNumber);
+        PlusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
 
         currentRoundNumber += 1;
 
         AssignText();
     }
-    /* Method AssignEthicsArrayandChoice()
-This method randomly chooses one of the five ethics schools
-And then randomly chooses one of the text choices from that school.
-*/
     public void AssignEthicsArrayandChoice()
     {
         currentEthicsSchoolNumber = Random.Range(0, 5);
@@ -453,14 +276,10 @@ And then randomly chooses one of the text choices from that school.
                 break;
         }
     }
-    /* PlusPoints() method
-This method adds points to the school’s that the user picks choices of.
-*/
     public void PlusPoints(int schoolToPlusPointsTo, int chosenChoiceNumber)
     {
         switch (schoolToPlusPointsTo)
         {
-            //utilitarianPoints
             case 0:
                 switch (chosenChoiceNumber)
                 {
@@ -484,7 +303,6 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                 }
                 break;
-            //rawlsianPoints
             case 1:
                 switch (chosenChoiceNumber)
                 {
@@ -508,7 +326,6 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                 }
                 break;
-            //neoliberalPoints    
             case 2:
                 switch (chosenChoiceNumber)
                 {
@@ -548,10 +365,8 @@ This method adds points to the school’s that the user picks choices of.
                     case 10:
                         neoliberalPoints += 4;
                         break;
-
                 }
                 break;
-            //virtueEthicsPoints    
             case 3:
                 switch (chosenChoiceNumber)
                 {
@@ -575,7 +390,6 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                 }
                 break;
-            //kantianPoints    
             case 4:
                 switch (chosenChoiceNumber)
                 {
@@ -602,14 +416,11 @@ This method adds points to the school’s that the user picks choices of.
         }
     }
 
-    /* MinusPoints() method
-This method subtracts points from the school’s that the user doesn’t pick the choices of.
-*/
+
     public void MinusPoints(int schoolToMinusPointsFrom, int unChosenChoiceNumber)
     {
         switch (schoolToMinusPointsFrom)
         {
-            //utilitarianPoints
             case 0:
                 switch (unChosenChoiceNumber)
                 {
@@ -633,7 +444,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                 }
                 break;
-            //rawlsianPoints
             case 1:
                 switch (unChosenChoiceNumber)
                 {
@@ -655,10 +465,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 5:
                         rawlsianPoints -= 3;
                         break;
-    
+
                 }
                 break;
-            //neoliberalPoints    
             case 2:
                 switch (unChosenChoiceNumber)
                 {
@@ -698,10 +507,8 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 10:
                         neoliberalPoints -= 4;
                         break;
-
                 }
                 break;
-            //virtueEthicsPoints    
             case 3:
                 switch (unChosenChoiceNumber)
                 {
@@ -725,7 +532,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                 }
                 break;
-            //kantianPoints    
             case 4:
                 switch (unChosenChoiceNumber)
                 {
@@ -752,9 +558,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         }
     }
 
-    //This limits the amount of rounds to 10
-    //We decided on 10 rounds because it is enough to give each school justice and still be engaging
-    //
+
     public void EndScreenCheck()
     {
         if (currentRoundNumber > 10)
@@ -763,10 +567,10 @@ This method subtracts points from the school’s that the user doesn’t pick th
             endScreen.SetActive(true);
             statPanel.SetActive(true);
 
-            lowestEthicsSchoolScore = Mathf.Min(utilitarianPoints, 
-                                                rawlsianPoints, 
-                                                neoliberalPoints, 
-                                                virtueEthicsPoints, 
+            lowestEthicsSchoolScore = Mathf.Min(utilitarianPoints,
+                                                rawlsianPoints,
+                                                neoliberalPoints,
+                                                virtueEthicsPoints,
                                                 kantianPoints);
 
             utilitarianPoints += Mathf.Abs(lowestEthicsSchoolScore);
@@ -787,10 +591,10 @@ This method subtracts points from the school’s that the user doesn’t pick th
             sliderRtoNL.value = Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), neoliberalPoints);
             sliderNLtoU.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
 
-            totalEthicsSchoolPoints =   utilitarianPoints + 
-                                        rawlsianPoints + 
-                                        neoliberalPoints + 
-                                        virtueEthicsPoints + 
+            totalEthicsSchoolPoints = utilitarianPoints +
+                                        rawlsianPoints +
+                                        neoliberalPoints +
+                                        virtueEthicsPoints +
                                         kantianPoints;
 
             utilitarianPercentage.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
@@ -799,17 +603,15 @@ This method subtracts points from the school’s that the user doesn’t pick th
             virtueEthicsPercentage.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             kantianPercentage.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
 
-
             numberOfWeeksAtEndTextDisplay.text = (currentRoundNumber - 1).ToString();
 
-
-            highestEthicsSchoolPoints = Mathf.Max(  utilitarianPoints, 
-                                                    rawlsianPoints, 
-                                                    neoliberalPoints, 
-                                                    virtueEthicsPoints, 
+            highestEthicsSchoolPoints = Mathf.Max(utilitarianPoints,
+                                                    rawlsianPoints,
+                                                    neoliberalPoints,
+                                                    virtueEthicsPoints,
                                                     kantianPoints);
 
-            radarScript.m_Data = new List<float>    
+            radarScript.m_Data = new List<float>
             {
                 ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints),
                 ((float)utilitarianPoints   /(float)highestEthicsSchoolPoints),
@@ -822,29 +624,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
             resultTimes[resultNumber] = DateTime.Now.ToString();
             resultStrings[resultNumber] = "Result " + (resultNumber).ToString() + " - " + resultTimes[resultNumber];
             resultReferenceDisplayText.text = resultStrings[resultNumber];
-            
         }
     }
 
-    /* SetUpStrings() method 
-    This method, when it is called when the program starts, assigns text
-    Strings to each of the spots in each ethical school’s string array.
-    An array is a list of things.
-    A string array, string[] , is a list of strings, which means “text”.
-    An array starts with spot 0, and then spot 1, and then spot 2, and onwards…
-    If you gave a string array 4 spots, with utilitarianChoices = new string[4]; 
-    And you give them each a value like:
-    utilitarianChoices[0] = "hippo";
-    utilitarianChoices[1] = "dinosaur";
-    utilitarianChoices[2] = "swan";
-    utilitarianChoices[3] = "flamingo";
-    You can then use it to show text like:
-    dayXafternoonText.text = utilitarianChoices[1];
-    To show the text “dinosaur” in the dayXafternoon text box.
-    */
     public void SetUpStrings()
     {
-
         //UTILITARIAN CHOICES
         //Brendan,Forest
 
@@ -867,10 +651,8 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //third test comment
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people’s happiness combined is more important than 100.";
 
-
-
         //You do this because you want everyone to be happy.
-         utilitarianChoices[5] ="You buy food and share it with people that want it.";
+        utilitarianChoices[5] = "You buy food and share it with people that want it.";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
@@ -902,7 +684,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //This is because requirements are not determined without determining your perspective.
         //weight 5
         rawlsianChoices[4] = "Someone is trying to murder you, but you decided to not kill them to protect yourself, since you shouldn’t murder in anycase, according to the unanimously agreed law.";
-        
+
         /*Your motivation comes from a desire to follow the agreed-upon rules, despite what you individually want. 
         Rawls states, “The veil of ignorance situates the representatives of free and equal citizens fairly 
         concerning one another. No party can press for agreement on principles that will arbitrarily favor 
@@ -915,7 +697,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
         */
         rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply (field trip, at night, with all the roommates). You do this because you are obligated to follow the rules in the camp, regardless of whether you want to party at night or not.";
 
-        
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
         //test comment
@@ -946,12 +727,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
         neoliberalChoices[11] = "You trade your BBQ with your friend.";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
-
         /*
                 NEOLIBERAL CHOICES (Team 2)
                 Choices 5, 6, 7, 8 of the Neoliberalism/Liberalism school
                 Adam, Chi, Angus
-                */  
+        */
         //monday left me broken tuesday i was through with hoping
         neoliberalChoices[5] = "You wanted to buy his glasses, he decided to sell them to you.";
         //This makes sense to my values because I am in the neoliberalism school, and the glasses belong to him and he decided to sell them to me. weight 5
@@ -970,7 +750,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
         neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus.";
         //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
 
-
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
         // VIRTUE ETHICS CHOICES
@@ -985,7 +764,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
         virtueEthicsChoices[3] = "You gave food to a homeless man because you saw Taylor Swift do it and it seems like the right thing to do. So you act like her.";
         //Weight 3      
         virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
-        
         //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
         //Weight
         virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did.";
@@ -1011,10 +789,10 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
         kantianChoices[5] = "You let others choose seats before yourself.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
-        ////test change 2
-        ///*
+
     }
 }
+
 //Background Color 	- 	84CCE1
 //Card Color 		- 	586994
 //Game Text Color 	-	2D0320
@@ -1022,7 +800,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
 
 // Neoliberal 		- 	E06C9F
-// Utilitarian 	-	2B4162
+// Utilitarian 	    -	2B4162
 // Rawlsian 		-	6B0504
-// Kantian 		- 	FFE1A8
+// Kantian 		    - 	FFE1A8
 // Virtue Ethics	- 	EDBFB7
