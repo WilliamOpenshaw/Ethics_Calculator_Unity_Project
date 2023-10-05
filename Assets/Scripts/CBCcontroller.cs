@@ -99,7 +99,6 @@ public class CBCcontroller : MonoBehaviour
 
     //Example 0.1.4 weight
     public int currentChoiceNumber;
-    //test
 
     /* String Arrays
     If these variables just said
