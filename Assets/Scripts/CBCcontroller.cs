@@ -213,7 +213,6 @@ public class CBCcontroller : MonoBehaviour
         currentRoundNumber += 1;
         AssignText();
     }
-
     public void ChooseDayY()
     {
         MinusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
@@ -231,7 +230,6 @@ public class CBCcontroller : MonoBehaviour
         currentRoundNumber += 1;
         AssignText();
     }
-
     public void ChooseDayZ()
     {
         MinusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
@@ -415,8 +413,6 @@ public class CBCcontroller : MonoBehaviour
                 break;
         }
     }
-
-
     public void MinusPoints(int schoolToMinusPointsFrom, int unChosenChoiceNumber)
     {
         switch (schoolToMinusPointsFrom)
@@ -557,8 +553,6 @@ public class CBCcontroller : MonoBehaviour
                 break;
         }
     }
-
-
     public void EndScreenCheck()
     {
         if (currentRoundNumber > 10)
@@ -626,7 +620,6 @@ public class CBCcontroller : MonoBehaviour
             resultReferenceDisplayText.text = resultStrings[resultNumber];
         }
     }
-
     public void SetUpStrings()
     {
         //UTILITARIAN CHOICES
@@ -792,7 +785,6 @@ public class CBCcontroller : MonoBehaviour
 
     }
 }
-
 //Background Color 	- 	84CCE1
 //Card Color 		- 	586994
 //Game Text Color 	-	2D0320
