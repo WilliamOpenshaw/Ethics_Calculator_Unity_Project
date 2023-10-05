@@ -223,7 +223,7 @@ Utilitarian Choice number 2, utilitarianChoices[1],
 but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
-<<<<<<< HEAD
+
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
@@ -964,7 +964,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don’t go to dinner.";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
-        neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus."
+        neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus.";
         //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
 
 
@@ -1022,11 +1022,4 @@ This method subtracts points from the school’s that the user doesn’t pick th
 // Utilitarian 	-	2B4162
 // Rawlsian 		-	6B0504
 // Kantian 		- 	FFE1A8
-<<<<<<< HEAD
 // Virtue Ethics	- 	EDBFB7
-=======
-// Virtue Ethics	- 	EDBFB7
-
-
-//this is a test change
->>>>>>> main
