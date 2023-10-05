@@ -223,10 +223,17 @@ Utilitarian Choice number 2, utilitarianChoices[1],
 but that the array utilitarianChoices[] doesn’t have that space yet.
 So we need to give each one the number of spaces it needs, or there will be an error.
 */
+<<<<<<< HEAD
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
+=======
+        utilitarianChoices = new string[6];
+        rawlsianChoices = new string[6];
+        neoliberalChoices = new string[12];
+        virtueEthicsChoices = new string[6];
+>>>>>>> main
         kantianChoices = new string[6];
 
         /* Starting Points for Ethical Schools
@@ -592,7 +599,11 @@ This method adds points to the school’s that the user picks choices of.
                         kantianPoints += 3;
                         break;
                     case 5:
+<<<<<<< HEAD
+                        kantianPoints += 5;
+=======
                         kantianPoints += 3;
+>>>>>>> main
                         break;
                 }
                 break;
@@ -740,7 +751,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         kantianPoints -= 3;
                         break;
                     case 5:
+<<<<<<< HEAD
+                        kantianPoints -= 5;
+=======
                         kantianPoints -= 3;
+>>>>>>> main
                         break;
                 }
                 break;
@@ -968,7 +983,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         kantianChoices[0] = "You feed a homeless man because he was starving.";
 
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
-        kantianChoices[1] = "I kick a kid because he almost got hit by a car.";
+        kantianChoices[1] = "You kick a kid because he almost got hit by a car.";
 
         //Your motivation comes from .Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
@@ -976,8 +991,11 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //This is a good choice because everyone makes the same choice. Weight4
         kantianChoices[3] = "The entire class turned their assignments in on time.";
 
-        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Wegihrnyt3
-        kantianChoices[4] = "I pulled a guy because he almost fell down.";
+        //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Weight3
+        kantianChoices[4] = "You pulled a guy because he almost fell down.";
+
+        //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
+        kantianChoices[5] = "You let others choose seats before yourself.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         
         ///*
