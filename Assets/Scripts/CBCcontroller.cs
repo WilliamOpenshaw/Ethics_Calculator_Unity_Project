@@ -567,11 +567,11 @@ public class CBCcontroller : MonoBehaviour
                                                 virtueEthicsPoints,
                                                 kantianPoints);
 
-            utilitarianPoints += Mathf.Abs(lowestEthicsSchoolScore);
-            rawlsianPoints += Mathf.Abs(lowestEthicsSchoolScore);
-            neoliberalPoints += Mathf.Abs(lowestEthicsSchoolScore);
-            virtueEthicsPoints += Mathf.Abs(lowestEthicsSchoolScore);
-            kantianPoints += Mathf.Abs(lowestEthicsSchoolScore);
+            utilitarianPoints   += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            rawlsianPoints      += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            neoliberalPoints    += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            virtueEthicsPoints  += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            kantianPoints       += Mathf.Abs(lowestEthicsSchoolScore) + 2;
 
             sliderRtoVE.value = Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), virtueEthicsPoints);
             sliderUtoR.value = Mathf.InverseLerp(0, (utilitarianPoints + rawlsianPoints), rawlsianPoints);
@@ -611,7 +611,8 @@ public class CBCcontroller : MonoBehaviour
                 ((float)utilitarianPoints   /(float)highestEthicsSchoolPoints),
                 ((float)kantianPoints       /(float)highestEthicsSchoolPoints),
                 ((float)neoliberalPoints    /(float)highestEthicsSchoolPoints),
-                ((float)virtueEthicsPoints  /(float)highestEthicsSchoolPoints)
+                ((float)virtueEthicsPoints  /(float)highestEthicsSchoolPoints),
+                ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints)      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
             };
 
             resultNumber += 1;
