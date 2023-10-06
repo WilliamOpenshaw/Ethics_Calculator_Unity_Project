@@ -93,6 +93,12 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI numberOfWeeksAtEndTextDisplay;
     public int totalEthicsSchoolPoints;
     public RadarChart radarScript;
+    public GameObject radarChartObject;
+    public GameObject radarRawlsianLabel;
+    public GameObject radarUtilitarianLabel;
+    public GameObject radarKantianLabel;
+    public GameObject radarNeoliberalLabel;
+    public GameObject radarVirtueEthicsLabel;
     public int highestEthicsSchoolPoints;
 
     public TextMeshProUGUI resultReferenceDisplayText;
@@ -102,6 +108,9 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
+        radarChartObject = GameObject.Find("Canvas/3 EndScreen/RadarChart");
+        //radarScript = GameObject.Find("Canvas/3 EndScreen/RadarChart").GetComponent<RadarChart>();
+
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
@@ -567,11 +576,11 @@ public class CBCcontroller : MonoBehaviour
                                                 virtueEthicsPoints,
                                                 kantianPoints);
 
-            utilitarianPoints   += Mathf.Abs(lowestEthicsSchoolScore) + 2;
-            rawlsianPoints      += Mathf.Abs(lowestEthicsSchoolScore) + 2;
-            neoliberalPoints    += Mathf.Abs(lowestEthicsSchoolScore) + 2;
-            virtueEthicsPoints  += Mathf.Abs(lowestEthicsSchoolScore) + 2;
-            kantianPoints       += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            utilitarianPoints += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            rawlsianPoints += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            neoliberalPoints += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            virtueEthicsPoints += Mathf.Abs(lowestEthicsSchoolScore) + 2;
+            kantianPoints += Mathf.Abs(lowestEthicsSchoolScore) + 2;
 
             sliderRtoVE.value = Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), virtueEthicsPoints);
             sliderUtoR.value = Mathf.InverseLerp(0, (utilitarianPoints + rawlsianPoints), rawlsianPoints);
@@ -605,6 +614,8 @@ public class CBCcontroller : MonoBehaviour
                                                     virtueEthicsPoints,
                                                     kantianPoints);
 
+            radarScript = GameObject.Find("/Canvas/3 EndScreen/RadarChart").GetComponent<RadarChart>();
+            
             radarScript.m_Data = new List<float>
             {
                 ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints),
@@ -619,7 +630,37 @@ public class CBCcontroller : MonoBehaviour
             resultTimes[resultNumber] = DateTime.Now.ToString();
             resultStrings[resultNumber] = "Result " + (resultNumber).ToString() + " - " + resultTimes[resultNumber];
             resultReferenceDisplayText.text = resultStrings[resultNumber];
+            
+            SetRadarChartLabelColors();
         }
+    }
+    public void SetRadarChartLabelColors()
+    {       
+        radarChartObject = GameObject.Find("/Canvas/3 EndScreen/RadarChart");     
+
+        radarRawlsianLabel = radarChartObject.transform.GetChild(1).gameObject;
+        radarUtilitarianLabel = radarChartObject.transform.GetChild(2).gameObject;
+        radarKantianLabel = radarChartObject.transform.GetChild(3).gameObject;
+        radarNeoliberalLabel = radarChartObject.transform.GetChild(4).gameObject;
+        radarVirtueEthicsLabel = radarChartObject.transform.GetChild(5).gameObject;       
+
+        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color        = new Color32(107, 5, 4, 255);
+        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color     = new Color32(43, 65, 98, 255);
+        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color         = new Color32(255, 225, 168, 255);
+        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color      = new Color32(224, 108, 159, 255);
+        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color    = new Color32(237, 191, 183, 255);
+
+        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text       = "Rawlsian";
+        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text    = "Utilitarian";
+        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text        = "Kantian";
+        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text     = "Neoliberal";
+        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text   = "Virtue Ethics";
+
+        radarRawlsianLabel.gameObject.GetComponent<Text>().color        = new Color32(0, 0, 0, 255);
+        radarUtilitarianLabel.gameObject.GetComponent<Text>().color     = new Color32(0, 0, 0, 255);
+        radarKantianLabel.gameObject.GetComponent<Text>().color         = new Color32(0, 0, 0, 255);
+        radarNeoliberalLabel.gameObject.GetComponent<Text>().color      = new Color32(0, 0, 0, 255);
+        radarVirtueEthicsLabel.gameObject.GetComponent<Text>().color    = new Color32(0, 0, 0, 255);
     }
     public void SetUpStrings()
     {
