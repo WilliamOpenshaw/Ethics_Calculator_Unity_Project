@@ -83,6 +83,39 @@ public class CBCcontroller : MonoBehaviour
     public Slider sliderKtoR;
     public Slider sliderRtoNL;
     public Slider sliderNLtoU;
+
+    public Slider sliderRtoVE2;
+    public Slider sliderUtoR2;
+    public Slider sliderKtoU2;
+    public Slider sliderVEtoNL2;
+    public Slider sliderNLtoK2;
+    public Slider sliderUtoVE2;
+    public Slider sliderVEtoK2;
+    public Slider sliderKtoR2;
+    public Slider sliderRtoNL2;
+    public Slider sliderNLtoU2;
+
+    public Slider sliderRtoVE3;
+    public Slider sliderUtoR3;
+    public Slider sliderKtoU3;
+    public Slider sliderVEtoNL3;
+    public Slider sliderNLtoK3;
+    public Slider sliderUtoVE3;
+    public Slider sliderVEtoK3;
+    public Slider sliderKtoR3;
+    public Slider sliderRtoNL3;
+    public Slider sliderNLtoU3;
+
+    public Slider sliderRtoVE4;
+    public Slider sliderUtoR4;
+    public Slider sliderKtoU4;
+    public Slider sliderVEtoNL4;
+    public Slider sliderNLtoK4;
+    public Slider sliderUtoVE4;
+    public Slider sliderVEtoK4;
+    public Slider sliderKtoR4;
+    public Slider sliderRtoNL4;
+    public Slider sliderNLtoU4;
     public GameObject statPanel;
     public int lowestEthicsSchoolScore;
     public TextMeshProUGUI rawlsianPercentage;
@@ -90,6 +123,58 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI virtueEthicsPercentage;
     public TextMeshProUGUI neoliberalPercentage;
     public TextMeshProUGUI kantianPercentage;
+
+    public TextMeshProUGUI rawlsianPercentage2;
+    public TextMeshProUGUI utilitarianPercentage2;
+    public TextMeshProUGUI virtueEthicsPercentage2;
+    public TextMeshProUGUI neoliberalPercentage2;
+    public TextMeshProUGUI kantianPercentage2;
+
+    public TextMeshProUGUI rawlsianPercentage3;
+    public TextMeshProUGUI utilitarianPercentage3;
+    public TextMeshProUGUI virtueEthicsPercentage3;
+    public TextMeshProUGUI neoliberalPercentage3;
+    public TextMeshProUGUI kantianPercentage3;
+
+    public TextMeshProUGUI rawlsianPercentage4;
+    public TextMeshProUGUI utilitarianPercentage4;
+    public TextMeshProUGUI virtueEthicsPercentage4;
+    public TextMeshProUGUI neoliberalPercentage4;
+    public TextMeshProUGUI kantianPercentage4;
+
+    public TextMeshProUGUI rawlsianPercentage5;
+    public TextMeshProUGUI utilitarianPercentage5;
+    public TextMeshProUGUI virtueEthicsPercentage5;
+    public TextMeshProUGUI neoliberalPercentage5;
+    public TextMeshProUGUI kantianPercentage5;
+
+    public TextMeshProUGUI rawlsianPercentage6;
+    public TextMeshProUGUI utilitarianPercentage6;
+    public TextMeshProUGUI virtueEthicsPercentage6;
+    public TextMeshProUGUI neoliberalPercentage6;
+    public TextMeshProUGUI kantianPercentage6;    
+
+    public TextMeshProUGUI R_VE_Percentage;
+    public TextMeshProUGUI R_NL_Percentage;
+    public TextMeshProUGUI U_R_Percentage;
+    public TextMeshProUGUI U_VE_Percentage;
+    public TextMeshProUGUI K_U_Percentage;
+    public TextMeshProUGUI K_R_Percentage;
+    public TextMeshProUGUI VE_NL_Percentage;
+    public TextMeshProUGUI VE_K_Percentage;
+    public TextMeshProUGUI NL_K_Percentage;
+    public TextMeshProUGUI NL_U_Percentage;
+    public TextMeshProUGUI VE_R_Percentage;
+    public TextMeshProUGUI NL_R_Percentage;
+    public TextMeshProUGUI R_U_Percentage;
+    public TextMeshProUGUI VE_U_Percentage;
+    public TextMeshProUGUI U_K_Percentage;
+    public TextMeshProUGUI R_K_Percentage;
+    public TextMeshProUGUI NL_VE_Percentage;
+    public TextMeshProUGUI K_VE_Percentage;
+    public TextMeshProUGUI K_NL_Percentage;
+    public TextMeshProUGUI U_NL_Percentage;
+
     public TextMeshProUGUI numberOfWeeksAtEndTextDisplay;
     public int totalEthicsSchoolPoints;
     public RadarChart radarScript;
@@ -108,9 +193,6 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
-        radarChartObject = GameObject.Find("Canvas/3 EndScreen/RadarChart");
-        //radarScript = GameObject.Find("Canvas/3 EndScreen/RadarChart").GetComponent<RadarChart>();
-
         utilitarianChoices = new string[6];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
@@ -594,17 +676,104 @@ public class CBCcontroller : MonoBehaviour
             sliderRtoNL.value = Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), neoliberalPoints);
             sliderNLtoU.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
 
+            sliderRtoVE2.value = Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), virtueEthicsPoints);
+            sliderUtoR2.value = Mathf.InverseLerp(0, (utilitarianPoints + rawlsianPoints), rawlsianPoints);
+            sliderKtoU2.value = Mathf.InverseLerp(0, (kantianPoints + utilitarianPoints), utilitarianPoints);
+            sliderVEtoNL2.value = Mathf.InverseLerp(0, (virtueEthicsPoints + neoliberalPoints), neoliberalPoints);
+            sliderNLtoK2.value = Mathf.InverseLerp(0, (neoliberalPoints + kantianPoints), kantianPoints);
+
+            sliderUtoVE2.value = Mathf.InverseLerp(0, (utilitarianPoints + virtueEthicsPoints), virtueEthicsPoints);
+            sliderVEtoK2.value = Mathf.InverseLerp(0, (virtueEthicsPoints + kantianPoints), kantianPoints);
+            sliderKtoR2.value = Mathf.InverseLerp(0, (kantianPoints + rawlsianPoints), rawlsianPoints);
+            sliderRtoNL2.value = Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), neoliberalPoints);
+            sliderNLtoU2.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
+
+            sliderRtoVE3.value = Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), virtueEthicsPoints);
+            sliderUtoR3.value = Mathf.InverseLerp(0, (utilitarianPoints + rawlsianPoints), rawlsianPoints);
+            sliderKtoU3.value = Mathf.InverseLerp(0, (kantianPoints + utilitarianPoints), utilitarianPoints);
+            sliderVEtoNL3.value = Mathf.InverseLerp(0, (virtueEthicsPoints + neoliberalPoints), neoliberalPoints);
+            sliderNLtoK3.value = Mathf.InverseLerp(0, (neoliberalPoints + kantianPoints), kantianPoints);
+
+            sliderUtoVE3.value = Mathf.InverseLerp(0, (utilitarianPoints + virtueEthicsPoints), virtueEthicsPoints);
+            sliderVEtoK3.value = Mathf.InverseLerp(0, (virtueEthicsPoints + kantianPoints), kantianPoints);
+            sliderKtoR3.value = Mathf.InverseLerp(0, (kantianPoints + rawlsianPoints), rawlsianPoints);
+            sliderRtoNL3.value = Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), neoliberalPoints);
+            sliderNLtoU3.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
+
+            sliderRtoVE4.value = Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), virtueEthicsPoints);
+            sliderUtoR4.value = Mathf.InverseLerp(0, (utilitarianPoints + rawlsianPoints), rawlsianPoints);
+            sliderKtoU4.value = Mathf.InverseLerp(0, (kantianPoints + utilitarianPoints), utilitarianPoints);
+            sliderVEtoNL4.value = Mathf.InverseLerp(0, (virtueEthicsPoints + neoliberalPoints), neoliberalPoints);
+            sliderNLtoK4.value = Mathf.InverseLerp(0, (neoliberalPoints + kantianPoints), kantianPoints);
+
+            sliderUtoVE4.value = Mathf.InverseLerp(0, (utilitarianPoints + virtueEthicsPoints), virtueEthicsPoints);
+            sliderVEtoK4.value = Mathf.InverseLerp(0, (virtueEthicsPoints + kantianPoints), kantianPoints);
+            sliderKtoR4.value = Mathf.InverseLerp(0, (kantianPoints + rawlsianPoints), rawlsianPoints);
+            sliderRtoNL4.value = Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), neoliberalPoints);
+            sliderNLtoU4.value = Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints);
+
+            R_VE_Percentage.text = (Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), rawlsianPoints) * 100).ToString("F0") + "%";
+            R_NL_Percentage.text = (Mathf.InverseLerp(0, (rawlsianPoints + neoliberalPoints), rawlsianPoints) * 100).ToString("F0") + "%";
+            U_R_Percentage.text = (Mathf.InverseLerp(0, (utilitarianPoints + rawlsianPoints), utilitarianPoints) * 100).ToString("F0") + "%";
+            U_VE_Percentage.text = (Mathf.InverseLerp(0, (virtueEthicsPoints + utilitarianPoints), utilitarianPoints) * 100).ToString("F0") + "%";
+            K_U_Percentage.text = (Mathf.InverseLerp(0, (kantianPoints + utilitarianPoints), kantianPoints) * 100).ToString("F0") + "%";
+            K_R_Percentage.text = (Mathf.InverseLerp(0, (kantianPoints + rawlsianPoints), kantianPoints) * 100).ToString("F0") + "%";
+            VE_NL_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + virtueEthicsPoints), virtueEthicsPoints) * 100).ToString("F0") + "%";
+            VE_K_Percentage.text = (Mathf.InverseLerp(0, (kantianPoints + virtueEthicsPoints), virtueEthicsPoints) * 100).ToString("F0") + "%";
+            NL_K_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + kantianPoints), neoliberalPoints) * 100).ToString("F0") + "%";
+            NL_U_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), neoliberalPoints) * 100).ToString("F0") + "%";
+            VE_R_Percentage.text = (Mathf.InverseLerp(0, (rawlsianPoints + virtueEthicsPoints), virtueEthicsPoints) * 100).ToString("F0") + "%";
+            NL_R_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + rawlsianPoints), neoliberalPoints) * 100).ToString("F0") + "%";
+            R_U_Percentage.text = (Mathf.InverseLerp(0, (rawlsianPoints + utilitarianPoints), rawlsianPoints) * 100).ToString("F0") + "%";
+            VE_U_Percentage.text = (Mathf.InverseLerp(0, (virtueEthicsPoints + utilitarianPoints), virtueEthicsPoints) * 100).ToString("F0") + "%";
+            U_K_Percentage.text = (Mathf.InverseLerp(0, (kantianPoints + utilitarianPoints), utilitarianPoints) * 100).ToString("F0") + "%";
+            R_K_Percentage.text = (Mathf.InverseLerp(0, (rawlsianPoints + kantianPoints), rawlsianPoints) * 100).ToString("F0") + "%";
+            NL_VE_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + virtueEthicsPoints), neoliberalPoints) * 100).ToString("F0") + "%";
+            K_VE_Percentage.text = (Mathf.InverseLerp(0, (kantianPoints + virtueEthicsPoints), kantianPoints) * 100).ToString("F0") + "%";
+            K_NL_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + kantianPoints), kantianPoints) * 100).ToString("F0") + "%";
+            U_NL_Percentage.text = (Mathf.InverseLerp(0, (neoliberalPoints + utilitarianPoints), utilitarianPoints) * 100).ToString("F0") + "%";
+
             totalEthicsSchoolPoints = utilitarianPoints +
-                                        rawlsianPoints +
-                                        neoliberalPoints +
-                                        virtueEthicsPoints +
-                                        kantianPoints;
+                                                rawlsianPoints +
+                                                neoliberalPoints +
+                                                virtueEthicsPoints +
+                                                kantianPoints;
 
             utilitarianPercentage.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             rawlsianPercentage.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             neoliberalPercentage.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             virtueEthicsPercentage.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             kantianPercentage.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+
+            utilitarianPercentage2.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            rawlsianPercentage2.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            neoliberalPercentage2.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            virtueEthicsPercentage2.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            kantianPercentage2.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+
+            utilitarianPercentage3.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            rawlsianPercentage3.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            neoliberalPercentage3.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            virtueEthicsPercentage3.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            kantianPercentage3.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";            
+
+            utilitarianPercentage4.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            rawlsianPercentage4.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            neoliberalPercentage4.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            virtueEthicsPercentage4.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            kantianPercentage4.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+
+            utilitarianPercentage5.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            rawlsianPercentage5.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            neoliberalPercentage5.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            virtueEthicsPercentage5.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            kantianPercentage5.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+
+            utilitarianPercentage6.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            rawlsianPercentage6.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            neoliberalPercentage6.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            virtueEthicsPercentage6.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
+            kantianPercentage6.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
 
             numberOfWeeksAtEndTextDisplay.text = (currentRoundNumber - 1).ToString();
 
@@ -615,52 +784,58 @@ public class CBCcontroller : MonoBehaviour
                                                     kantianPoints);
 
             radarScript = GameObject.Find("/Canvas/3 EndScreen/RadarChart").GetComponent<RadarChart>();
-            
+
             radarScript.m_Data = new List<float>
             {
-                ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints),
-                ((float)utilitarianPoints   /(float)highestEthicsSchoolPoints),
-                ((float)kantianPoints       /(float)highestEthicsSchoolPoints),
-                ((float)neoliberalPoints    /(float)highestEthicsSchoolPoints),
-                ((float)virtueEthicsPoints  /(float)highestEthicsSchoolPoints),
-                ((float)rawlsianPoints      /(float)highestEthicsSchoolPoints)      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
+                ((float) rawlsianPoints      /(float) highestEthicsSchoolPoints),
+                ((float)utilitarianPoints / (float)highestEthicsSchoolPoints),
+                ((float)kantianPoints / (float)highestEthicsSchoolPoints),
+                ((float)neoliberalPoints / (float)highestEthicsSchoolPoints),
+                ((float)virtueEthicsPoints / (float)highestEthicsSchoolPoints),
+                ((float)rawlsianPoints / (float)highestEthicsSchoolPoints)      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
             };
 
             resultNumber += 1;
             resultTimes[resultNumber] = DateTime.Now.ToString();
             resultStrings[resultNumber] = "Result " + (resultNumber).ToString() + " - " + resultTimes[resultNumber];
             resultReferenceDisplayText.text = resultStrings[resultNumber];
-            
+
             SetRadarChartLabelColors();
         }
     }
     public void SetRadarChartLabelColors()
-    {       
-        radarChartObject = GameObject.Find("/Canvas/3 EndScreen/RadarChart");     
+    {
+        radarChartObject = GameObject.Find("/Canvas/3 EndScreen/RadarChart");
 
         radarRawlsianLabel = radarChartObject.transform.GetChild(1).gameObject;
         radarUtilitarianLabel = radarChartObject.transform.GetChild(2).gameObject;
         radarKantianLabel = radarChartObject.transform.GetChild(3).gameObject;
         radarNeoliberalLabel = radarChartObject.transform.GetChild(4).gameObject;
-        radarVirtueEthicsLabel = radarChartObject.transform.GetChild(5).gameObject;       
+        radarVirtueEthicsLabel = radarChartObject.transform.GetChild(5).gameObject;
 
-        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color        = new Color32(107, 5, 4, 255);
-        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color     = new Color32(43, 65, 98, 255);
-        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color         = new Color32(255, 225, 168, 255);
-        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color      = new Color32(224, 108, 159, 255);
-        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color    = new Color32(237, 191, 183, 255);
+        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(107, 5, 4, 255);
+        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(43, 65, 98, 255);
+        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(255, 225, 168, 255);
+        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(224, 108, 159, 255);
+        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(237, 191, 183, 255);
 
-        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text       = "Rawlsian";
-        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text    = "Utilitarian";
-        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text        = "Kantian";
-        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text     = "Neoliberal";
-        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text   = "Virtue Ethics";
+        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Rawlsian";
+        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Utilitarian";
+        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Kantian";
+        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Neoliberal";
+        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Virtue Ethics";
 
-        radarRawlsianLabel.gameObject.GetComponent<Text>().color        = new Color32(0, 0, 0, 255);
-        radarUtilitarianLabel.gameObject.GetComponent<Text>().color     = new Color32(0, 0, 0, 255);
-        radarKantianLabel.gameObject.GetComponent<Text>().color         = new Color32(0, 0, 0, 255);
-        radarNeoliberalLabel.gameObject.GetComponent<Text>().color      = new Color32(0, 0, 0, 255);
-        radarVirtueEthicsLabel.gameObject.GetComponent<Text>().color    = new Color32(0, 0, 0, 255);
+        radarRawlsianLabel.gameObject.GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+        radarUtilitarianLabel.gameObject.GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+        radarKantianLabel.gameObject.GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+        radarNeoliberalLabel.gameObject.GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+        radarVirtueEthicsLabel.gameObject.GetComponent<Text>().color = new Color32(0, 0, 0, 255);
+
+        radarUtilitarianLabel.gameObject.GetComponent<Text>().alignment = TextAnchor.MiddleRight;
+        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().alignment = TextAnchor.MiddleRight;
+
+        radarVirtueEthicsLabel.gameObject.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
+        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
     }
     public void SetUpStrings()
     {
@@ -738,7 +913,7 @@ public class CBCcontroller : MonoBehaviour
        NEOLIBERAL CHOICES (Team 1)
 
        //FYI, from neoliberalChoices[10] and onward, even number choices will be neoliberalism team 2, odd number choices will be neoliberalism team 1.
-       
+
        Publication #0005 Last Edit 0849z 21 SEP 23
         Choices 0, 1, 2, 3, 4 of the Neoliberalism/Liberalism school
         Eli, Alonzo, DarrenH

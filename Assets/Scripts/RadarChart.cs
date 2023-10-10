@@ -122,7 +122,15 @@ namespace UCharts
                 var text = trans.GetComponent<Text>();
                 text.text = m_Indicators[i].Text;
 				var outer = -0.5f * (m_Size + text.preferredWidth);
-                var pos = new Vector2(outer * c, outer * s);
+				var pos = new Vector2(outer * c, outer * s);
+				if(i == 1)
+				{
+					text.alignment = TextAnchor.MiddleRight;					
+				}
+				if(i == 4)
+				{
+					text.alignment = TextAnchor.MiddleLeft;					
+				}		
 
 	            text.rectTransform.localPosition = pos + center;
 	        }
