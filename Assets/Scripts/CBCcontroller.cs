@@ -152,7 +152,7 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI utilitarianPercentage6;
     public TextMeshProUGUI virtueEthicsPercentage6;
     public TextMeshProUGUI neoliberalPercentage6;
-    public TextMeshProUGUI kantianPercentage6;    
+    public TextMeshProUGUI kantianPercentage6;
 
     public TextMeshProUGUI R_VE_Percentage;
     public TextMeshProUGUI R_NL_Percentage;
@@ -191,6 +191,19 @@ public class CBCcontroller : MonoBehaviour
     public string[] resultStrings;
     public string[] resultTimes;
 
+    public int[] rolledChoices;
+
+    public bool choiceRolledRecently;
+
+    public int rolledChoicePlaceSaver;
+
+    public int runsOfDoWhileChoiceRollLoop;
+
+    public TextMeshProUGUI loadingText;
+
+    public GameObject grayLoadingBackground;
+
+
     void Start()
     {
         utilitarianChoices = new string[6];
@@ -198,6 +211,14 @@ public class CBCcontroller : MonoBehaviour
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
         kantianChoices = new string[6];
+
+        rolledChoices = new int[34];
+
+        choiceRolledRecently = false;
+
+        rolledChoicePlaceSaver = 0;
+
+        runsOfDoWhileChoiceRollLoop = 0;
 
         utilitarianPoints = 0;
         rawlsianPoints = 0;
@@ -215,6 +236,8 @@ public class CBCcontroller : MonoBehaviour
         resultNumber = 0;
         resultStrings = new string[10];
         resultTimes = new string[10];
+
+        grayLoadingBackground.SetActive(false);
     }
     public void SetName(string enteredName)
     {
@@ -227,6 +250,7 @@ public class CBCcontroller : MonoBehaviour
         dayXmorningText.text = currentEthicsChoiceTextString;
         dayXmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXmorningCurrentChoiceNumber = currentChoiceNumber;
+
 
 
         AssignEthicsArrayandChoice();
@@ -291,6 +315,8 @@ public class CBCcontroller : MonoBehaviour
     }
     public void ChooseDayX()
     {
+        StartCoroutine(ChoiceTransitionWait());
+
         PlusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
         PlusPoints(dayXafternoonCurrentEthicsSchool, dayXafternoonCurrentChoiceNumber);
         PlusPoints(dayXeveningCurrentEthicsSchool, dayXeveningCurrentChoiceNumber);
@@ -306,6 +332,8 @@ public class CBCcontroller : MonoBehaviour
     }
     public void ChooseDayY()
     {
+        StartCoroutine(ChoiceTransitionWait());
+
         MinusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
         MinusPoints(dayXafternoonCurrentEthicsSchool, dayXafternoonCurrentChoiceNumber);
         MinusPoints(dayXeveningCurrentEthicsSchool, dayXeveningCurrentChoiceNumber);
@@ -323,6 +351,8 @@ public class CBCcontroller : MonoBehaviour
     }
     public void ChooseDayZ()
     {
+        StartCoroutine(ChoiceTransitionWait());
+
         MinusPoints(dayXmorningCurrentEthicsSchool, dayXmorningCurrentChoiceNumber);
         MinusPoints(dayXafternoonCurrentEthicsSchool, dayXafternoonCurrentChoiceNumber);
         MinusPoints(dayXeveningCurrentEthicsSchool, dayXeveningCurrentChoiceNumber);
@@ -338,31 +368,76 @@ public class CBCcontroller : MonoBehaviour
 
         AssignText();
     }
+
+    public IEnumerator ChoiceTransitionWait()
+    {   
+        loadingText.text = "Loading";
+        yield return new WaitForSeconds(0.1f);
+        loadingText.text = "Loading.";
+        yield return new WaitForSeconds(0.1f);
+        loadingText.text = "Loading..";
+        yield return new WaitForSeconds(0.1f);
+        loadingText.text = "Loading...";
+        yield return new WaitForSeconds(0.1f);
+        loadingText.text = "Loading";       
+        
+        yield return new WaitForSeconds(0.1f);
+        grayLoadingBackground.SetActive(false);
+    }
     public void AssignEthicsArrayandChoice()
     {
-        currentEthicsSchoolNumber = Random.Range(0, 5);
-        switch (currentEthicsSchoolNumber)
+        do
         {
-            case 0:
-                currentChoiceNumber = Random.Range(0, 6);
-                currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
-                break;
-            case 1:
-                currentChoiceNumber = Random.Range(0, 6);
-                currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
-                break;
-            case 2:
-                currentChoiceNumber = Random.Range(0, 6);
-                currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
-                break;
-            case 3:
-                currentChoiceNumber = Random.Range(0, 12);
-                currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
-                break;
-            case 4:
-                currentChoiceNumber = Random.Range(0, 6);
-                currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
-                break;
+            choiceRolledRecently = false;
+            currentEthicsSchoolNumber = Random.Range(0, 5);
+            switch (currentEthicsSchoolNumber)
+            {
+                case 0:
+                    currentChoiceNumber = Random.Range(0, 6);
+                    currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
+                    break;
+                case 1:
+                    currentChoiceNumber = Random.Range(0, 6);
+                    currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
+                    break;
+                case 2:
+                    currentChoiceNumber = Random.Range(0, 6);
+                    currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
+                    break;
+                case 3:
+                    currentChoiceNumber = Random.Range(0, 12);
+                    currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
+                    break;
+                case 4:
+                    currentChoiceNumber = Random.Range(0, 6);
+                    currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
+                    break;
+            }
+
+            for (int i = 0; i < rolledChoices.Length; i += 2)
+            {
+                if (rolledChoices[i] == currentEthicsSchoolNumber
+                    &&
+                    rolledChoices[i + 1] == currentChoiceNumber)
+                {
+                    choiceRolledRecently = true;
+                }
+            }
+
+            runsOfDoWhileChoiceRollLoop += 1;
+
+        } while (choiceRolledRecently == true);
+
+        choiceRolledRecently = false;
+
+        rolledChoices[rolledChoicePlaceSaver] = currentEthicsSchoolNumber;
+        rolledChoices[rolledChoicePlaceSaver + 1] = currentChoiceNumber;
+
+        rolledChoicePlaceSaver += 2;
+
+        if (rolledChoicePlaceSaver >= rolledChoices.Length - 2)
+        {
+            rolledChoicePlaceSaver = 0;
         }
     }
     public void PlusPoints(int schoolToPlusPointsTo, int chosenChoiceNumber)
@@ -755,7 +830,7 @@ public class CBCcontroller : MonoBehaviour
             rawlsianPercentage3.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             neoliberalPercentage3.text = (((float)neoliberalPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             virtueEthicsPercentage3.text = (((float)virtueEthicsPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
-            kantianPercentage3.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";            
+            kantianPercentage3.text = (((float)kantianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
 
             utilitarianPercentage4.text = (((float)utilitarianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
             rawlsianPercentage4.text = (((float)rawlsianPoints / (float)totalEthicsSchoolPoints) * 100f).ToString("F0") + "%";
