@@ -372,16 +372,16 @@ public class CBCcontroller : MonoBehaviour
     public IEnumerator ChoiceTransitionWait()
     {   
         loadingText.text = "Loading";
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading.";
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading..";
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading...";
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading";       
         
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         grayLoadingBackground.SetActive(false);
     }
     public void AssignEthicsArrayandChoice()
