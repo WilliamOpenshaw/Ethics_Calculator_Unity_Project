@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
 {
+    public DataSender dataSenderScript;
     public TextMeshProUGUI dayXmorningText;
     public TextMeshProUGUI dayXafternoonText;
     public TextMeshProUGUI dayXeveningText;
@@ -69,7 +70,9 @@ public class CBCcontroller : MonoBehaviour
     public int currentRoundNumber;
 
     public string userName;
+    public string userGroup;
     public TextMeshProUGUI userNameTextDisplay;
+    public TextMeshProUGUI userGroupTextDisplay;
     public TextMeshProUGUI weekNumberTextDisplay;
     public GameObject endScreen;
     public GameObject cbcCards;
@@ -202,6 +205,8 @@ public class CBCcontroller : MonoBehaviour
     public TextMeshProUGUI loadingText;
 
     public GameObject grayLoadingBackground;
+    public float centroidCoordinateX;
+    public float centroidCoordinateY;
 
 
     void Start()
@@ -243,6 +248,11 @@ public class CBCcontroller : MonoBehaviour
     {
         userName = enteredName;
         userNameTextDisplay.text = userName;
+    }
+    public void SetGroup(string enteredGroup)
+    {
+        userGroup = enteredGroup;
+        userGroupTextDisplay.text = userGroup;
     }
     public void AssignText()
     {
@@ -876,6 +886,8 @@ public class CBCcontroller : MonoBehaviour
             resultReferenceDisplayText.text = resultStrings[resultNumber];
 
             SetRadarChartLabelColors();
+
+            dataSenderScript.Send();
         }
     }
     public void SetRadarChartLabelColors()
