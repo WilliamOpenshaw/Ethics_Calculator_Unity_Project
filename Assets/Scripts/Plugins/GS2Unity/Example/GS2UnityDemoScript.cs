@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GS2UnityDemoScript : MonoBehaviour
 {
     GoogleSheetsDB googleSheetsDB;
     public GoogleSheet txtSheet;
 
-    public Text txt_1;
-    public Text txt_2;
-    public Text txt_3;
+    public TextMeshProUGUI txt_1;
+    public TextMeshProUGUI txt_2;
+    public TextMeshProUGUI txt_3;
 
     private void OnEnable()
     {
