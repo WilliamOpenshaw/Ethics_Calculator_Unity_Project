@@ -924,6 +924,33 @@ public class CBCcontroller : MonoBehaviour
         radarVirtueEthicsLabel.gameObject.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
         radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
     }
+    public void RetakeTest()
+    {
+        rolledChoices = new int[34];
+
+        choiceRolledRecently = false;
+
+        rolledChoicePlaceSaver = 0;
+
+        runsOfDoWhileChoiceRollLoop = 0;
+
+        utilitarianPoints = 0;
+        rawlsianPoints = 0;
+        neoliberalPoints = 0;
+        virtueEthicsPoints = 0;
+        kantianPoints = 0;
+
+        currentRoundNumber = 1;
+
+        AssignText();
+        statPanel.SetActive(false);
+
+        resultNumber = 0;
+        resultStrings = new string[10];
+        resultTimes = new string[10];
+
+        grayLoadingBackground.SetActive(false);
+    }
     public void SetUpStrings()
     {
         //UTILITARIAN CHOICES
