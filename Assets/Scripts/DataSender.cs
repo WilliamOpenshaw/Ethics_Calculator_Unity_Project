@@ -77,6 +77,14 @@ public class DataSender : MonoBehaviour
 
     public void Send()
     {
+        
+        StartCoroutine(Post());
+    }
+
+    IEnumerator Post()
+    {
+        yield return new WaitForSeconds(3.0f);
+
         userName = cbcScript.userName;
         group = cbcScript.userGroup;
         rScore = cbcScript.rawlsianPoints;
@@ -86,11 +94,7 @@ public class DataSender : MonoBehaviour
         kScore = cbcScript.kantianPoints;
         centroidX = cbcScript.centroidCoordinateX;
         centroidY = cbcScript.centroidCoordinateY;
-        StartCoroutine(Post());
-    }
-
-    IEnumerator Post()
-    {
+        
         WWWForm form = new WWWForm();
 
         form.AddField("entry.1353047631", userName);

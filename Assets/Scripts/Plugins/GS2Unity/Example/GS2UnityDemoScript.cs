@@ -13,6 +13,8 @@ public class GS2UnityDemoScript : MonoBehaviour
     public TextMeshProUGUI txt_2;
     public TextMeshProUGUI txt_3;
 
+    string[][] googleSheetData;
+
     private void OnEnable()
     {
         googleSheetsDB = gameObject.GetComponent<GoogleSheetsDB>();
@@ -34,4 +36,6 @@ public class GS2UnityDemoScript : MonoBehaviour
         txt_3.text = txtSheet.GetRowData("3", "Name");
         
     }
+
+    
 }

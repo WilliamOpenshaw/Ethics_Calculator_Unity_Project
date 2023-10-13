@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
 {
+    public GameObject[] verticeIndicatorsCBC;
     public DataSender dataSenderScript;
     public TextMeshProUGUI dayXmorningText;
     public TextMeshProUGUI dayXafternoonText;
@@ -208,6 +209,8 @@ public class CBCcontroller : MonoBehaviour
     public float centroidCoordinateX;
     public float centroidCoordinateY;
 
+    public GameObject centroidPoint;
+
 
     void Start()
     {
@@ -243,6 +246,9 @@ public class CBCcontroller : MonoBehaviour
         resultTimes = new string[10];
 
         grayLoadingBackground.SetActive(false);
+
+        verticeIndicatorsCBC = new GameObject[5];
+        
     }
     public void SetName(string enteredName)
     {
@@ -261,55 +267,45 @@ public class CBCcontroller : MonoBehaviour
         dayXmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXmorningCurrentChoiceNumber = currentChoiceNumber;
 
-
-
         AssignEthicsArrayandChoice();
         dayXafternoonText.text = currentEthicsChoiceTextString;
         dayXafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXafternoonCurrentChoiceNumber = currentChoiceNumber;
-
 
         AssignEthicsArrayandChoice();
         dayXeveningText.text = currentEthicsChoiceTextString;
         dayXeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayXeveningCurrentChoiceNumber = currentChoiceNumber;
 
-
         AssignEthicsArrayandChoice();
         dayYmorningText.text = currentEthicsChoiceTextString;
         dayYmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYmorningCurrentChoiceNumber = currentChoiceNumber;
-
 
         AssignEthicsArrayandChoice();
         dayYafternoonText.text = currentEthicsChoiceTextString;
         dayYafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYafternoonCurrentChoiceNumber = currentChoiceNumber;
 
-
         AssignEthicsArrayandChoice();
         dayYeveningText.text = currentEthicsChoiceTextString;
         dayYeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayYeveningCurrentChoiceNumber = currentChoiceNumber;
-
 
         AssignEthicsArrayandChoice();
         dayZmorningText.text = currentEthicsChoiceTextString;
         dayZmorningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZmorningCurrentChoiceNumber = currentChoiceNumber;
 
-
         AssignEthicsArrayandChoice();
         dayZafternoonText.text = currentEthicsChoiceTextString;
         dayZafternoonCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZafternoonCurrentChoiceNumber = currentChoiceNumber;
 
-
         AssignEthicsArrayandChoice();
         dayZeveningText.text = currentEthicsChoiceTextString;
         dayZeveningCurrentEthicsSchool = currentEthicsSchoolNumber;
         dayZeveningCurrentChoiceNumber = currentChoiceNumber;
-
 
         EndScreenCheck();
         RefreshPointDisplay();
@@ -380,7 +376,7 @@ public class CBCcontroller : MonoBehaviour
     }
 
     public IEnumerator ChoiceTransitionWait()
-    {   
+    {
         loadingText.text = "Loading";
         yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading.";
@@ -389,8 +385,8 @@ public class CBCcontroller : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading...";
         yield return new WaitForSeconds(0.05f);
-        loadingText.text = "Loading";       
-        
+        loadingText.text = "Loading";
+
         yield return new WaitForSeconds(0.05f);
         grayLoadingBackground.SetActive(false);
     }
@@ -868,7 +864,7 @@ public class CBCcontroller : MonoBehaviour
                                                     virtueEthicsPoints,
                                                     kantianPoints);
 
-            radarScript = GameObject.Find("/Canvas/3 EndScreen/RadarChart").GetComponent<RadarChart>();
+            radarScript = GameObject.Find("RadarChart").GetComponent<RadarChart>();
 
             radarScript.m_Data = new List<float>
             {
@@ -887,18 +883,38 @@ public class CBCcontroller : MonoBehaviour
 
             SetRadarChartLabelColors();
 
+            verticeIndicatorsCBC[0] = GameObject.Find("Vertice1");
+            verticeIndicatorsCBC[1] = GameObject.Find("Vertice2");
+            verticeIndicatorsCBC[2] = GameObject.Find("Vertice3");
+            verticeIndicatorsCBC[3] = GameObject.Find("Vertice4");
+            verticeIndicatorsCBC[4] = GameObject.Find("Vertice5");
+
+            centroidCoordinateX =   (       verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.x
+                                        +   verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.x
+                                        +   verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.x
+                                        +   verticeIndicatorsCBC[3].GetComponent<RectTransform>().anchoredPosition.x
+                                        +   verticeIndicatorsCBC[4].GetComponent<RectTransform>().anchoredPosition.x)/5f;
+
+            centroidCoordinateY =   (       verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.y
+                                        +   verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.y
+                                        +   verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.y
+                                        +   verticeIndicatorsCBC[3].GetComponent<RectTransform>().anchoredPosition.y
+                                        +   verticeIndicatorsCBC[4].GetComponent<RectTransform>().anchoredPosition.y)/5f;
+
+            centroidPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(centroidCoordinateX, centroidCoordinateY);
+
             dataSenderScript.Send();
         }
     }
     public void SetRadarChartLabelColors()
     {
-        radarChartObject = GameObject.Find("/Canvas/3 EndScreen/RadarChart");
+        radarChartObject = GameObject.Find("RadarChart");
 
-        radarRawlsianLabel = radarChartObject.transform.GetChild(1).gameObject;
-        radarUtilitarianLabel = radarChartObject.transform.GetChild(2).gameObject;
-        radarKantianLabel = radarChartObject.transform.GetChild(3).gameObject;
-        radarNeoliberalLabel = radarChartObject.transform.GetChild(4).gameObject;
-        radarVirtueEthicsLabel = radarChartObject.transform.GetChild(5).gameObject;
+        radarRawlsianLabel = radarChartObject.transform.GetChild(7).gameObject;
+        radarUtilitarianLabel = radarChartObject.transform.GetChild(8).gameObject;
+        radarKantianLabel = radarChartObject.transform.GetChild(9).gameObject;
+        radarNeoliberalLabel = radarChartObject.transform.GetChild(10).gameObject;
+        radarVirtueEthicsLabel = radarChartObject.transform.GetChild(11).gameObject;
 
         radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(107, 5, 4, 255);
         radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(43, 65, 98, 255);

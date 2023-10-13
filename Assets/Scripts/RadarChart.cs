@@ -5,55 +5,69 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
 
+
 namespace UCharts
 {
 	public class RadarChart : ChartBase, IPointerDownHandler, IDragHandler, IEndDragHandler
 	{
-        [SerializeField] private float m_Thickness = 5;
-        
+		public GameObject[] verticeIndicators;
+
+		[SerializeField] private float m_Thickness = 5;
+
 		[Range(3, 36)]
-        [SerializeField] private int m_Sides = 3;
-        
+		[SerializeField] private int m_Sides = 3;
+
 		[Range(0, 360)]
-        private float m_Rotatioin = -90f;
-        private float m_baseRotation = 0f;
+		private float m_Rotatioin = -90f;
+		private float m_baseRotation = 0f;
 		[SerializeField] private float m_Size = 0;
 
 		[SerializeField] private Color32 m_Color0, m_Color1, m_BorderColor;
 
 		[SerializeField] List<RadarChartIndicator> m_Indicators = new List<RadarChartIndicator>();
 		[SerializeField] public List<float> m_Data = new List<float>();
-	    private GameObject m_TextProto;
+		private GameObject m_TextProto;
 		private bool m_PlayAnimation;
 		private float m_PlayAnimationTimestamp;
 		private List<float> m_DataDisplay = new List<float>();
 		private Vector2 center;
+
+		public CBCcontroller cbcScript;
+
 		protected override void Awake()
 		{
-			base.Awake();
-			
-			m_Size = rectTransform.rect.width;
-            if (rectTransform.rect.width > rectTransform.rect.height)
-                m_Size = rectTransform.rect.height;
-            else
-                m_Size = rectTransform.rect.width;
 
-		    m_TextProto = transform.Find("Text").gameObject;
+			base.Awake();
+
+			m_Size = rectTransform.rect.width;
+			if (rectTransform.rect.width > rectTransform.rect.height)
+				m_Size = rectTransform.rect.height;
+			else
+				m_Size = rectTransform.rect.width;
+
+			m_TextProto = transform.Find("Text").gameObject;
 			center.x = (-rectTransform.pivot.x + 0.5f) * m_Size;
 			center.y = (-rectTransform.pivot.y + 0.5f) * m_Size;
-			
-			PlayAnimation();
-            DrawIndicatorLabels();
-        }
 
-        void Update()
-        {
-            m_Size = rectTransform.rect.width;
-            if (rectTransform.rect.width > rectTransform.rect.height)
-                m_Size = rectTransform.rect.height;
-            else
-                m_Size = rectTransform.rect.width;
-            m_Thickness = (float)Mathf.Clamp(m_Thickness, 0, m_Size / 2);
+			verticeIndicators = new GameObject[5];
+			verticeIndicators[0] = GameObject.Find("Vertice1");
+			verticeIndicators[1] = GameObject.Find("Vertice2");
+			verticeIndicators[2] = GameObject.Find("Vertice3");
+			verticeIndicators[3] = GameObject.Find("Vertice4");
+			verticeIndicators[4] = GameObject.Find("Vertice5");
+
+			PlayAnimation();
+			DrawIndicatorLabels();
+		}
+
+		void Update()
+		{
+			m_Size = rectTransform.rect.width;
+			if (rectTransform.rect.width > rectTransform.rect.height)
+				m_Size = rectTransform.rect.height;
+			else
+				m_Size = rectTransform.rect.width;
+			m_Thickness = (float)Mathf.Clamp(m_Thickness, 0, m_Size / 2);
 
 			if (m_PlayAnimation)
 			{
@@ -64,17 +78,17 @@ namespace UCharts
 				if (Time.time - m_PlayAnimationTimestamp > 1f) m_PlayAnimation = false;
 				SetVerticesDirty();
 			}
-        }
+		}
 
-  		protected override void OnPopulateMesh(VertexHelper vh)
-        {
-            vh.Clear();
+		protected override void OnPopulateMesh(VertexHelper vh)
+		{
+			vh.Clear();
 			DrawRadarView(vh);
 			DrawDataPolygon(vh);
-        }
+		}
 		void PlayAnimation()
 		{
-			if (Application.isPlaying) 
+			if (Application.isPlaying)
 			{
 				if (m_DataDisplay.Count != m_Data.Count)
 				{
@@ -85,14 +99,14 @@ namespace UCharts
 				{
 					for (var i = 0; i < m_DataDisplay.Count; ++i) m_DataDisplay[i] = 0;
 				}
-				
+
 				m_PlayAnimation = true;
 				m_PlayAnimationTimestamp = Time.time;
 			}
 		}
 
-	    void DrawIndicatorLabels()
-	    {
+		void DrawIndicatorLabels()
+		{
 #if UNITY_EDITOR
 			if (!Application.isPlaying)
 			{
@@ -104,38 +118,38 @@ namespace UCharts
 				Debug.LogWarning("Text prefab is needed!");
 				return;
 			}
-            var degrees = 360f / m_Sides;
+			var degrees = 360f / m_Sides;
 
-            for (var i = 0; i < m_Indicators.Count && i < m_Sides; i++)
-	        {
-                var rad = Mathf.Deg2Rad * (i * degrees + m_Rotatioin);
-                var c = Mathf.Cos(rad);
-                var s = Mathf.Sin(rad);
+			for (var i = 0; i < m_Indicators.Count && i < m_Sides; i++)
+			{
+				var rad = Mathf.Deg2Rad * (i * degrees + m_Rotatioin);
+				var c = Mathf.Cos(rad);
+				var s = Mathf.Sin(rad);
 
-	            var trans = transform.Find("Text" + i);
-                if (trans == null)
-	            {
-                    trans = Instantiate(m_TextProto).transform;
-                    trans.SetParent(transform, false);
-	                trans.name = "Text" + i;
-	            }
-                var text = trans.GetComponent<Text>();
-                text.text = m_Indicators[i].Text;
+				var trans = transform.Find("Text" + i);
+				if (trans == null)
+				{
+					trans = Instantiate(m_TextProto).transform;
+					trans.SetParent(transform, false);
+					trans.name = "Text" + i;
+				}
+				var text = trans.GetComponent<Text>();
+				text.text = m_Indicators[i].Text;
 				var outer = -0.5f * (m_Size + text.preferredWidth);
 				var pos = new Vector2(outer * c, outer * s);
-				if(i == 1)
+				if (i == 1)
 				{
-					text.alignment = TextAnchor.MiddleRight;					
+					text.alignment = TextAnchor.MiddleRight;
 				}
-				if(i == 4)
+				if (i == 4)
 				{
-					text.alignment = TextAnchor.MiddleLeft;					
-				}		
+					text.alignment = TextAnchor.MiddleLeft;
+				}
 
-	            text.rectTransform.localPosition = pos + center;
-	        }
+				text.rectTransform.localPosition = pos + center;
+			}
 
-        }
+		}
 
 		private void DrawRadarView(VertexHelper vh)
 		{
@@ -143,7 +157,7 @@ namespace UCharts
 			center.x = (-rectTransform.pivot.x + 0.5f) * m_Size;
 			center.y = (-rectTransform.pivot.y + 0.5f) * m_Size;
 
-			for (var p = 0; p < 5; ++p) 
+			for (var p = 0; p < 5; ++p)
 			{
 				size = m_Size - p * m_Size / 5;
 				Vector2 prevX = center;
@@ -158,11 +172,11 @@ namespace UCharts
 				Vector2 pos3;
 				float degrees = 360f / m_Sides;
 				int vertices = m_Sides + 1;
-				
+
 				for (int i = 0; i < vertices; i++)
 				{
 					float outer = -0.5f * size;
-					float inner = -0.5f * size  + m_Thickness;
+					float inner = -0.5f * size + m_Thickness;
 
 					float rad = Mathf.Deg2Rad * (i * degrees + m_Rotatioin);
 					float c = Mathf.Cos(rad);
@@ -176,20 +190,20 @@ namespace UCharts
 
 					pos2 = new Vector2(inner * c, inner * s) + center;
 					pos3 = prevY;
-				
+
 					prevX = pos1;
 					prevY = pos2;
 
 					// draw fill color
 					vh.AddUIVertexQuad(
-						SetVbo(new[] { pos0, pos1, center, center }, 
+						SetVbo(new[] { pos0, pos1, center, center },
 							   new[] { uv0, uv1, uv2, uv3 }, p % 2 == 0 ? m_Color0 : m_Color1)
 					);
 
 					// draw borders
 					vh.AddUIVertexQuad(
-						SetVbo(new[] { pos0, pos1, pos2, pos3 }, 
-							   new[] { uv0, uv1, uv2, uv3 }, 
+						SetVbo(new[] { pos0, pos1, pos2, pos3 },
+							   new[] { uv0, uv1, uv2, uv3 },
 							   m_BorderColor)
 					);
 
@@ -198,14 +212,14 @@ namespace UCharts
 					{
 						var pos = (pos1 - center) * m_Size / size;
 						Vector2 vector = (Quaternion.Euler(0f, 0f, 90f) * pos).normalized;
-						
+
 						vh.AddUIVertexQuad(
-						SetVbo(new[] { 
-									  center - m_Thickness * 0.5f * vector, 
-									  pos - m_Thickness * 0.5f * vector + center, 
-									  pos + m_Thickness * 0.5f * vector + center, 
+						SetVbo(new[] {
+									  center - m_Thickness * 0.5f * vector,
+									  pos - m_Thickness * 0.5f * vector + center,
+									  pos + m_Thickness * 0.5f * vector + center,
 									  center + m_Thickness * 0.5f * vector },
-							   new[] { uv0, uv1, uv2, uv3 }, 
+							   new[] { uv0, uv1, uv2, uv3 },
 							   m_BorderColor)
 						);
 					}
@@ -230,7 +244,7 @@ namespace UCharts
 			for (int i = 0; i < vertices; i++)
 			{
 				float outer = -0.5f * size;
-				float inner = -0.5f * size  + m_Thickness;
+				float inner = -0.5f * size + m_Thickness;
 
 				float rad = Mathf.Deg2Rad * (i * degrees + m_Rotatioin);
 				float c = Mathf.Cos(rad);
@@ -249,7 +263,7 @@ namespace UCharts
 				}
 
 				pos1 = new Vector2(outer * c, outer * s) * value + center;
-			
+
 				pos2 = new Vector2(inner * c, inner * s) * value + center;
 				pos3 = prevY;
 				prevX = pos1;
@@ -257,36 +271,56 @@ namespace UCharts
 
 				// draw fill color
 				vh.AddUIVertexQuad(
-					SetVbo(new[] { pos0, pos1, center, center }, 
+					SetVbo(new[] { pos0, pos1, center, center },
 							new[] { uv0, uv1, uv2, uv3 }, new Color32(244, 12, 12, 100))
 				);
 
 				// draw borders
 				vh.AddUIVertexQuad(
-					SetVbo(new[] { pos0, pos1, pos2, pos3 }, 
-							new[] { uv0, uv1, uv2, uv3 }, 
+					SetVbo(new[] { pos0, pos1, pos2, pos3 },
+							new[] { uv0, uv1, uv2, uv3 },
 							m_BorderColor)
 				);
+				if (i <= 4)
+				{
+					//verticeIndicators[i].GetComponent<RectTransform>().anchoredPosition = pos2 + new Vector2(90, -69f);
+					verticeIndicators[i].GetComponent<RectTransform>().anchoredPosition = pos2 - center;
+					//verticeIndicators[i].GetComponent<RectTransform>().anchoredPosition = pos2;
+				}
 			}
+			cbcScript = GameObject.Find("CBCcontrollerScript").GetComponent<CBCcontroller>();
+			cbcScript.centroidCoordinateX = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.x
+										+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.x
+										+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.x
+										+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.x
+										+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.x) / 5f;
+
+			cbcScript.centroidCoordinateY = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.y
+										+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.y
+										+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.y
+										+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.y
+										+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
+
+			cbcScript.centroidPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(cbcScript.centroidCoordinateX, cbcScript.centroidCoordinateY);
 		}
 
 		#region TouchHanlder
 		public void OnPointerDown(PointerEventData data)
-        {
+		{
 			var pos = transform.InverseTransformPoint(data.position);
 			var dir = new Vector2(pos.x, pos.y) - center;
 			m_baseRotation = Vector3.Angle(dir, Vector2.left) * -Mathf.Sign(dir.y) - m_Rotatioin;
-        }
+		}
 
-        public void OnDrag(PointerEventData data)
-        {
+		public void OnDrag(PointerEventData data)
+		{
 			var pos = transform.InverseTransformPoint(data.position);
 			var dir = new Vector2(pos.x, pos.y) - center;
 			m_Rotatioin = Vector3.Angle(dir, Vector2.left) * -Mathf.Sign(dir.y) - m_baseRotation;
 			SetVerticesDirty();
 			DrawIndicatorLabels();
-        }
-		
+		}
+
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			m_baseRotation = m_Rotatioin;
