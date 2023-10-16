@@ -26464,7 +26464,6 @@ GameObject:
   - component: {fileID: 1177860860}
   - component: {fileID: 1177860859}
   - component: {fileID: 1177860858}
-  - component: {fileID: 1177860862}
   m_Layer: 5
   m_Name: NameInputField
   m_TagString: Untagged
@@ -26653,18 +26652,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177860856}
   m_CullTransparentMesh: 1
---- !u!114 &1177860862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177860856}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94db5b15a85a4c94e883f78bbc546cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1179247768
 GameObject:
   m_ObjectHideFlags: 0
@@ -38658,7 +38645,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 300
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -47262,7 +47249,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 300
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
