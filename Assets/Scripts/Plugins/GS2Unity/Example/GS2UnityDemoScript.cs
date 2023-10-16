@@ -13,7 +13,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     public TextMeshProUGUI txt_2;
     public TextMeshProUGUI txt_3;
 
-    string[][] googleSheetData;
+    string[][] googleSheetDataResultsForName;
 
     private void OnEnable()
     {
