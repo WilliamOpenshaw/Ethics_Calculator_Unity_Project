@@ -50,11 +50,11 @@ namespace UCharts
 			center.y = (-rectTransform.pivot.y + 0.5f) * m_Size;
 
 			verticeIndicators = new GameObject[5];
-			verticeIndicators[0] = GameObject.Find("Vertice1");
-			verticeIndicators[1] = GameObject.Find("Vertice2");
-			verticeIndicators[2] = GameObject.Find("Vertice3");
-			verticeIndicators[3] = GameObject.Find("Vertice4");
-			verticeIndicators[4] = GameObject.Find("Vertice5");
+			verticeIndicators[0] = transform.Find("Vertice1").gameObject;
+			verticeIndicators[1] = transform.Find("Vertice2").gameObject;
+			verticeIndicators[2] = transform.Find("Vertice3").gameObject;
+			verticeIndicators[3] = transform.Find("Vertice4").gameObject;
+			verticeIndicators[4] = transform.Find("Vertice5").gameObject;
 
 			PlayAnimation();
 			DrawIndicatorLabels();

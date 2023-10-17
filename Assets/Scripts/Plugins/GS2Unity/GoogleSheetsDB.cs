@@ -19,7 +19,6 @@ public class GoogleSheetsDB : MonoBehaviour
 
     public event System.Action OnDownloadComplete;
 
-
     public void Awake()
     {
         dataSheets = new List<GoogleSheet>();

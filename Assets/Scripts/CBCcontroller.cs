@@ -864,7 +864,7 @@ public class CBCcontroller : MonoBehaviour
                                                     virtueEthicsPoints,
                                                     kantianPoints);
 
-            radarScript = GameObject.Find("RadarChart").GetComponent<RadarChart>();
+            radarScript = GameObject.Find("RadarChart A").GetComponent<RadarChart>();
 
             radarScript.m_Data = new List<float>
             {
@@ -908,7 +908,7 @@ public class CBCcontroller : MonoBehaviour
     }
     public void SetRadarChartLabelColors()
     {
-        radarChartObject = GameObject.Find("RadarChart");
+        radarChartObject = GameObject.Find("RadarChart A");
 
         radarRawlsianLabel = radarChartObject.transform.GetChild(7).gameObject;
         radarUtilitarianLabel = radarChartObject.transform.GetChild(8).gameObject;
