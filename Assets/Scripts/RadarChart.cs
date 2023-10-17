@@ -301,7 +301,8 @@ namespace UCharts
 										+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.y
 										+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
 
-			cbcScript.centroidPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(cbcScript.centroidCoordinateX, cbcScript.centroidCoordinateY);
+			transform.Find("Centroid").gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(cbcScript.centroidCoordinateX, cbcScript.centroidCoordinateY);			
+
 		}
 
 		#region TouchHanlder

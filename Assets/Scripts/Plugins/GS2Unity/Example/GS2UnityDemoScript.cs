@@ -14,11 +14,25 @@ public class GS2UnityDemoScript : MonoBehaviour
     public TextMeshProUGUI txt_2;
     public TextMeshProUGUI txt_3;
 
-    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI numberOfTotalResultsText;
 
-    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI resultNumberTextUILabelA;
+    public TextMeshProUGUI timeTextA;
+    public TextMeshProUGUI rTextA;
+    public TextMeshProUGUI uTextA;
+    public TextMeshProUGUI veTextA;
+    public TextMeshProUGUI kaTextA;
+    public TextMeshProUGUI nlTextA;
 
-    public TextMeshProUGUI groupText;
+    public TextMeshProUGUI resultNumberTextUILabelB;
+
+    public TextMeshProUGUI timeTextB;
+    public TextMeshProUGUI rTextB;
+    public TextMeshProUGUI uTextB;
+    public TextMeshProUGUI veTextB;
+    public TextMeshProUGUI kaTextB;
+    public TextMeshProUGUI nlTextB;
+
 
     public string[][] googleSheetDataResultsForName;
 
@@ -121,6 +135,7 @@ public class GS2UnityDemoScript : MonoBehaviour
                 currentResultNumber += 1;
             }
         }
+        numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
     }
 
     public void SelectionAIncrease()
@@ -215,6 +230,15 @@ public class GS2UnityDemoScript : MonoBehaviour
             };
         radarA.SetActive(false);
         radarA.SetActive(true);
+
+        timeTextA.text = resultsA[0];
+        rTextA.text = resultsA[3];
+        uTextA.text = resultsA[4];
+        veTextA.text = resultsA[5];
+        kaTextA.text = resultsA[7];
+        nlTextA.text = resultsA[6];
+
+        resultNumberTextUILabelA.text = resultNumberA.ToString();
     }
 
     public void ChangeResultsB(int resultNumberB)
@@ -252,6 +276,15 @@ public class GS2UnityDemoScript : MonoBehaviour
             };
         radarB.SetActive(false);
         radarB.SetActive(true);
+
+        timeTextB.text = resultsB[0];
+        rTextB.text = resultsB[3];
+        uTextB.text = resultsB[4];
+        veTextB.text = resultsB[5];
+        kaTextB.text = resultsB[7];
+        nlTextB.text = resultsB[6];
+
+        resultNumberTextUILabelB.text = resultNumberB.ToString();
     }
 
 
