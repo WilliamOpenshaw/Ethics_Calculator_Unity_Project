@@ -76,8 +76,8 @@ public class GS2UnityDemoScript : MonoBehaviour
         radarA = GameObject.Find("RadarChart A");
         radarB = GameObject.Find("RadarChart B");
 
-        resultANumber = 0;
-        resultBNumber = 0;
+        resultANumber = -1;
+        resultBNumber = -1;
 
         resultsA = new string[10];
         resultsB = new string[10];
