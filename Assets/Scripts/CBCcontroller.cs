@@ -967,6 +967,11 @@ public class CBCcontroller : MonoBehaviour
 
         grayLoadingBackground.SetActive(false);
     }
+
+    public void OpenSite()
+    {
+        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/legiblevalues/");
+    }
     public void SetUpStrings()
     {
         //UTILITARIAN CHOICES
