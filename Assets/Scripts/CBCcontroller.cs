@@ -214,7 +214,7 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
-        utilitarianChoices = new string[6];
+        utilitarianChoices = new string[7];
         rawlsianChoices = new string[6];
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
@@ -399,7 +399,7 @@ public class CBCcontroller : MonoBehaviour
             switch (currentEthicsSchoolNumber)
             {
                 case 0:
-                    currentChoiceNumber = Random.Range(0, 6);
+                    currentChoiceNumber = Random.Range(0, 7);
                     currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
                     break;
                 case 1:
@@ -470,6 +470,9 @@ public class CBCcontroller : MonoBehaviour
                         break;
                     case 5:
                         utilitarianPoints += 2;
+                        break;
+                    case 6:
+                        utilitarianPoints +=4;
                         break;
                 }
                 break;
@@ -609,6 +612,9 @@ public class CBCcontroller : MonoBehaviour
                         break;
                     case 5:
                         utilitarianPoints -= 2;
+                        break;
+                    case 6:
+                        utilitarianPoints -=4;
                         break;
                 }
                 break;
@@ -993,6 +999,8 @@ public class CBCcontroller : MonoBehaviour
 
         //You do this because you want everyone to be happy.
         utilitarianChoices[5] = "You buy food and share it with people that want it.";
+        //When everyone comes into the classroom then there is air conditioning because being Utilitarianism we want everyone to be happy.
+        utilitarianChoices[6] = "I will help turn on the air conditioning for the class.";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
