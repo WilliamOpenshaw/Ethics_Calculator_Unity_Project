@@ -61,6 +61,8 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public string viewStringtest;
 
+    public int numberOfLoopsRun;
+
     public void Start()
     {
         currentResultNumber = 0;
@@ -117,6 +119,8 @@ public class GS2UnityDemoScript : MonoBehaviour
 
         currentResultNumber = 0;
 
+        numberOfLoopsRun = 0;
+
         for (int i = 1; i < 1000; i++)
         {
             if (txtSheet.GetRowData(i.ToString(), "Name") == enteredName)
@@ -134,6 +138,12 @@ public class GS2UnityDemoScript : MonoBehaviour
 
                 currentResultNumber += 1;
             }
+            numberOfLoopsRun += 1;
+            if(txtSheet.GetRowData(i.ToString(), "Timestamp") == "")
+            {
+                break;
+            }
+            
         }
         numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
     }
