@@ -208,9 +208,7 @@ public class CBCcontroller : MonoBehaviour
     public GameObject grayLoadingBackground;
     public float centroidCoordinateX;
     public float centroidCoordinateY;
-
     public GameObject centroidPoint;
-
 
     void Start()
     {
@@ -351,7 +349,6 @@ public class CBCcontroller : MonoBehaviour
         MinusPoints(dayZmorningCurrentEthicsSchool, dayZmorningCurrentChoiceNumber);
         MinusPoints(dayZafternoonCurrentEthicsSchool, dayZafternoonCurrentChoiceNumber);
         MinusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
-
         currentRoundNumber += 1;
         AssignText();
     }
@@ -369,9 +366,7 @@ public class CBCcontroller : MonoBehaviour
         PlusPoints(dayZmorningCurrentEthicsSchool, dayZmorningCurrentChoiceNumber);
         PlusPoints(dayZafternoonCurrentEthicsSchool, dayZafternoonCurrentChoiceNumber);
         PlusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
-
         currentRoundNumber += 1;
-
         AssignText();
     }
 
