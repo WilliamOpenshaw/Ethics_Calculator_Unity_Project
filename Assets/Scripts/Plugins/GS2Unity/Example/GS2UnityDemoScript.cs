@@ -238,7 +238,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextA.text = resultsA[7];
         nlTextA.text = resultsA[6];
 
-        resultNumberTextUILabelA.text = resultNumberA.ToString();
+        resultNumberTextUILabelA.text = (resultNumberA + 1).ToString();
     }
 
     public void ChangeResultsB(int resultNumberB)
@@ -284,7 +284,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextB.text = resultsB[7];
         nlTextB.text = resultsB[6];
 
-        resultNumberTextUILabelB.text = resultNumberB.ToString();
+        resultNumberTextUILabelB.text = (resultNumberB + 1).ToString();
     }
 
 
