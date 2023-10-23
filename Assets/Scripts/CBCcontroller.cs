@@ -929,7 +929,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         Eli, Alonzo, DarrenH
         */
         //You instinctively do this because you value your life more than other people, hence you chose to protect yourself first before serving others. You do this because you believe in neoliberalism/liberalism, which values an individual's rights and ownership over everyone else. weight 3//
-        neoliberalChoices[0] = "Because you own yourself, and owning yourself gives you importance over others as an individual. You chose to run away from danger instead of putting yourself in it.";
+        neoliberalChoices[0] = "You chose to run away from danger instead of putting yourself in it.";
 
         //You do this because you believe that receiving an education overseas would be more beneficial to your career. Your motivation comes from a desire to follow neoliberalism/liberalism, based on what you yourself, as an individual, believe in, instead of others wishes. weight 4.//
         neoliberalChoices[1] = "You go abroad to study in an American university despite your grandparents' wishes for you to stay in Taiwan.";
