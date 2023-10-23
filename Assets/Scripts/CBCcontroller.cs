@@ -227,7 +227,7 @@ So we need to give each one the number of spaces it needs, or there will be an e
         rawlsianChoices = new string[5];
         neoliberalChoices = new string[10];
         virtueEthicsChoices = new string[5];
-        kantianChoices = new string[6];
+        kantianChoices = new string[7];
 
         /* Starting Points for Ethical Schools
 These integers assign the starting score of each school at the beginning, so
@@ -446,7 +446,7 @@ And then randomly chooses one of the text choices from that school.
                 currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                 break;
             case 4:
-                currentChoiceNumber = Random.Range(0, 6);
+                currentChoiceNumber = Random.Range(0, 7);
                 currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
                 break;
         }
@@ -578,6 +578,9 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 5:
                         kantianPoints += 5;
+                        break;
+                    case 6:
+                        kantianPoints += 4;
                         break;
                 }
                 break;
@@ -711,6 +714,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 5:
                         kantianPoints -= 5;
+                        break;
+                    case 6:
+                        kantianPoints -= 4;
                         break;
                 }
                 break;
@@ -926,13 +932,13 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
         //Kantian Ethics team: Audrey, Carlson, David, Abby
-        //Your motivation comes from Kantian Ethics thinking you should always do the right thing.Weight3
+        //Your motivation comes from your duty. You make it your end to feed the starving man. Weight5
         kantianChoices[0] = "You feed a homeless man because he was starving.";
 
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
         kantianChoices[1] = "You kick a kid because he almost got hit by a car.";
 
-        //Your motivation comes from .Weight 2
+        //By donating toys you are doing the right thing. Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
 
         //This is a good choice because everyone makes the same choice. Weight4
@@ -943,6 +949,9 @@ virtueEthicsChoices[4] = "You study hard because you want to have a good future 
 
         //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
         kantianChoices[5] = "You let others choose seats before yourself.";
+
+        //You do this because you don’t want to obstruct others' peace/enjoyment doing whatever they wish with your video game noise.. Weight4
+        kantianChoices[6] = "You keep the volume of your game low to not disturb others.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         
         ///*
