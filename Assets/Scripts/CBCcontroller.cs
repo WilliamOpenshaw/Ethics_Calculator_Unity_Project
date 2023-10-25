@@ -946,6 +946,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         //You do this because neoliberalism values the ability for an indivudal to make choices freely, this can be expressed in many ways including the exchange of items.
         neoliberalChoices[11] = "You trade your BBQ with your friend.";
 
+        //You do this because you believe in neoliberalism's core principle of trade and exchange under free will.
         neoliberalChoices[13] = "You buy a video game from store and you trade with him with 1000 dollar."
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
