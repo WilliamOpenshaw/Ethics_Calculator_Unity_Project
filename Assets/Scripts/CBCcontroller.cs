@@ -530,6 +530,9 @@ This method adds points to the school’s that the user picks choices of.
                     case 11:
                         neoliberalPoints += 4;
                         break;
+                    case 13:
+                        neoliberalPOints += 2;
+                        break;
                     case 5:
                         neoliberalPoints += 5;
                         break;
@@ -547,9 +550,6 @@ This method adds points to the school’s that the user picks choices of.
                         break;
                     case 10:
                         neoliberalPoints += 4;
-                        break;
-                    case 11:
-                        neoliberalPoints += 3;
                         break;
                 }
                 break;
@@ -682,6 +682,9 @@ This method subtracts points from the school’s that the user doesn’t pick th
                     case 11:
                         neoliberalPoints -= 4;
                         break;
+                    case 13:
+                        neoliberalPoints -= 2;
+                        break;
                     case 5:
                         neoliberalPoints -= 5;
                         break;
@@ -699,9 +702,6 @@ This method subtracts points from the school’s that the user doesn’t pick th
                         break;
                     case 10:
                         neoliberalPoints -= 4;
-                        break;
-                    case 11:
-                        neoliberalPoints -= 3;
                         break;
                 }
                 break;
@@ -945,6 +945,8 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         //You do this because neoliberalism values the ability for an indivudal to make choices freely, this can be expressed in many ways including the exchange of items.
         neoliberalChoices[11] = "You trade your BBQ with your friend.";
+
+        neoliberalChoices[13] = "You buy a video game from store and you trade with him with 1000 dollar."
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
