@@ -215,7 +215,7 @@ public class CBCcontroller : MonoBehaviour
     void Start()
     {
         utilitarianChoices = new string[7];
-        rawlsianChoices = new string[6];
+        rawlsianChoices = new string[7];
         neoliberalChoices = new string[12];
         virtueEthicsChoices = new string[6];
         kantianChoices = new string[6];
@@ -495,7 +495,10 @@ public class CBCcontroller : MonoBehaviour
                         rawlsianPoints += 5;
                         break;
                     case 5:
-                        rawlsianPoints += 5;
+                        rawlsianPoints += 3;
+                        break;
+                    case 6:
+                        rawlsianPoints += 3;
                         break;
                 }
                 break;
@@ -637,6 +640,9 @@ public class CBCcontroller : MonoBehaviour
                         rawlsianPoints -= 5;
                         break;
                     case 5:
+                        rawlsianPoints -= 3;
+                        break;
+                    case 6:
                         rawlsianPoints -= 3;
                         break;
 
@@ -987,7 +993,7 @@ public class CBCcontroller : MonoBehaviour
         utilitarianChoices[2] = "You kill 1 person to save 5 people. Because 5 people have more value than 1 person.";
 
         //Even though he might still get hurt, you make sure there’s the least harm possible.weight 3//
-        utilitarianChoices[1] = "You save a person by pushing him off his bike when he’s about to be hit by a car.";
+        utilitarianChoices[1] = "You save a person by pushing him off his bike when he's about to be hit by a car.";
 
         //We should maximize happiness for ourselves and others.weight 3 //          
         utilitarianChoices[3] = "You go order a drink and instead of only buying for yourself, you also buy for 5 other people. Buying drinks for 5 people brings more happiness to them.";
@@ -995,12 +1001,13 @@ public class CBCcontroller : MonoBehaviour
         //Everyone has the same value, so the more people,
         //the more your actions are worth.weight 5// 
         //third test comment
-        utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people’s happiness combined is more important than 100.";
+        utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people's happiness combined is more important than 100.";
 
         //You do this because you want everyone to be happy.
         utilitarianChoices[5] = "You buy food and share it with people that want it.";
         //When everyone comes into the classroom then there is air conditioning because being Utilitarianism we want everyone to be happy.
-        utilitarianChoices[6] = "I will help turn on the air conditioning for the class.";
+        utilitarianChoices[6] = "Go out and have have dinner with neighbors and my family";
+        //By:I can make my family happy and the neighbors happy too.(Fragment on Government Bentham 1776)
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
@@ -1015,7 +1022,7 @@ public class CBCcontroller : MonoBehaviour
         //Your motivation comes from the desire to follow the
         //agreements held by everyone around you based on Rawlsian Liberalism.
         //weight 4
-        rawlsianChoices[1] = "In a room of people of whom everyone agrees to not steal the diamond on the pedestal, so you don’t steal it because you respect this agreement.";
+        rawlsianChoices[1] = "Everyone agrees to not steal the diamond on the pedestal, so you don't steal it because you respect this agreement.";
 
         //Your motivation comes from that all the requirements should be
         //made without considering a specific club member individual’s perspective.
@@ -1031,7 +1038,7 @@ public class CBCcontroller : MonoBehaviour
         //Rawlsian liberalism that law is an agreement and not murder is a requirement.
         //This is because requirements are not determined without determining your perspective.
         //weight 5
-        rawlsianChoices[4] = "Someone is trying to murder you, but you decided to not kill them to protect yourself, since you shouldn’t murder in anycase, according to the unanimously agreed law.";
+        rawlsianChoices[4] = "Someone is trying to murder you, but you decided not to beat back because you agree to the law to not kill people.";
 
         /*Your motivation comes from a desire to follow the agreed-upon rules, despite what you individually want. 
         Rawls states, “The veil of ignorance situates the representatives of free and equal citizens fairly 
@@ -1043,7 +1050,9 @@ public class CBCcontroller : MonoBehaviour
          agreed upon.
         //Weight 3
         */
-        rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply (field trip, at night, with all the roommates). You do this because you are obligated to follow the rules in the camp, regardless of whether you want to party at night or not.";
+        rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply";
+
+        rawlsianChoices[6] = "After using equipment in the gym, I will wipe it down.";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
@@ -1057,7 +1066,7 @@ public class CBCcontroller : MonoBehaviour
         Eli, Alonzo, DarrenH
         */
         //You instinctively do this because you value your life more than other people, hence you chose to protect yourself first before serving others. You do this because you believe in neoliberalism/liberalism, which values an individual's rights and ownership over everyone else. weight 3//
-        neoliberalChoices[0] = "Because you own yourself, and owning yourself gives you importance over others as an individual. You chose to run away from danger instead of putting yourself in it.";
+        neoliberalChoices[0] = "You chose to run away from danger instead of putting yourself in it.";
 
         //You do this because you believe that receiving an education overseas would be more beneficial to your career. Your motivation comes from a desire to follow neoliberalism/liberalism, based on what you yourself, as an individual, believe in, instead of others wishes. weight 4.//
         neoliberalChoices[1] = "You go abroad to study in an American university despite your grandparents' wishes for you to stay in Taiwan.";
@@ -1093,7 +1102,7 @@ public class CBCcontroller : MonoBehaviour
         neoliberalChoices[8] = "He tries to force you to trade pencils with him, and you decided that you didn't want to trade pencils with him.";
         //This makes sense to my values because I am in the neoliberalism school, and because we can only trade things if the choice is free I can decide not to trade with him because the trade isn't free. weight 4 
 
-        neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don’t go to dinner.";
+        neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don't go to dinner.";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
         neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus.";
         //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
@@ -1103,18 +1112,18 @@ public class CBCcontroller : MonoBehaviour
         // VIRTUE ETHICS CHOICES
         //Virtue Ethics team: Amber, Anna, Chelsea W, Irene
         //Your motivation comes from a desire to follow your parent’s example of being a calm person, based on the virtue ethics of Aristotle (imitate good people to be good). Weight 4
-        virtueEthicsChoices[0] = "You calmly ask your classmate what’s wrong instead of punching them back when they punch you out of nowhere because you want to be like your parent who handles disagreements civilly.";
+        virtueEthicsChoices[0] = "You want to be like your parent who handles conflicts civilly, so when hit you ask what's wrong and don't hit the person back.";
         //Your motivation comes from a desire to model your classmate’s helpfulness, based on Aristotle’s virtue ethics. Weight 5
-        virtueEthicsChoices[1] = "You help pick up trash from the floor, which keeps the environment clean and pleasant for everyone, because you saw a helpful classmate do this and you want to be helpful like them.";
+        virtueEthicsChoices[1] = "You pick up trash from the floor, which keeps the environment clean, because you saw someone do this and want to be like them.";
         //Your motivation comes from a desire to get good grades, based on Confucius’s virtue ethics (孔子 says that it’s fine to be good for the sake of the result and not for goodness). Weight 5
-        virtueEthicsChoices[2] = "You become hard-working after noticing the learning habits of a new classmate who always gets good grades. You act like your classmate because you want to get good grades, too.";
+        virtueEthicsChoices[2] = "After noticing the learning habits of a classmate who gets good grades, you turn studious because you want good grades too.";
         //Weight 4
-        virtueEthicsChoices[3] = "You gave food to a homeless man because you saw Taylor Swift do it and it seems like the right thing to do. So you act like her.";
+        virtueEthicsChoices[3] = "You gave food to a homeless man because you saw a celebrity do it and it seems like the right thing to do.";
         //Weight 3      
         virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
         //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
         //Weight
-        virtueEthicsChoices[5] = "You participate in the group project, which helps your team complete the work faster. You do this because this is what every helpful teammate you've had did.";
+        virtueEthicsChoices[5] = "You take part in the group project because this is what every teammate you've had did, helping your team finish the work faster.";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
