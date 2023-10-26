@@ -947,7 +947,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
         neoliberalChoices[11] = "You trade your BBQ with your friend.";
 
         //You do this because you believe in neoliberalism's core principle of trade and exchange under free will.
-        neoliberalChoices[13] = "You buy a video game from store and you trade with him with 1000 dollar."
+        neoliberalChoices[13] = "You buy a video game from store and you trade with him with 1000 dollar.";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -971,7 +971,7 @@ This method subtracts points from the school’s that the user doesn’t pick th
 
         neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don’t go to dinner.";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
-        neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus."
+        neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus.";
         //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
 
 
