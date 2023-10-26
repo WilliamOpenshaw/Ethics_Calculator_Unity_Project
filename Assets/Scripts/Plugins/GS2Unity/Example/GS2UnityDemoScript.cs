@@ -61,8 +61,24 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public string viewStringtest;
 
+    public int numberOfLoopsRun;
+
     public void Start()
     {
+        timeTextA.text = "x";
+        rTextA.text =  "x";
+        uTextA.text =  "x";
+        veTextA.text =  "x";
+        kaTextA.text =  "x";
+        nlTextA.text =  "x";
+
+         timeTextB.text = "x";
+        rTextB.text =  "x";
+        uTextB.text =  "x";
+        veTextB.text =  "x";
+        kaTextB.text =  "x";
+        nlTextB.text =  "x";
+        
         currentResultNumber = 0;
         enteredName = "empty";
 
@@ -106,6 +122,26 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void searchNameResults(string typedName)
     {
+         timeTextA.text = "x";
+        rTextA.text =  "x";
+        uTextA.text =  "x";
+        veTextA.text =  "x";
+        kaTextA.text =  "x";
+        nlTextA.text =  "x";
+
+         timeTextB.text = "x";
+        rTextB.text =  "x";
+        uTextB.text =  "x";
+        veTextB.text =  "x";
+        kaTextB.text =  "x";
+        nlTextB.text =  "x";
+        
+        resultNumberTextUILabelA.text = "x";
+        resultNumberTextUILabelB.text = "x";
+
+        resultsA = new string[] {"","","","","","","","","",""};
+        resultsB = new string[] {"","","","","","","","","",""};
+        
         radarA = GameObject.Find("RadarChart A");
         radarB = GameObject.Find("RadarChart B");
 
@@ -117,23 +153,31 @@ public class GS2UnityDemoScript : MonoBehaviour
 
         currentResultNumber = 0;
 
+        numberOfLoopsRun = 0;
+
         for (int i = 1; i < 1000; i++)
         {
             if (txtSheet.GetRowData(i.ToString(), "Name") == enteredName)
             {
-                googleSheetDataResultsForName[currentResultNumber][0] = txtSheet.GetRowData(currentResultNumber, "Timestamp");
-                googleSheetDataResultsForName[currentResultNumber][1] = txtSheet.GetRowData(currentResultNumber, "Name");
-                googleSheetDataResultsForName[currentResultNumber][2] = txtSheet.GetRowData(currentResultNumber, "Group");
-                googleSheetDataResultsForName[currentResultNumber][3] = txtSheet.GetRowData(currentResultNumber, "Rawlsian score");
-                googleSheetDataResultsForName[currentResultNumber][4] = txtSheet.GetRowData(currentResultNumber, "Utilitarian score");
-                googleSheetDataResultsForName[currentResultNumber][5] = txtSheet.GetRowData(currentResultNumber, "Virtue Ethics score");
-                googleSheetDataResultsForName[currentResultNumber][6] = txtSheet.GetRowData(currentResultNumber, "Neoliberal score");
-                googleSheetDataResultsForName[currentResultNumber][7] = txtSheet.GetRowData(currentResultNumber, "Kantian score");
-                googleSheetDataResultsForName[currentResultNumber][8] = txtSheet.GetRowData(currentResultNumber, "Centroid X Coordinate");
-                googleSheetDataResultsForName[currentResultNumber][9] = txtSheet.GetRowData(currentResultNumber, "Centroid Y Coordinate");
+                googleSheetDataResultsForName[currentResultNumber][0] = txtSheet.GetRowData(i, "Timestamp");
+                googleSheetDataResultsForName[currentResultNumber][1] = txtSheet.GetRowData(i, "Name");
+                googleSheetDataResultsForName[currentResultNumber][2] = txtSheet.GetRowData(i, "Group");
+                googleSheetDataResultsForName[currentResultNumber][3] = txtSheet.GetRowData(i, "Rawlsian score");
+                googleSheetDataResultsForName[currentResultNumber][4] = txtSheet.GetRowData(i, "Utilitarian score");
+                googleSheetDataResultsForName[currentResultNumber][5] = txtSheet.GetRowData(i, "Virtue Ethics score");
+                googleSheetDataResultsForName[currentResultNumber][6] = txtSheet.GetRowData(i, "Neoliberal score");
+                googleSheetDataResultsForName[currentResultNumber][7] = txtSheet.GetRowData(i, "Kantian score");
+                googleSheetDataResultsForName[currentResultNumber][8] = txtSheet.GetRowData(i, "Centroid X Coordinate");
+                googleSheetDataResultsForName[currentResultNumber][9] = txtSheet.GetRowData(i, "Centroid Y Coordinate");
 
                 currentResultNumber += 1;
             }
+            numberOfLoopsRun += 1;
+            if(txtSheet.GetRowData(i.ToString(), "Timestamp") == "")
+            {
+                break;
+            }
+            
         }
         numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
     }
@@ -238,7 +282,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextA.text = resultsA[7];
         nlTextA.text = resultsA[6];
 
-        resultNumberTextUILabelA.text = resultNumberA.ToString();
+        resultNumberTextUILabelA.text = (resultNumberA + 1).ToString();
     }
 
     public void ChangeResultsB(int resultNumberB)
@@ -284,7 +328,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextB.text = resultsB[7];
         nlTextB.text = resultsB[6];
 
-        resultNumberTextUILabelB.text = resultNumberB.ToString();
+        resultNumberTextUILabelB.text = (resultNumberB + 1).ToString();
     }
 
 
