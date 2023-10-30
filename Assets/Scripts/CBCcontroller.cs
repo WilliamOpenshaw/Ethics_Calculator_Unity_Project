@@ -531,7 +531,7 @@ This method adds points to the school’s that the user picks choices of.
                         neoliberalPoints += 4;
                         break;
                     case 13:
-                        neoliberalPOints += 2;
+                        neoliberalPoints += 2;
                         break;
                     case 5:
                         neoliberalPoints += 5;
