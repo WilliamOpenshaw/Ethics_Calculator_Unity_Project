@@ -39561,12 +39561,12 @@ RectTransform:
   - {fileID: 2046850245}
   - {fileID: 1337744497}
   - {fileID: 477696422}
-  - {fileID: 1106422016}
   - {fileID: 1859058194}
   - {fileID: 716563925}
   - {fileID: 980953737}
   - {fileID: 1807996111}
   - {fileID: 1964329161}
+  - {fileID: 1106422016}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
