@@ -12,6 +12,12 @@ using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
 {
+    public GameObject dayXFlash;
+    public GameObject dayYFlash;
+    public GameObject dayZFlash;
+    public GameObject dayXWholeCard;
+    public GameObject dayYWholeCard;
+    public GameObject dayZWholeCard;
     public GameObject[] verticeIndicatorsCBC;
     public DataSender dataSenderScript;
     public TextMeshProUGUI dayXmorningText;
@@ -333,6 +339,7 @@ public class CBCcontroller : MonoBehaviour
         MinusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
         currentRoundNumber += 1;
         AssignText();
+        StartCoroutine(FlashGrowShrink(dayXFlash, dayXWholeCard));
     }
     public void ChooseDayY()
     {
@@ -351,6 +358,7 @@ public class CBCcontroller : MonoBehaviour
         MinusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
         currentRoundNumber += 1;
         AssignText();
+        StartCoroutine(FlashGrowShrink(dayYFlash, dayYWholeCard));
     }
     public void ChooseDayZ()
     {
@@ -368,21 +376,30 @@ public class CBCcontroller : MonoBehaviour
         PlusPoints(dayZeveningCurrentEthicsSchool, dayZeveningCurrentChoiceNumber);
         currentRoundNumber += 1;
         AssignText();
+        StartCoroutine(FlashGrowShrink(dayZFlash, dayZWholeCard));
     }
 
+    public IEnumerator FlashGrowShrink(GameObject clickedDayFlash, GameObject clickedDayWholeCard)
+    {
+        clickedDayFlash.SetActive(true);
+        clickedDayWholeCard.GetComponent<RectTransform>().localScale = new Vector3(1.05f, 1.05f, 1.05f);
+        yield return new WaitForSeconds(0.5f);
+        clickedDayWholeCard.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        clickedDayFlash.SetActive(false);
+    }
     public IEnumerator ChoiceTransitionWait()
     {
         loadingText.text = "Loading";
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
         loadingText.text = "Loading.";
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
         loadingText.text = "Loading..";
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
         loadingText.text = "Loading...";
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
         loadingText.text = "Loading";
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
         grayLoadingBackground.SetActive(false);
     }
     public void AssignEthicsArrayandChoice()
