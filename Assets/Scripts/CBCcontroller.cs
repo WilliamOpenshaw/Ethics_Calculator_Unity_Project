@@ -923,11 +923,11 @@ public class CBCcontroller : MonoBehaviour
         radarNeoliberalLabel = radarChartObject.transform.GetChild(10).gameObject;
         radarVirtueEthicsLabel = radarChartObject.transform.GetChild(11).gameObject;
 
-        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(146, 193, 114, 255);
-        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(208, 197, 253, 255);
-        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(247,	235, 82, 255);
-        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(242, 143,	201, 255);
-        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(161, 213, 255, 255);
+        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(107, 5, 4, 255);
+        radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(43, 65, 98, 255);
+        radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(255, 225, 168, 255);
+        radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(224, 108, 159, 255);
+        radarVirtueEthicsLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(237, 191, 183, 255);
 
         radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Rawlsian";
         radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Utilitarian";
