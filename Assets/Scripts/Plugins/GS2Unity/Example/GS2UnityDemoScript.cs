@@ -353,10 +353,10 @@ public class GS2UnityDemoScript : MonoBehaviour
         x2_plus_y2 = Mathf.Pow(xDifference, 2) + Mathf.Pow(yDifference, 2);
         hypotenuseLength = Mathf.Sqrt(x2_plus_y2);        
         pointsOfDifference.text = hypotenuseLength.ToString("0.0") + " Points of Difference";
-        Debug.Log("Centroid A x coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
-        Debug.Log("Centroid A y coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
-        Debug.Log("Centroid B x coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
-        Debug.Log("Centroid B y coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
+        //Debug.Log("Centroid A x coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
+        //Debug.Log("Centroid A y coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
+        //Debug.Log("Centroid B x coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
+        //Debug.Log("Centroid B y coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
     }
 
 }
