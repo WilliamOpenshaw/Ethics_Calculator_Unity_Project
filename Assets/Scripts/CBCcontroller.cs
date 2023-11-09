@@ -218,11 +218,11 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
-        utilitarianChoices = new string[7];
-        rawlsianChoices = new string[7];
-        neoliberalChoices = new string[12];
-        virtueEthicsChoices = new string[6];
-        kantianChoices = new string[6];
+        utilitarianChoices = new string[9];
+        rawlsianChoices = new string[10];
+        neoliberalChoices = new string[18];
+        virtueEthicsChoices = new string[9];
+        kantianChoices = new string[9];
 
         rolledChoices = new int[34];
 
@@ -411,23 +411,23 @@ public class CBCcontroller : MonoBehaviour
             switch (currentEthicsSchoolNumber)
             {
                 case 0:
-                    currentChoiceNumber = Random.Range(0, 7);
+                    currentChoiceNumber = Random.Range(0, 8);
                     currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
                     break;
                 case 1:
-                    currentChoiceNumber = Random.Range(0, 6);
+                    currentChoiceNumber = Random.Range(0, 8);
                     currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
                     break;
                 case 2:
-                    currentChoiceNumber = Random.Range(0, 6);
+                    currentChoiceNumber = Random.Range(0, 8);
                     currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
                     break;
                 case 3:
-                    currentChoiceNumber = Random.Range(0, 12);
+                    currentChoiceNumber = Random.Range(0, 18);
                     currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                     break;
                 case 4:
-                    currentChoiceNumber = Random.Range(0, 6);
+                    currentChoiceNumber = Random.Range(0, 8);
                     currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
                     break;
             }
@@ -486,6 +486,12 @@ public class CBCcontroller : MonoBehaviour
                     case 6:
                         utilitarianPoints +=4;
                         break;
+                    case 7:
+                        utilitarianPoints +=3;
+                        break; 
+                    case 8:
+                        utilitarianPoints +=2;
+                        break;
                 }
                 break;
             case 1:
@@ -511,6 +517,15 @@ public class CBCcontroller : MonoBehaviour
                         break;
                     case 6:
                         rawlsianPoints += 3;
+                        break;
+                    case 7:
+                        rawlsianPoints +=5;
+                        break;
+                    case 8:
+                        rawlsianPoints +=3;
+                        break;
+                    case 9:
+                        rawlsianPoints +=3;
                         break;
                 }
                 break;
@@ -553,6 +568,24 @@ public class CBCcontroller : MonoBehaviour
                     case 10:
                         neoliberalPoints += 4;
                         break;
+                    case 13:
+                        neoliberalPoints +=2;
+                        break;
+                    case 15:
+                        neoliberalPoints +=4;
+                        break;
+                    case 17:
+                        neoliberalPoints +=3;
+                        break;
+                    case 12:
+                        neoliberalPoints +=4;
+                        break;
+                    case 14:
+                        neoliberalPoints +=4;
+                        break;
+                    case 16:
+                        neoliberalPoints +=3;
+                        break;
                 }
                 break;
             case 3:
@@ -576,6 +609,15 @@ public class CBCcontroller : MonoBehaviour
                     case 5:
                         virtueEthicsPoints += 5;
                         break;
+                    case 6:
+                        virtueEthicsPoints +=4;
+                        break;
+                    case 7:
+                        virtueEthicsPoints +=4;
+                        break; 
+                    case 8:
+                        virtueEthicsPoints +=4;
+                        break;
                 }
                 break;
             case 4:
@@ -598,6 +640,15 @@ public class CBCcontroller : MonoBehaviour
                         break;
                     case 5:
                         kantianPoints += 3;
+                        break;
+                    case 6:
+                        kantianPoints +=2;
+                        break;
+                    case 7:
+                        kantianPoints +=2;
+                        break;
+                    case 8:
+                        kantianPoints +=3;
                         break;
                 }
                 break;
@@ -631,6 +682,12 @@ public class CBCcontroller : MonoBehaviour
                     case 6:
                         utilitarianPoints -=4;
                         break;
+                    case 7:
+                        utilitarianPoints -= 3;
+                        break;
+                    case 8:
+                        utilitarianPoints -=2;
+                        break; 
                 }
                 break;
             case 1:
@@ -655,6 +712,15 @@ public class CBCcontroller : MonoBehaviour
                         rawlsianPoints -= 3;
                         break;
                     case 6:
+                        rawlsianPoints -= 3;
+                        break;
+                    case 7:
+                        rawlsianPoints -= 5;
+                        break;
+                    case 8:
+                        rawlsianPoints -=3;
+                        break;
+                    case 9:
                         rawlsianPoints -= 3;
                         break;
 
@@ -699,6 +765,25 @@ public class CBCcontroller : MonoBehaviour
                     case 10:
                         neoliberalPoints -= 4;
                         break;
+                    case 13:
+                        neoliberalPoints -=2;
+                        break;
+                    case 15:
+                        neoliberalPoints -=4;
+                        break;
+                    case 17:
+                        neoliberalPoints -=3;
+                        break;
+                    case 12:
+                        neoliberalPoints -=4;
+                        break;
+                    case 14:
+                        neoliberalPoints -=4;
+                        break;
+                    case 16:
+                        neoliberalPoints -=3;
+                        break;
+
                 }
                 break;
             case 3:
@@ -722,6 +807,16 @@ public class CBCcontroller : MonoBehaviour
                     case 5:
                         virtueEthicsPoints -= 5;
                         break;
+                    case 6:
+                        virtueEthicsPoints -= 4;
+                        break;
+                    case 7:
+                        virtueEthicsPoints -= 4;
+                        break;
+                    case 8:
+                        virtueEthicsPoints -=4;
+                        break;
+
                 }
                 break;
             case 4:
@@ -744,6 +839,15 @@ public class CBCcontroller : MonoBehaviour
                         break;
                     case 5:
                         kantianPoints -= 3;
+                        break;
+                    case 6:
+                        kantianPoints -=2;
+                        break;
+                    case 7:
+                        kantianPoints -=2;
+                        break;
+                    case 8:
+                        kantianPoints -=3;
                         break;
                 }
                 break;
@@ -1025,6 +1129,9 @@ public class CBCcontroller : MonoBehaviour
         //When everyone comes into the classroom then there is air conditioning because being Utilitarianism we want everyone to be happy.
         utilitarianChoices[6] = "Go out and have have dinner with neighbors and my family";
         //By:I can make my family happy and the neighbors happy too.(Fragment on Government Bentham 1776)
+        utilitarianChoices [7] = "Go out and have have dinner with neighbors and my family";
+
+        utilitarianChoices [8] = "Celebrate halloween with my family.";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
@@ -1071,6 +1178,11 @@ public class CBCcontroller : MonoBehaviour
 
         rawlsianChoices[6] = "After using equipment in the gym, I will wipe it down.";
 
+        rawlsianChoices [7] = "Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
+
+        rawlsianChoices [8] = "To have interviews with classmates and teachers.";
+
+        rawlsianChoices[9] ="I am going to finish the poster on time according to the agreement between Me, Chi and Annie.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
         //test comment
@@ -1100,6 +1212,12 @@ public class CBCcontroller : MonoBehaviour
         //You do this because neoliberalism values the ability for an indivudal to make choices freely, this can be expressed in many ways including the exchange of items.
         neoliberalChoices[11] = "You trade your BBQ with your friend.";
 
+        //You do this because you believe in neoliberalism's core principle of trade and exchange under free will.
+        neoliberalChoices [13] ="You buy a video game from store and you trade with him with 1000 dollar.";
+        //Because you own your metro card and you decide if you want to walk into the metro station and walk out again when there are no people.
+        neoliberalChoices [15] ="You own your metro card so you can decide if you want to get in and out of the station.";
+        //You buy slurpee for your classmate because the 7-Eleven is beside your house, and you charge 5 dollar to your classmate for bringing you the drink
+        neoliberalChoices [17] ="You use 5 dollar to exchange for the delivery";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*
                 NEOLIBERAL CHOICES (Team 2)
@@ -1123,7 +1241,10 @@ public class CBCcontroller : MonoBehaviour
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
         neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus.";
         //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
-
+        neoliberalChoices[12] = "You bring your own lunch to school because you don't want to spend money on lunch";
+        //You do this because neoliberalism values the ability for an individual to make choices freely, and you choose to go buy dessert at 7-11.
+        neoliberalChoices [14] = "In public you go to the 7-11 and buy dessert there";
+         neoliberalChoices [16]="In public you decide to go to the gym to work out because you feel like you want to get stronger.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
         // VIRTUE ETHICS CHOICES
@@ -1141,7 +1262,12 @@ public class CBCcontroller : MonoBehaviour
         //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
         //Weight
         virtueEthicsChoices[5] = "You take part in the group project because this is what every teammate you've had did, helping your team finish the work faster.";
-
+        //This agrees with virtue ethics' idea of being good by following an example of good people.
+        virtueEthicsChoices[6]= "You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
+        //This decision fits the values of my team’s ethical school because I’m practicing honesty, which is commonly regarded as a virtue (Wilson, Honesty as a Virtue, 2018). Going to bed at a healthy time will improve my overall life quality without hurting anyone. Therefore, both decisions are something a virtuous person who practices honesty and self-discipline may do.
+        virtueEthicsChoices[7]="I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
+        //I’ve read about people reading during short periods of free time. Reading during lunch break would fit in that category. So, I will be following what some people with habits I respect do, which fits virtue ethics (Athanasoulis, Virtue Ethics | Internet Encyclopedia of Philosophy, n.d.).
+        virtueEthicsChoices[8]="I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         //KANTIAN CHOICES
         //Kantian Ethics team: Audrey, Carlson, David, Abby
@@ -1162,6 +1288,12 @@ public class CBCcontroller : MonoBehaviour
 
         //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
         kantianChoices[5] = "You let others choose seats before yourself.";
+        //It promotes freedom of choice
+        kantianChoices[6] ="I let others choose seats before myself";
+        //I do this because it is the right thing to do
+        kantianChoices[7] ="I sort garbage correctly";
+        //As her child it is my duty to help her do chores
+        kantianChoices[8]="I help my mom do chores.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
     }
