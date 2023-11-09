@@ -7,6 +7,17 @@ using UCharts;
 
 public class GS2UnityDemoScript : MonoBehaviour
 {
+    
+    public TextMeshProUGUI pointsOfDifference;
+    public float xDifference;
+    public float yDifference;
+
+    public float x2_plus_y2;
+
+    public float hypotenuseLength;
+
+    public GameObject CentroidA;
+    public GameObject CentroidB;
     GoogleSheetsDB googleSheetsDB;
     public GoogleSheet txtSheet;
 
@@ -283,6 +294,8 @@ public class GS2UnityDemoScript : MonoBehaviour
         nlTextA.text = resultsA[6];
 
         resultNumberTextUILabelA.text = (resultNumberA + 1).ToString();
+        
+        StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
 
     public void ChangeResultsB(int resultNumberB)
@@ -329,8 +342,21 @@ public class GS2UnityDemoScript : MonoBehaviour
         nlTextB.text = resultsB[6];
 
         resultNumberTextUILabelB.text = (resultNumberB + 1).ToString();
+
+        StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
-
-
+    public IEnumerator CalculateAndDisplayHypotenuseLength()
+    {
+        yield return new WaitForSeconds(0.1f);
+        xDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.x - CentroidB.GetComponent<RectTransform>().anchoredPosition.x);
+        yDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.y - CentroidB.GetComponent<RectTransform>().anchoredPosition.y);
+        x2_plus_y2 = Mathf.Pow(xDifference, 2) + Mathf.Pow(yDifference, 2);
+        hypotenuseLength = Mathf.Sqrt(x2_plus_y2);        
+        pointsOfDifference.text = hypotenuseLength.ToString("0.0") + " Points of Difference";
+        Debug.Log("Centroid A x coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
+        Debug.Log("Centroid A y coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
+        Debug.Log("Centroid B x coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
+        Debug.Log("Centroid B y coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
+    }
 
 }
