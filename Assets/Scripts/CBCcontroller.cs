@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
 {
+    
     public GameObject dayXFlash;
     public GameObject dayYFlash;
     public GameObject dayZFlash;
