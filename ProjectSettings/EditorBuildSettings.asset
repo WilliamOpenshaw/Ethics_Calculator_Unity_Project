@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/0.2.3 Ethics Calculator.unity
-    guid: 34aa21498590bb34187bd7f745820240
+    path: Assets/Scenes/0.2.4 Ethics Calculator.unity
+    guid: 55ac9bf1feae3bf468063654b49dbdce
   m_configObjects: {}
