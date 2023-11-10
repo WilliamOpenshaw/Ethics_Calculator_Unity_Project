@@ -225,11 +225,17 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
-        utilitarianChoices = new string[9];
-        rawlsianChoices = new string[10];
-        neoliberalChoices = new string[18];
-        virtueEthicsChoices = new string[9];
-        kantianChoices = new string[9];
+        utilitarianChoices      = new string[9];
+        rawlsianChoices         = new string[10];
+        neoliberalChoices       = new string[18];
+        virtueEthicsChoices     = new string[9];
+        kantianChoices          = new string[9];
+
+        utilitarianChoicesChinese   = new string[9];
+        rawlsianChoicesChinese      = new string[10];
+        neoliberalChoicesChinese    = new string[18];
+        virtueEthicsChoicesChinese  = new string[9];
+        kantianChoicesChinese       = new string[9];
 
         rolledChoices = new int[34];
 
