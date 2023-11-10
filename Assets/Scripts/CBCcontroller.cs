@@ -11,8 +11,7 @@ using System;
 using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
-{
-    
+{    
     public string currentLanguage;
     public GameObject dayXFlash;
     public GameObject dayYFlash;
@@ -228,17 +227,17 @@ public class CBCcontroller : MonoBehaviour
     {
         currentLanguage = "eng";
 
-        utilitarianChoices      = new string[9];
-        rawlsianChoices         = new string[10];
-        neoliberalChoices       = new string[18];
-        virtueEthicsChoices     = new string[9];
-        kantianChoices          = new string[9];
+        utilitarianChoices = new string[9];
+        rawlsianChoices = new string[10];
+        neoliberalChoices = new string[18];
+        virtueEthicsChoices = new string[9];
+        kantianChoices = new string[9];
 
-        utilitarianChoicesChinese   = new string[9];
-        rawlsianChoicesChinese      = new string[10];
-        neoliberalChoicesChinese    = new string[18];
-        virtueEthicsChoicesChinese  = new string[9];
-        kantianChoicesChinese       = new string[9];
+        utilitarianChoicesChinese = new string[9];
+        rawlsianChoicesChinese = new string[10];
+        neoliberalChoicesChinese = new string[18];
+        virtueEthicsChoicesChinese = new string[9];
+        kantianChoicesChinese = new string[9];
 
         rolledChoices = new int[34];
 
@@ -268,15 +267,15 @@ public class CBCcontroller : MonoBehaviour
         grayLoadingBackground.SetActive(false);
 
         verticeIndicatorsCBC = new GameObject[5];
-        
+
     }
-     public void ChangeLanguage(string chosenLanguage)
+    public void ChangeLanguage(string chosenLanguage)
     {
-        if(chosenLanguage == "english" && currentLanguage != "eng")
+        if (chosenLanguage == "english" && currentLanguage != "eng")
         {
             currentLanguage = "eng";
             DisplayEnglish();
-        } 
+        }
         else if (chosenLanguage == "chinese" && currentLanguage != "chi")
         {
             currentLanguage = "chi";
@@ -343,20 +342,19 @@ public class CBCcontroller : MonoBehaviour
         EndScreenCheck();
         RefreshPointDisplay();
 
-        if(currentLanguage == "chi")
+        if (currentLanguage == "chi")
         {
             DisplayChinese();
         }
     }
-    
     public void RefreshPointDisplay()
     {
-        utilitarianNumberDisplay.text   = utilitarianPoints.ToString();
-        rawlsianNumberDisplay.text      = rawlsianPoints.ToString();
-        neoliberalNumberDisplay.text    = neoliberalPoints.ToString();
-        virtueethicsNumberDisplay.text  = virtueEthicsPoints.ToString();
-        kantianNumberDisplay.text       = kantianPoints.ToString();
-        weekNumberTextDisplay.text      = currentRoundNumber.ToString();
+        utilitarianNumberDisplay.text = utilitarianPoints.ToString();
+        rawlsianNumberDisplay.text = rawlsianPoints.ToString();
+        neoliberalNumberDisplay.text = neoliberalPoints.ToString();
+        virtueethicsNumberDisplay.text = virtueEthicsPoints.ToString();
+        kantianNumberDisplay.text = kantianPoints.ToString();
+        weekNumberTextDisplay.text = currentRoundNumber.ToString();
     }
     public void ChooseDayX()
     {
@@ -413,28 +411,27 @@ public class CBCcontroller : MonoBehaviour
         AssignText();
         StartCoroutine(FlashGrowShrink(dayZFlash, dayZWholeCard));
     }
-
     public IEnumerator FlashGrowShrink(GameObject clickedDayFlash, GameObject clickedDayWholeCard)
     {
         clickedDayFlash.SetActive(true);
         clickedDayWholeCard.GetComponent<RectTransform>().localScale = new Vector3(1.05f, 1.05f, 1.05f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         clickedDayWholeCard.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
         clickedDayFlash.SetActive(false);
     }
     public IEnumerator ChoiceTransitionWait()
     {
         loadingText.text = "Loading";
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading.";
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading..";
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading...";
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.05f);
         loadingText.text = "Loading";
 
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.05f);
         grayLoadingBackground.SetActive(false);
     }
     public void DisplayChinese()
@@ -601,7 +598,7 @@ public class CBCcontroller : MonoBehaviour
                 dayZeveningText.text = kantianChoicesChinese[dayZeveningCurrentChoiceNumber];
                 break;
         }
-        
+
     }
     public void DisplayEnglish()
     {
@@ -767,7 +764,7 @@ public class CBCcontroller : MonoBehaviour
                 dayZeveningText.text = kantianChoices[dayZeveningCurrentChoiceNumber];
                 break;
         }
-        
+
     }
     public void AssignEthicsArrayandChoice()
     {
@@ -851,13 +848,13 @@ public class CBCcontroller : MonoBehaviour
                         utilitarianPoints += 2;
                         break;
                     case 6:
-                        utilitarianPoints +=4;
+                        utilitarianPoints += 4;
                         break;
                     case 7:
-                        utilitarianPoints +=3;
-                        break; 
+                        utilitarianPoints += 3;
+                        break;
                     case 8:
-                        utilitarianPoints +=2;
+                        utilitarianPoints += 2;
                         break;
                 }
                 break;
@@ -886,13 +883,13 @@ public class CBCcontroller : MonoBehaviour
                         rawlsianPoints += 3;
                         break;
                     case 7:
-                        rawlsianPoints +=5;
+                        rawlsianPoints += 5;
                         break;
                     case 8:
-                        rawlsianPoints +=3;
+                        rawlsianPoints += 3;
                         break;
                     case 9:
-                        rawlsianPoints +=3;
+                        rawlsianPoints += 3;
                         break;
                 }
                 break;
@@ -936,22 +933,22 @@ public class CBCcontroller : MonoBehaviour
                         neoliberalPoints += 4;
                         break;
                     case 13:
-                        neoliberalPoints +=2;
+                        neoliberalPoints += 2;
                         break;
                     case 15:
-                        neoliberalPoints +=4;
+                        neoliberalPoints += 4;
                         break;
                     case 17:
-                        neoliberalPoints +=3;
+                        neoliberalPoints += 3;
                         break;
                     case 12:
-                        neoliberalPoints +=4;
+                        neoliberalPoints += 4;
                         break;
                     case 14:
-                        neoliberalPoints +=4;
+                        neoliberalPoints += 4;
                         break;
                     case 16:
-                        neoliberalPoints +=3;
+                        neoliberalPoints += 3;
                         break;
                 }
                 break;
@@ -977,13 +974,13 @@ public class CBCcontroller : MonoBehaviour
                         virtueEthicsPoints += 5;
                         break;
                     case 6:
-                        virtueEthicsPoints +=4;
+                        virtueEthicsPoints += 4;
                         break;
                     case 7:
-                        virtueEthicsPoints +=4;
-                        break; 
+                        virtueEthicsPoints += 4;
+                        break;
                     case 8:
-                        virtueEthicsPoints +=4;
+                        virtueEthicsPoints += 4;
                         break;
                 }
                 break;
@@ -1009,13 +1006,13 @@ public class CBCcontroller : MonoBehaviour
                         kantianPoints += 3;
                         break;
                     case 6:
-                        kantianPoints +=2;
+                        kantianPoints += 2;
                         break;
                     case 7:
-                        kantianPoints +=2;
+                        kantianPoints += 2;
                         break;
                     case 8:
-                        kantianPoints +=3;
+                        kantianPoints += 3;
                         break;
                 }
                 break;
@@ -1047,14 +1044,14 @@ public class CBCcontroller : MonoBehaviour
                         utilitarianPoints -= 2;
                         break;
                     case 6:
-                        utilitarianPoints -=4;
+                        utilitarianPoints -= 4;
                         break;
                     case 7:
                         utilitarianPoints -= 3;
                         break;
                     case 8:
-                        utilitarianPoints -=2;
-                        break; 
+                        utilitarianPoints -= 2;
+                        break;
                 }
                 break;
             case 1:
@@ -1085,7 +1082,7 @@ public class CBCcontroller : MonoBehaviour
                         rawlsianPoints -= 5;
                         break;
                     case 8:
-                        rawlsianPoints -=3;
+                        rawlsianPoints -= 3;
                         break;
                     case 9:
                         rawlsianPoints -= 3;
@@ -1133,22 +1130,22 @@ public class CBCcontroller : MonoBehaviour
                         neoliberalPoints -= 4;
                         break;
                     case 13:
-                        neoliberalPoints -=2;
+                        neoliberalPoints -= 2;
                         break;
                     case 15:
-                        neoliberalPoints -=4;
+                        neoliberalPoints -= 4;
                         break;
                     case 17:
-                        neoliberalPoints -=3;
+                        neoliberalPoints -= 3;
                         break;
                     case 12:
-                        neoliberalPoints -=4;
+                        neoliberalPoints -= 4;
                         break;
                     case 14:
-                        neoliberalPoints -=4;
+                        neoliberalPoints -= 4;
                         break;
                     case 16:
-                        neoliberalPoints -=3;
+                        neoliberalPoints -= 3;
                         break;
 
                 }
@@ -1181,7 +1178,7 @@ public class CBCcontroller : MonoBehaviour
                         virtueEthicsPoints -= 4;
                         break;
                     case 8:
-                        virtueEthicsPoints -=4;
+                        virtueEthicsPoints -= 4;
                         break;
 
                 }
@@ -1208,13 +1205,13 @@ public class CBCcontroller : MonoBehaviour
                         kantianPoints -= 3;
                         break;
                     case 6:
-                        kantianPoints -=2;
+                        kantianPoints -= 2;
                         break;
                     case 7:
-                        kantianPoints -=2;
+                        kantianPoints -= 2;
                         break;
                     case 8:
-                        kantianPoints -=3;
+                        kantianPoints -= 3;
                         break;
                 }
                 break;
@@ -1384,17 +1381,17 @@ public class CBCcontroller : MonoBehaviour
             verticeIndicatorsCBC[3] = GameObject.Find("Vertice4");
             verticeIndicatorsCBC[4] = GameObject.Find("Vertice5");
 
-            centroidCoordinateX =   (       verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.x
-                                        +   verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.x
-                                        +   verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.x
-                                        +   verticeIndicatorsCBC[3].GetComponent<RectTransform>().anchoredPosition.x
-                                        +   verticeIndicatorsCBC[4].GetComponent<RectTransform>().anchoredPosition.x)/5f;
+            centroidCoordinateX = (verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBC[3].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBC[4].GetComponent<RectTransform>().anchoredPosition.x) / 5f;
 
-            centroidCoordinateY =   (       verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.y
-                                        +   verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.y
-                                        +   verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.y
-                                        +   verticeIndicatorsCBC[3].GetComponent<RectTransform>().anchoredPosition.y
-                                        +   verticeIndicatorsCBC[4].GetComponent<RectTransform>().anchoredPosition.y)/5f;
+            centroidCoordinateY = (verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBC[3].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBC[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
 
             centroidPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(centroidCoordinateX, centroidCoordinateY);
 
@@ -1411,7 +1408,7 @@ public class CBCcontroller : MonoBehaviour
         radarNeoliberalLabel = radarChartObject.transform.GetChild(10).gameObject;
         radarVirtueEthicsLabel = radarChartObject.transform.GetChild(11).gameObject;
 
-        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(146,193, 114, 255);
+        radarRawlsianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(146, 193, 114, 255);
         radarUtilitarianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(208, 197, 253, 255);
         radarKantianLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(247, 235, 82, 255);
         radarNeoliberalLabel.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().color = new Color32(242, 143, 201, 255);
@@ -1462,10 +1459,281 @@ public class CBCcontroller : MonoBehaviour
 
         grayLoadingBackground.SetActive(false);
     }
-
-    public void OpenSite()
+    public void OpenSite(int choiceOf9)
     {
-        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/legiblevalues/");
+        switch (choiceOf9)
+        {
+            case 0:
+                switch (dayXmorningCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayXmorningCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayXmorningCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayXmorningCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayXmorningCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayXmorningCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 1:
+                switch (dayXafternoonCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayXafternoonCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayXafternoonCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayXafternoonCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayXafternoonCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayXafternoonCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 2:
+                switch (dayXeveningCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayXeveningCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayXeveningCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayXeveningCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayXeveningCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayXeveningCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 3:
+                switch (dayYmorningCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayYmorningCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayYmorningCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayYmorningCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayYmorningCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayYmorningCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 4:
+                switch (dayYafternoonCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayYafternoonCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayYafternoonCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayYafternoonCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayYafternoonCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayYafternoonCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 5:
+                switch (dayYeveningCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayYeveningCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayYeveningCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayYeveningCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayYeveningCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayYeveningCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 6:
+                switch (dayZmorningCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayZmorningCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayZmorningCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayZmorningCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayZmorningCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayZmorningCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 7:
+                switch (dayZafternoonCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayZafternoonCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayZafternoonCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayZafternoonCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayZafternoonCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayZafternoonCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+            case 8:
+                switch (dayZeveningCurrentEthicsSchool)
+                {
+                    case 0:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                        + dayZeveningCurrentChoiceNumber.ToString() +
+                        "-utilitarian-choice");
+                        break;
+                    case 1:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                        + dayZeveningCurrentChoiceNumber.ToString() +
+                        "-rawlsian-choice");
+                        break;
+                    case 2:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                        + dayZeveningCurrentChoiceNumber.ToString() +
+                        "virtue-ethics-choice");
+                        break;
+                    case 3:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        + dayZeveningCurrentChoiceNumber.ToString() +
+                        "-neoliberal-choice");
+                        break;
+                    case 4:
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                        + dayZeveningCurrentChoiceNumber.ToString() +
+                        "-kantian-choice");
+                        break;
+                }
+                break;
+        }       
     }
     public void SetUpStrings()
     {
@@ -1501,11 +1769,11 @@ public class CBCcontroller : MonoBehaviour
         utilitarianChoices[6] = "Go out and have have dinner with neighbors and my family";
         utilitarianChoicesChinese[6] = "中文 Go out and have have dinner with neighbors and my family";
         //By:I can make my family happy and the neighbors happy too.(Fragment on Government Bentham 1776)
-        utilitarianChoices [7] = "Go out and have have dinner with neighbors and my family";
-        utilitarianChoicesChinese [7] = "中文 Go out and have have dinner with neighbors and my family";
+        utilitarianChoices[7] = "Go out and have have dinner with neighbors and my family";
+        utilitarianChoicesChinese[7] = "中文 Go out and have have dinner with neighbors and my family";
 
-        utilitarianChoices [8] = "Celebrate halloween with my family.";
-        utilitarianChoicesChinese [8] = "中文 Celebrate halloween with my family.";
+        utilitarianChoices[8] = "Celebrate halloween with my family.";
+        utilitarianChoicesChinese[8] = "中文 Celebrate halloween with my family.";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
@@ -1559,14 +1827,14 @@ public class CBCcontroller : MonoBehaviour
         rawlsianChoices[6] = "After using equipment in the gym, I will wipe it down.";
         rawlsianChoicesChinese[6] = "中文 After using equipment in the gym, I will wipe it down.";
 
-        rawlsianChoices [7] = "Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
-        rawlsianChoicesChinese [7] = "中文 Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
+        rawlsianChoices[7] = "Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
+        rawlsianChoicesChinese[7] = "中文 Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
 
         rawlsianChoices[8] = "To have interviews with classmates and teachers.";
         rawlsianChoicesChinese[8] = "中文 To have interviews with classmates and teachers.";
 
-        rawlsianChoices[9] ="I am going to finish the poster on time according to the agreement between Me, 中文 and Annie.";
-         rawlsianChoicesChinese[9] ="中文 I am going to finish the poster on time according to the agreement between Me, 中文 and Annie.";
+        rawlsianChoices[9] = "I am going to finish the poster on time according to the agreement between Me, 中文 and Annie.";
+        rawlsianChoicesChinese[9] = "中文 I am going to finish the poster on time according to the agreement between Me, 中文 and Annie.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
         //test comment
@@ -1604,14 +1872,14 @@ public class CBCcontroller : MonoBehaviour
         neoliberalChoicesChinese[11] = "中文 You trade your BBQ with your friend.";
 
         //You do this because you believe in neoliberalism's core principle of trade and exchange under free will.
-        neoliberalChoices [13] ="You buy a video game from store and you trade with him with 1000 dollar.";
-        neoliberalChoicesChinese [13] ="中文 You buy a video game from store and you trade with him with 1000 dollar.";
+        neoliberalChoices[13] = "You buy a video game from store and you trade with him with 1000 dollar.";
+        neoliberalChoicesChinese[13] = "中文 You buy a video game from store and you trade with him with 1000 dollar.";
         //Because you own your metro card and you decide if you want to walk into the metro station and walk out again when there are no people.
-        neoliberalChoices [15] ="You own your metro card so you can decide if you want to get in and out of the station.";
-        neoliberalChoicesChinese [15] ="中文 You own your metro card so you can decide if you want to get in and out of the station.";
+        neoliberalChoices[15] = "You own your metro card so you can decide if you want to get in and out of the station.";
+        neoliberalChoicesChinese[15] = "中文 You own your metro card so you can decide if you want to get in and out of the station.";
         //You buy slurpee for your classmate because the 7-Eleven is beside your house, and you charge 5 dollar to your classmate for bringing you the drink
-        neoliberalChoices [17] ="You use 5 dollar to exchange for the delivery";
-        neoliberalChoicesChinese [17] ="中文 You use 5 dollar to exchange for the delivery";
+        neoliberalChoices[17] = "You use 5 dollar to exchange for the delivery";
+        neoliberalChoicesChinese[17] = "中文 You use 5 dollar to exchange for the delivery";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*
                 NEOLIBERAL CHOICES (Team 2)
@@ -1644,10 +1912,10 @@ public class CBCcontroller : MonoBehaviour
         neoliberalChoices[12] = "You bring your own lunch to school because you don't want to spend money on lunch";
         neoliberalChoicesChinese[12] = "中文 You bring your own lunch to school because you don't want to spend money on lunch";
         //You do this because neoliberalism values the ability for an individual to make choices freely, and you choose to go buy dessert at 7-11.
-        neoliberalChoices [14] = "In public you go to the 7-11 and buy dessert there";
-        neoliberalChoicesChinese [14] = "中文 In public you go to the 7-11 and buy dessert there";
-        neoliberalChoices [16]= "In public you decide to go to the gym to work out because you feel like you want to get stronger.";
-        neoliberalChoicesChinese [16]= "中文 In public you decide to go to the gym to work out because you feel like you want to get stronger.";
+        neoliberalChoices[14] = "In public you go to the 7-11 and buy dessert there";
+        neoliberalChoicesChinese[14] = "中文 In public you go to the 7-11 and buy dessert there";
+        neoliberalChoices[16] = "In public you decide to go to the gym to work out because you feel like you want to get stronger.";
+        neoliberalChoicesChinese[16] = "中文 In public you decide to go to the gym to work out because you feel like you want to get stronger.";
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
         // VIRTUE ETHICS CHOICES
@@ -1674,16 +1942,16 @@ public class CBCcontroller : MonoBehaviour
         virtueEthicsChoicesChinese[5] = "中文 You take part in the group project because this is what every teammate you've had did, helping your team finish the work faster.";
 
         //This agrees with virtue ethics' idea of being good by following an example of good people.
-        virtueEthicsChoices[6]= "You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
-        virtueEthicsChoicesChinese[6]= "中文 You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
+        virtueEthicsChoices[6] = "You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
+        virtueEthicsChoicesChinese[6] = "中文 You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
         //This decision fits the values of my team’s ethical school because I’m practicing honesty, which is commonly regarded as a virtue (Wilson, Honesty as a Virtue, 2018). Going to bed at a healthy time will improve my overall life quality without hurting anyone. Therefore, both decisions are something a virtuous person who practices honesty and self-discipline may do.
-        virtueEthicsChoices[7]="I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
-        virtueEthicsChoicesChinese[7]="中文 I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
+        virtueEthicsChoices[7] = "I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
+        virtueEthicsChoicesChinese[7] = "中文 I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
         //I’ve read about people reading during short periods of free time. Reading during lunch break would fit in that category. So, I will be following what some people with habits I respect do, which fits virtue ethics (Athanasoulis, Virtue Ethics | Internet Encyclopedia of Philosophy, n.d.).
-        virtueEthicsChoices[8]="I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
-        virtueEthicsChoicesChinese[8]="中文 I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
+        virtueEthicsChoices[8] = "I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
+        virtueEthicsChoicesChinese[8] = "中文 I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
 
-        
+
 
 
 
@@ -1715,16 +1983,16 @@ public class CBCcontroller : MonoBehaviour
         kantianChoicesChinese[5] = "中文 You let others choose seats before yourself.";
 
         //It promotes freedom of choice
-        kantianChoices[6] ="I let others choose seats before myself";
-        kantianChoicesChinese[6] ="中文 I let others choose seats before myself";
+        kantianChoices[6] = "I let others choose seats before myself";
+        kantianChoicesChinese[6] = "中文 I let others choose seats before myself";
         //I do this because it is the right thing to do
-        kantianChoices[7] ="I sort garbage correctly";
-        kantianChoicesChinese[7] ="中文 I sort garbage correctly";
+        kantianChoices[7] = "I sort garbage correctly";
+        kantianChoicesChinese[7] = "中文 I sort garbage correctly";
         //As her child it is my duty to help her do chores
-        kantianChoices[8]="I help my mom do chores.";
-        kantianChoicesChinese[8]="中文 I help my mom do chores.";
+        kantianChoices[8] = "I help my mom do chores.";
+        kantianChoicesChinese[8] = "中文 I help my mom do chores.";
 
-       
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
