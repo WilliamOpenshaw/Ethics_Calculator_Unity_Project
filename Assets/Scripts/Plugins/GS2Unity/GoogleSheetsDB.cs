@@ -15,7 +15,7 @@ public class GoogleSheetsDB : MonoBehaviour
     public List<GoogleSheet> dataSheets;
 
     private string _googleSheetsRequestAddressFormat = "https://script.google.com/macros/s/{0}/exec?sheetNameString={1}";
-    private int _numDataSheetsAdded = 0;
+    //private int _numDataSheetsAdded = 0;
 
     public event System.Action OnDownloadComplete;
 

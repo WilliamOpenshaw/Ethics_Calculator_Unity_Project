@@ -23,20 +23,21 @@ public class DataSender : MonoBehaviour
     public float centroidX = 0f;
     public float centroidY = 0f;
 
+    
     public void Start()
     {
-        Debug.Log("Starting Coroutine Find Location");
+        //Debug.Log("Starting Coroutine Find Location");
         StartCoroutine(FindLocation());
     }
     IEnumerator FindLocation()
     {
-        Debug.Log("Checking if location is enabled");
+        //Debug.Log("Checking if location is enabled");
         // Check if the user has location service enabled.
         if (!Input.location.isEnabledByUser)
             yield break;
 
         // Starts the location service.
-        Debug.Log("Trying to start location service");
+        //Debug.Log("Trying to start location service");
         Input.location.Start();
 
         // Waits until the location service initializes
@@ -50,7 +51,7 @@ public class DataSender : MonoBehaviour
         // If the service didn't initialize in 20 seconds this cancels location service use.
         if (maxWait < 1)
         {
-            Debug.Log("Timed out");
+            //Debug.Log("Timed out");
             print("Timed out");
             yield break;
         }
@@ -58,14 +59,14 @@ public class DataSender : MonoBehaviour
         // If the connection failed this cancels location service use.
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            Debug.Log("Unable to determine device location");
+            //Debug.Log("Unable to determine device location");
             print("Unable to determine device location");
             yield break;
         }
         else
         {
             // If the connection succeeded, this retrieves the device's current location and displays it in the Console window.
-            Debug.Log("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
+            //Debug.Log("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
             print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
             latitude = Input.location.lastData.latitude.ToString();
             longitude = Input.location.lastData.longitude.ToString();

@@ -19,11 +19,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     public GameObject CentroidA;
     public GameObject CentroidB;
     GoogleSheetsDB googleSheetsDB;
-    public GoogleSheet txtSheet;
-
-    public TextMeshProUGUI txt_1;
-    public TextMeshProUGUI txt_2;
-    public TextMeshProUGUI txt_3;
+    public GoogleSheet txtSheet;    
 
     public TextMeshProUGUI numberOfTotalResultsText;
 
@@ -125,10 +121,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     {
         int txtSheetIndex = googleSheetsDB.sheetTabNames.IndexOf("Form Responses 1");
 
-        txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];
-        txt_1.text = txtSheet.GetRowData("1", "Name");
-        txt_2.text = txtSheet.GetRowData("2", "Name");
-        txt_3.text = txtSheet.GetRowData("3", "Name");
+        txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];        
     }
 
     public void searchNameResults(string typedName)
