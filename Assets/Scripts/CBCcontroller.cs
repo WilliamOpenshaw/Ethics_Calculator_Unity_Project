@@ -1476,7 +1476,7 @@ public class CBCcontroller : MonoBehaviour
         //(Utilitarianism)I help people to push the gold across and she give
         //me some gold and i help her and we are equal happiness.weight 3 //
         utilitarianChoices[0] = "You help an old person push gold across the street. You do it because they will be safe, give you gold, and you will both be happy.";
-        utilitarianChoicesChinese[0] = "chi You help an old person push gold across the street. You do it because they will be safe, give you gold, and you will both be happy.";
+        utilitarianChoicesChinese[0] = "你幫助一位老人將黃金推過馬路。 你這樣做是因為他們會安全，給你黃金，你們都會幸福。";
 
 
         //Utilitarianism means you do things that make you most happy.weight 4 //
