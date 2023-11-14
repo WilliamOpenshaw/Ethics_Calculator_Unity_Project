@@ -1743,37 +1743,37 @@ public class CBCcontroller : MonoBehaviour
         //Everyone wants equal happiness and help others.
         //(Utilitarianism)I help people to push the gold across and she give
         //me some gold and i help her and we are equal happiness.weight 3 //
-        utilitarianChoices[0] = "You help an old person push gold across the street. You do it because they will be safe, give you gold, and you will both be happy.";
+        utilitarianChoices[0] = "You help an old person carry gold across the street. You do it because they will be safe, give you gold, and you will both be happy.";
         utilitarianChoicesChinese[0] = "你幫助一位老人將黃金推過馬路。 你這樣做是因為他們會安全，給你黃金，你們都會幸福。";
 
 
         //Utilitarianism means you do things that make you most happy.weight 4 //
         utilitarianChoices[2] = "You kill 1 person to save 5 people. Because 5 people have more value than 1 person.";
-        utilitarianChoicesChinese[2] = "中文 ";
+        utilitarianChoicesChinese[2] = "你殺了 1 個人救了 5 個人。因為5個人比1個人更有價值。";
 
         //Even though he might still get hurt, you make sure there’s the least harm possible.weight 3//
         utilitarianChoices[1] = "You save a person by pushing him off his bike when he's about to be hit by a car.";
-        utilitarianChoicesChinese[1] = "中文 ";
+        utilitarianChoicesChinese[1] = "當一個人即將被汽車撞到時，你可以透過將他從自行車上推下來來拯救他。";
         //We should maximize happiness for ourselves and others.weight 3 //          
         utilitarianChoices[3] = "You go order a drink and instead of only buying for yourself, you also buy for 5 other people. Buying drinks for 5 people brings more happiness to them.";
-        utilitarianChoicesChinese[3] = "中文 ";
+        utilitarianChoicesChinese[3] = "你去點一杯飲料，不只給自己買，還買給其他 5 個人。為5個人購買飲料會為他們帶來更多的快樂。";
         //Everyone has the same value, so the more people,
         //the more your actions are worth.weight 5// 
         //third test comment
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people's happiness combined is more important than 100.";
-        utilitarianChoicesChinese[4] = "中文 ";
+        utilitarianChoicesChinese[4] = "你在200人面前表演，而不是在100人面前表演。200人的幸福加起來比100人的幸福更重要。";
         //You do this because you want everyone to be happy.
         utilitarianChoices[5] = "You buy food and share it with people that want it.";
-        utilitarianChoicesChinese[5] = "中文 ";
+        utilitarianChoicesChinese[5] = "您購買食物並與需要的人分享。";
         //When everyone comes into the classroom then there is air conditioning because being Utilitarianism we want everyone to be happy.
         utilitarianChoices[6] = "Go out and have have dinner with neighbors and my family";
-        utilitarianChoicesChinese[6] = "中文 Go out and have have dinner with neighbors and my family";
+        utilitarianChoicesChinese[6] = "出去和鄰居還有我的家人一起吃晚餐";
         //By:I can make my family happy and the neighbors happy too.(Fragment on Government Bentham 1776)
         utilitarianChoices[7] = "Go out and have have dinner with neighbors and my family";
-        utilitarianChoicesChinese[7] = "中文 Go out and have have dinner with neighbors and my family";
+        utilitarianChoicesChinese[7] = "出去和鄰居還有我的家人一起吃晚餐";
 
         utilitarianChoices[8] = "Celebrate halloween with my family.";
-        utilitarianChoicesChinese[8] = "中文 Celebrate halloween with my family.";
+        utilitarianChoicesChinese[8] = "跟我的家人慶祝萬聖節";
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         //RAWLSIAN CHOICES
@@ -1784,32 +1784,32 @@ public class CBCcontroller : MonoBehaviour
         //made by you and your friend based on the Rawlsian liberalism that choices create agreement.
         //weight 1
         rawlsianChoices[0] = "When your friend refuses to lend you her eraser, you respect her choice.";
-        rawlsianChoicesChinese[0] = "中文 When your friend refuses to lend you her eraser, you respect her choice.";
+        rawlsianChoicesChinese[0] = "當你的朋友拒絕借你橡皮擦時，你尊重她的選擇。";
 
         //Your motivation comes from the desire to follow the
         //agreements held by everyone around you based on Rawlsian Liberalism.
         //weight 4
         rawlsianChoices[1] = "Everyone agrees to not steal the diamond on the pedestal, so you don't steal it because you respect this agreement.";
-        rawlsianChoicesChinese[1] = "中文 Everyone agrees to not steal the diamond on the pedestal, so you don't steal it because you respect this agreement.";
+        rawlsianChoicesChinese[1] = "每個人都同意不偷底座上的鑽石，所以你不偷它，因為你尊重這個協議。";
 
         //Your motivation comes from that all the requirements should be
         //made without considering a specific club member individual’s perspective.
         //weight 3
         rawlsianChoices[2] = "You are a leader of a club, you decide to give each student an equal amount of supplies regardless of each individual.";
-        rawlsianChoicesChinese[2] = "中文 You are a leader of a club, you decide to give each student an equal amount of supplies regardless of each individual.";
+        rawlsianChoicesChinese[2] = "你是一個俱樂部的領導者，你決定為每個學生提供等量的用品，無論每個人如何。";
 
         //Your motivation comes from a desire to follow the
         //agreements of everyone based on Rawlsian Liberalism.
         //weight 2
         rawlsianChoices[3] = "In a room where people agree to speak only English, you only speak English because you respect this agreement.";
-        rawlsianChoicesChinese[3] = "中文 In a room where people agree to speak only English, you only speak English because you respect this agreement.";
+        rawlsianChoicesChinese[3] = "在一個人們同意只說英語的房間裡，你只說英語，因為你尊重這個協議。";
 
         //Your motivation comes from a desire to follow the law based on the
         //Rawlsian liberalism that law is an agreement and not murder is a requirement.
         //This is because requirements are not determined without determining your perspective.
         //weight 5
         rawlsianChoices[4] = "Someone is trying to murder you, but you decided not to beat back because you agree to the law to not kill people.";
-        rawlsianChoicesChinese[4] = "中文 Someone is trying to murder you, but you decided not to beat back because you agree to the law to not kill people.";
+        rawlsianChoicesChinese[4] = "有人試圖謀殺你，但你決定不反擊，因為你同意不殺人的法律。";
 
         /*Your motivation comes from a desire to follow the agreed-upon rules, despite what you individually want. 
         Rawls states, “The veil of ignorance situates the representatives of free and equal citizens fairly 
@@ -1822,19 +1822,19 @@ public class CBCcontroller : MonoBehaviour
         //Weight 3
         */
         rawlsianChoices[5] = "When everyone agrees to have lights out by a certain time, you will comply";
-        rawlsianChoicesChinese[5] = "中文 When everyone agrees to have lights out by a certain time, you will comply";
+        rawlsianChoicesChinese[5] = "當每個人都同意在某個時間點熄燈時，你就會遵守。";
 
         rawlsianChoices[6] = "After using equipment in the gym, I will wipe it down.";
-        rawlsianChoicesChinese[6] = "中文 After using equipment in the gym, I will wipe it down.";
+        rawlsianChoicesChinese[6] = "在健身房使用完器材後，我會把它擦乾淨。";
 
         rawlsianChoices[7] = "Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
-        rawlsianChoicesChinese[7] = "中文 Had an agreement with my friends to go to the same restaurant. Everyone has an agreement on one thing.";
+        rawlsianChoicesChinese[7] = "和我的朋友約定去同一家餐廳。每個人都在一件事上達成一致。";
 
         rawlsianChoices[8] = "To have interviews with classmates and teachers.";
-        rawlsianChoicesChinese[8] = "中文 To have interviews with classmates and teachers.";
+        rawlsianChoicesChinese[8] = "訪問同學和老師。";
 
-        rawlsianChoices[9] = "I am going to finish the poster on time according to the agreement between Me, 中文 and Annie.";
-        rawlsianChoicesChinese[9] = "中文 I am going to finish the poster on time according to the agreement between Me, 中文 and Annie.";
+        rawlsianChoices[9] = "I am going to finish the poster on time according to the agreement between Me, and Annie.";
+        rawlsianChoicesChinese[9] = "我會按照我和安妮的約定，按時完成海報。";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*//
         //test comment
@@ -1849,6 +1849,7 @@ public class CBCcontroller : MonoBehaviour
         //You instinctively do this because you value your life more than other people, hence you chose to protect yourself first before serving others. You do this because you believe in neoliberalism/liberalism, which values an individual's rights and ownership over everyone else. weight 3//
         neoliberalChoices[0] = "You chose to run away from danger instead of putting yourself in it.";
         neoliberalChoicesChinese[0] = "你選擇逃避危險而不是讓自己陷入危險.";
+
 
         //You do this because you believe that receiving an education overseas would be more beneficial to your career. Your motivation comes from a desire to follow neoliberalism/liberalism, based on what you yourself, as an individual, believe in, instead of others wishes. weight 4.//
         neoliberalChoices[1] = "You go abroad to study in an American university despite your grandparents' wishes for you to stay in Taiwan.";
@@ -1922,34 +1923,34 @@ public class CBCcontroller : MonoBehaviour
         //Virtue Ethics team: Amber, Anna, Chelsea W, Irene
         //Your motivation comes from a desire to follow your parent’s example of being a calm person, based on the virtue ethics of Aristotle (imitate good people to be good). Weight 4
         virtueEthicsChoices[0] = "You want to be like your parent who handles conflicts civilly, so when hit you ask what's wrong and don't hit the person back.";
-        virtueEthicsChoicesChinese[0] = "中文 You want to be like your parent who handles conflicts civilly, so when hit you ask what's wrong and don't hit the person back.";
+        virtueEthicsChoicesChinese[0] = "你想像你的父母一樣，以文明的方式處理衝突，所以當你被打的時候，你要問出了什麼問題，不要還手。";
         //Your motivation comes from a desire to model your classmate’s helpfulness, based on Aristotle’s virtue ethics. Weight 5
         virtueEthicsChoices[1] = "You pick up trash from the floor, which keeps the environment clean, because you saw someone do this and want to be like them.";
-        virtueEthicsChoicesChinese[1] = "中文 You pick up trash from the floor, which keeps the environment clean, because you saw someone do this and want to be like them.";
+        virtueEthicsChoicesChinese[1] = "你撿起地上的垃圾，為了保證環境整潔，因為你看到別人這麼做你也跟這這麼做。";
         //Your motivation comes from a desire to get good grades, based on Confucius’s virtue ethics (孔子 says that it’s fine to be good for the sake of the result and not for goodness). Weight 5
         virtueEthicsChoices[2] = "After noticing the learning habits of a classmate who gets good grades, you turn studious because you want good grades too.";
-        virtueEthicsChoicesChinese[2] = "中文 After noticing the learning habits of a classmate who gets good grades, you turn studious because you want good grades too.";
+        virtueEthicsChoicesChinese[2] = "在發現到成績好的同學的學習習慣後，你變得好學，因為你也想取得好成績。";
         //Weight 4
         virtueEthicsChoices[3] = "You gave food to a homeless man because you saw a celebrity do it and it seems like the right thing to do.";
-        virtueEthicsChoicesChinese[3] = "中文 You gave food to a homeless man because you saw a celebrity do it and it seems like the right thing to do.";
+        virtueEthicsChoicesChinese[3] = "你給一個無家可歸的人提供食物是因為你看到一個名人這樣做，而且這似乎是正確的做法。";
         //Weight 3      
         //Weight 3      
         virtueEthicsChoices[4] = "You study hard because you want to have a good future and it shows others how they can learn from you.";
-        virtueEthicsChoicesChinese[4] = "中文 You study hard because you want to have a good future and it shows others how they can learn from you.";
+        virtueEthicsChoicesChinese[4] = "你努力學習因為你想要有好的未來，並且你展示了其他人如何向你學習。";
         //This agrees with virtue ethics' idea of being good by following an example of good people (Athanassoulis, Internet Encyclopedia of Philosophy “Virtue Ethics”, n.d.).
         //Weight
         virtueEthicsChoices[5] = "You take part in the group project because this is what every teammate you've had did, helping your team finish the work faster.";
-        virtueEthicsChoicesChinese[5] = "中文 You take part in the group project because this is what every teammate you've had did, helping your team finish the work faster.";
+        virtueEthicsChoicesChinese[5] = "您幫忙了小組報告，因為這是您的每個隊友所須做的事情，可以幫助您的團隊更快地完成工作。";
 
         //This agrees with virtue ethics' idea of being good by following an example of good people.
         virtueEthicsChoices[6] = "You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
-        virtueEthicsChoicesChinese[6] = "中文 You want to focus more on yourself because you want to be like a friend who doesn't poke their nose in other people's business.";
+        virtueEthicsChoicesChinese[6] = "你想多關注自己，因為你想成為一個不干涉別人事務的朋友";
         //This decision fits the values of my team’s ethical school because I’m practicing honesty, which is commonly regarded as a virtue (Wilson, Honesty as a Virtue, 2018). Going to bed at a healthy time will improve my overall life quality without hurting anyone. Therefore, both decisions are something a virtuous person who practices honesty and self-discipline may do.
         virtueEthicsChoices[7] = "I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
-        virtueEthicsChoicesChinese[7] = "中文 I'll sleep before 11:30pm for 2 days and honestly check  if I did to practice honesty and improve my life with self-discipline.";
+        virtueEthicsChoicesChinese[7] = "我會連續兩天在晚上 11:30 之前睡覺，並誠實地檢查我是否實踐了誠實並通過自律改善了我的生活。";
         //I’ve read about people reading during short periods of free time. Reading during lunch break would fit in that category. So, I will be following what some people with habits I respect do, which fits virtue ethics (Athanasoulis, Virtue Ethics | Internet Encyclopedia of Philosophy, n.d.).
         virtueEthicsChoices[8] = "I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
-        virtueEthicsChoicesChinese[8] = "中文 I will read a little during lunch break one day of the week because people whose blogs I read suggest it.";
+        virtueEthicsChoicesChinese[8] = "我會在一週的某一天午休時間讀一點書，因為我讀過部落格的人建議我讀一讀。";
 
 
 
@@ -1960,37 +1961,37 @@ public class CBCcontroller : MonoBehaviour
         //Kantian Ethics team: Audrey, Carlson, David, Abby
         //Your motivation comes from Kantian Ethics thinking you should always do the right thing.Weight3
         kantianChoices[0] = "You feed a homeless man because he was starving.";
-        kantianChoicesChinese[0] = "中文 You feed a homeless man because he was starving.";
+        kantianChoicesChinese[0] = "你給一個無家可歸的人食物因為他很飢餓";
 
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
         kantianChoices[1] = "You kick a kid because he almost got hit by a car.";
-        kantianChoicesChinese[1] = "中文 You kick a kid because he almost got hit by a car.";
+        kantianChoicesChinese[1] = "你一腳踢開了一位小孩因為他快被車撞到了";
 
         //Your motivation comes from .Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
-        kantianChoicesChinese[2] = "中文 You donate old toys to the local orphanage because they need it.";
+        kantianChoicesChinese[2] = "您將舊玩具捐贈給當地的孤兒院，因為他們需要它。";
 
         //This is a good choice because everyone makes the same choice. Weight4
         kantianChoices[3] = "The entire class turned their assignments in on time.";
-        kantianChoicesChinese[3] = "中文 The entire class turned their assignments in on time.";
+        kantianChoicesChinese[3] = "全班同學都按時交了作業。";
 
         //I did this because if I didn't pull him he might’ve fallen down and been hurt more. Weight3
         kantianChoices[4] = "You pulled a guy because he almost fell down.";
-        kantianChoicesChinese[4] = "中文 You pulled a guy because he almost fell down.";
+        kantianChoicesChinese[4] = "你拉了一個人，因為他差點摔倒了";
 
         //You do this because you don’t want to keep anyone from sitting with who they want. Weight5
         kantianChoices[5] = "You let others choose seats before yourself.";
-        kantianChoicesChinese[5] = "中文 You let others choose seats before yourself.";
+        kantianChoicesChinese[5] = "您讓其他人先選擇座位。";
 
         //It promotes freedom of choice
         kantianChoices[6] = "I let others choose seats before myself";
-        kantianChoicesChinese[6] = "中文 I let others choose seats before myself";
+        kantianChoicesChinese[6] = "我讓別人先選座位";
         //I do this because it is the right thing to do
         kantianChoices[7] = "I sort garbage correctly";
-        kantianChoicesChinese[7] = "中文 I sort garbage correctly";
+        kantianChoicesChinese[7] = "我準確分類垃圾";
         //As her child it is my duty to help her do chores
         kantianChoices[8] = "I help my mom do chores.";
-        kantianChoicesChinese[8] = "中文 I help my mom do chores.";
+        kantianChoicesChinese[8] = "我幫媽媽做家事。";
 
 
 
