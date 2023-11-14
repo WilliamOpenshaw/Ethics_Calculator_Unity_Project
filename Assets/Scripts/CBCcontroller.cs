@@ -1848,38 +1848,39 @@ public class CBCcontroller : MonoBehaviour
         */
         //You instinctively do this because you value your life more than other people, hence you chose to protect yourself first before serving others. You do this because you believe in neoliberalism/liberalism, which values an individual's rights and ownership over everyone else. weight 3//
         neoliberalChoices[0] = "You chose to run away from danger instead of putting yourself in it.";
-        neoliberalChoicesChinese[0] = "";
+        neoliberalChoicesChinese[0] = "你選擇逃避危險而不是讓自己陷入危險.";
+
 
         //You do this because you believe that receiving an education overseas would be more beneficial to your career. Your motivation comes from a desire to follow neoliberalism/liberalism, based on what you yourself, as an individual, believe in, instead of others wishes. weight 4.//
         neoliberalChoices[1] = "You go abroad to study in an American university despite your grandparents' wishes for you to stay in Taiwan.";
-        neoliberalChoicesChinese[1] = "中文 You go abroad to study in an American university despite your grandparents' wishes for you to stay in Taiwan.";
+        neoliberalChoicesChinese[1] = "儘管你的祖父母希望你留在台灣，但你卻出國到美國大學讀書.";
 
         //You are tired of renting a flat and depending on the landlord’s decisions. Your motivation comes from a desire to follow neoliberalism/liberalism, causing you to prefer owning things instead of depending on others. weight 4.//
         neoliberalChoices[2] = "You purchased a house along with the basic utilities to be installed.";
-        neoliberalChoicesChinese[2] = "中文 You purchased a house along with the basic utilities to be installed.";
+        neoliberalChoicesChinese[2] = "您購買了房屋以及要安裝的基本公用設施.";
 
         //You do this because you are hungry and want to eat something. Your motivation comes from a desire to follow neoliberalism/liberalism, which values a person’s freedom to exchange items with others under an agreement, opposed to just stealing items. weight 3 //
         neoliberalChoices[3] = "You pay money to eat at a restaurant, you receive food and catering services in return.";
-        neoliberalChoicesChinese[3] = "中文 You pay money to eat at a restaurant, you receive food and catering services in return.";
+        neoliberalChoicesChinese[3] = "你付錢去餐廳吃飯，你會得到食物和餐飲服務作為回報。";
 
         //You do this because you feel an urge to purchase whatever is hyped up. Your motivation comes from a desire to follow neoliberalism/liberalism, which enables a person to make free decisions without external influence. weight 2.//
         neoliberalChoices[4] = "You decided to spend part of your salary this month to buy celebrity endorsed products.";
-        neoliberalChoicesChinese[4] = "中文 You decided to spend part of your salary this month to buy celebrity endorsed products.";
+        neoliberalChoicesChinese[4] = "你決定花這個月的部分薪水來購買名人代言的產品。";
 
 
         //You do this because neoliberalism values the ability for an indivudal to make choices freely, this can be expressed in many ways including the exchange of items.
         neoliberalChoices[11] = "You trade your BBQ with your friend.";
-        neoliberalChoicesChinese[11] = "中文 You trade your BBQ with your friend.";
+        neoliberalChoicesChinese[11] = "你和你的朋友交換你的烤肉。";
 
         //You do this because you believe in neoliberalism's core principle of trade and exchange under free will.
         neoliberalChoices[13] = "You buy a video game from store and you trade with him with 1000 dollar.";
-        neoliberalChoicesChinese[13] = "中文 You buy a video game from store and you trade with him with 1000 dollar.";
+        neoliberalChoicesChinese[13] = "你買了一個遊戲在一個店然後你賣給別人1000塊。";
         //Because you own your metro card and you decide if you want to walk into the metro station and walk out again when there are no people.
         neoliberalChoices[15] = "You own your metro card so you can decide if you want to get in and out of the station.";
-        neoliberalChoicesChinese[15] = "中文 You own your metro card so you can decide if you want to get in and out of the station.";
+        neoliberalChoicesChinese[15] = "您擁有地鐵卡，因此您可以決定是否進出車站。";
         //You buy slurpee for your classmate because the 7-Eleven is beside your house, and you charge 5 dollar to your classmate for bringing you the drink
         neoliberalChoices[17] = "You use 5 dollar to exchange for the delivery";
-        neoliberalChoicesChinese[17] = "中文 You use 5 dollar to exchange for the delivery";
+        neoliberalChoicesChinese[17] = "您用5塊換取送貨。";
         //-------------------------------------------------------------------------------------------------------------------------------------------
         /*
                 NEOLIBERAL CHOICES (Team 2)
@@ -1888,34 +1889,34 @@ public class CBCcontroller : MonoBehaviour
         */
         //monday left me broken tuesday i was through with hoping
         neoliberalChoices[5] = "You wanted to buy his glasses, he decided to sell them to you.";
-        neoliberalChoicesChinese[5] = "中文 You wanted to buy his glasses, he decided to sell them to you.";
+        neoliberalChoicesChinese[5] = "你想買他的眼鏡，他決定賣給你。";
         //This makes sense to my values because I am in the neoliberalism school, and the glasses belong to him and he decided to sell them to me. weight 5
 
         neoliberalChoices[6] = "He tries to force you to teach him math, You decide not to teach him math.";
-        neoliberalChoicesChinese[6] = "中文 He tries to force you to teach him math, You decide not to teach him math.";
+        neoliberalChoicesChinese[6] = "他試圖強迫你教他數學，你決定不教他數學。";
         //This makes sense to my values because I am in the neoliberalism school, and I have my own right to decide on my own if I want to teach him or not. weight 4
 
         neoliberalChoices[7] = "She wants to trade her pencil for your Rolex, but you don't think they are the same value. So you denied her trade offer.";
-        neoliberalChoicesChinese[7] = "中文 She wants to trade her pencil for your Rolex, but you don't think they are the same value. So you denied her trade offer.";
+        neoliberalChoicesChinese[7] = "她想用她的鉛筆換你的勞力士，但你認為它們的價值不一樣。 所以你拒絕了她的交易提議。";
         //This makes sense to my values because I am in the neoliberalism school, and I can decide the value of things I own and if I want to trade them. weight 5
 
         neoliberalChoices[8] = "He tries to force you to trade pencils with him, and you decided that you didn't want to trade pencils with him.";
-        neoliberalChoicesChinese[8] = "中文 He tries to force you to trade pencils with him, and you decided that you didn't want to trade pencils with him.";
+        neoliberalChoicesChinese[8] = "他試圖強迫您與他交易鉛筆，而您決定不想與他交易鉛筆。";
         //This makes sense to my values because I am in the neoliberalism school, and because we can only trade things if the choice is free I can decide not to trade with him because the trade isn't free. weight 4 
 
         neoliberalChoices[9] = "Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don't go to dinner.";
-        neoliberalChoicesChinese[9] = "中文 Mom is yelling that it’s time for dinner, but you think it's too early to have dinner, so you don't go to dinner.";
+        neoliberalChoicesChinese[9] = "媽媽喊著吃晚餐了，你卻覺得吃晚餐太早了，所以就不去吃晚餐了。";
         //This makes sense to my values because I am in the neoliberalism school, and because I own myself and that gives me rights. weight 3
         neoliberalChoices[10] = "Today is the field trip. You felt exhausted today so you slept on the bus.";
-        neoliberalChoicesChinese[10] = "中文 Today is the field trip. You felt exhausted today so you slept on the bus.";
+        neoliberalChoicesChinese[10] = "今天是實地考察。 今天你覺得很累，所以你在公車上睡了一覺。";
         //This makes sense to my values because you own yourself and this agrees with “If I own my own body, I should be free to sleep whenever I want.” - Sandel, Justice, 2009. weight 3
-        neoliberalChoices[12] = "You bring your own lunch to school because you don't want to spend money on lunch";
-        neoliberalChoicesChinese[12] = "中文 You bring your own lunch to school because you don't want to spend money on lunch";
+        neoliberalChoices[12] = "You bring your own lunch to school because you don't want to spend money on lunch.";
+        neoliberalChoicesChinese[12] = "你自己帶午餐去學校，因為你不想花錢買午餐。";
         //You do this because neoliberalism values the ability for an individual to make choices freely, and you choose to go buy dessert at 7-11.
-        neoliberalChoices[14] = "In public you go to the 7-11 and buy dessert there";
-        neoliberalChoicesChinese[14] = "中文 In public you go to the 7-11 and buy dessert there";
+        neoliberalChoices[14] = "In public you go to the 7-11 and buy dessert there.";
+        neoliberalChoicesChinese[14] = "在公共場合你去7-11並在那裡買甜點。";
         neoliberalChoices[16] = "In public you decide to go to the gym to work out because you feel like you want to get stronger.";
-        neoliberalChoicesChinese[16] = "中文 In public you decide to go to the gym to work out because you feel like you want to get stronger.";
+        neoliberalChoicesChinese[16] = "在公共場合，您決定去健身房鍛煉，因為您覺得自己想要變得更強壯。";
         //-------------------------------------------------------------------------------------------------------------------------------------------
 
         // VIRTUE ETHICS CHOICES
