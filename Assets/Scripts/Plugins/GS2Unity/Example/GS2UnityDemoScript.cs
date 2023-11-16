@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UCharts;
+using System;
 
 public class GS2UnityDemoScript : MonoBehaviour
 {
@@ -126,14 +127,18 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void searchNameResults(string typedName)
     {
-         timeTextA.text = "x";
+        resultANumber = -1;
+        resultBNumber = -1;
+        ClearResultsAandB();
+
+        timeTextA.text = "x";
         rTextA.text =  "x";
         uTextA.text =  "x";
         veTextA.text =  "x";
         kaTextA.text =  "x";
         nlTextA.text =  "x";
 
-         timeTextB.text = "x";
+        timeTextB.text = "x";
         rTextB.text =  "x";
         uTextB.text =  "x";
         veTextB.text =  "x";
@@ -183,12 +188,16 @@ public class GS2UnityDemoScript : MonoBehaviour
             }
             
         }
-        numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
+        numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";        
+
+        SelectionAIncrease();
+        SelectionBIncrease();
+        SelectionBIncrease();        
     }
 
     public void SelectionAIncrease()
     {
-        if (resultANumber >= currentResultNumber)
+        if (resultANumber > currentResultNumber -1)
         {
             resultANumber = 0;
             ChangeResultsA(resultANumber);
@@ -202,7 +211,7 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionADecrease()
     {
-        if (resultANumber <= 0)
+        if (resultANumber < 1)
         {
             resultANumber = currentResultNumber;
             ChangeResultsA(resultANumber);
@@ -216,12 +225,12 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionBIncrease()
     {
-        if (resultBNumber >= currentResultNumber)
+        if (resultBNumber > currentResultNumber - 1)
         {
             resultBNumber = 0;
             ChangeResultsB(resultBNumber);
         }
-        else
+        else 
         {
             resultBNumber += 1;
             ChangeResultsB(resultBNumber);
@@ -230,12 +239,12 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionBDecrease()
     {
-        if (resultBNumber <= 0)
+        if (resultBNumber < 1)
         {
             resultBNumber = currentResultNumber;
             ChangeResultsB(resultBNumber);
         }
-        else
+        else 
         {
             resultBNumber -= 1;
             ChangeResultsB(resultBNumber);
@@ -257,7 +266,16 @@ public class GS2UnityDemoScript : MonoBehaviour
         resultsA[8] = googleSheetDataResultsForName[resultNumberA][8];  //centroid X
         resultsA[9] = googleSheetDataResultsForName[resultNumberA][9];  //centroid Y
 
-        viewStringtest = resultsA[3];
+        //viewStringtest = resultsA[3];
+
+        Debug.Log(
+            "A = " +            
+            resultsB[3].ToString() + " " +
+            resultsB[4].ToString() + " " +
+            resultsB[5].ToString() + " " +
+            resultsB[6].ToString() + " " +
+            resultsB[7].ToString() 
+        );
 
         highestEthicsSchoolPointsA = Mathf.Max(int.Parse(resultsA[3]),
                                                    int.Parse(resultsA[4]),
@@ -307,11 +325,21 @@ public class GS2UnityDemoScript : MonoBehaviour
         resultsB[8] = googleSheetDataResultsForName[resultNumberB][8];  //centroid X
         resultsB[9] = googleSheetDataResultsForName[resultNumberB][9];  //centroid Y
 
-        highestEthicsSchoolPointsB = Mathf.Max(int.Parse(resultsB[3]),
+        Debug.Log(
+            "B = " +
+            
+            resultsB[4].ToString() + " " +
+            resultsB[5].ToString() + " " +
+            resultsB[6].ToString() + " " +
+            resultsB[7].ToString()
+            
+        );
+
+        highestEthicsSchoolPointsB = Mathf.Max(      int.Parse(resultsB[3]),
                                                      int.Parse(resultsB[4]),
                                                      int.Parse(resultsB[5]),
                                                      int.Parse(resultsB[6]),
-                                                     int.Parse(resultsB[7]));
+                                                     int.Parse(resultsB[7]) );
 
         radarChartBscript = GameObject.Find("RadarChart B").GetComponent<RadarChart>();
 
@@ -350,6 +378,13 @@ public class GS2UnityDemoScript : MonoBehaviour
         //Debug.Log("Centroid A y coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
         //Debug.Log("Centroid B x coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
         //Debug.Log("Centroid B y coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
+    }
+    public void ClearResultsAandB()
+    {
+        for (int i = 0; i < googleSheetDataResultsForName.Length; i++)
+        {
+            googleSheetDataResultsForName[i] = new string[10] {"","","","","","","","","",""};
+        }
     }
 
 }
