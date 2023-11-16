@@ -1366,12 +1366,7 @@ public class CBCcontroller : MonoBehaviour
                 ((float)neoliberalPoints / (float)highestEthicsSchoolPoints),
                 ((float)virtueEthicsPoints / (float)highestEthicsSchoolPoints),
                 ((float)rawlsianPoints / (float)highestEthicsSchoolPoints)      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
-            };
-
-            resultNumber += 1;
-            resultTimes[resultNumber] = DateTime.Now.ToString();
-            resultStrings[resultNumber] = "Result " + (resultNumber).ToString() + " - " + resultTimes[resultNumber];
-            resultReferenceDisplayText.text = resultStrings[resultNumber];
+            };            
 
             SetRadarChartLabelColors();
 
