@@ -12,6 +12,17 @@ using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
 {    
+    public GameObject canvas;
+
+    public GameObject mainMenu;
+    public GameObject nameAndSchool;
+    public GameObject mainMenuPlayButton;
+    public GameObject nameSchoolContinueButton;
+    public GameObject graphButton1;
+    public GameObject graphButton2;
+    public GameObject graphButton3;
+    public GameObject graphButton4;
+    public GameObject retakeButton;
     public string currentLanguage;
     public GameObject dayXFlash;
     public GameObject dayYFlash;
@@ -268,6 +279,57 @@ public class CBCcontroller : MonoBehaviour
 
         verticeIndicatorsCBC = new GameObject[5];
 
+    }
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.LeftBracket) && cbcCards.activeInHierarchy == true)
+        {
+                ChooseDayX();
+        }
+        else if (Input.GetKeyUp(KeyCode.RightBracket) && cbcCards.activeInHierarchy == true)
+        {
+                ChooseDayY();
+        }
+        else if (Input.GetKeyUp(KeyCode.Backslash) && cbcCards.activeInHierarchy == true)
+        {
+                ChooseDayZ();
+        }
+        else if (mainMenuPlayButton.activeInHierarchy == true && Input.anyKey)
+        {
+            mainMenuPlayButton.GetComponent<Button>().onClick.Invoke();
+            nameSchoolContinueButton.SetActive(false);
+            StartCoroutine(Wait());
+        }
+        else if ((nameSchoolContinueButton.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.RightBracket) || Input.GetKeyUp(KeyCode.Backslash) ) )
+        {
+            nameSchoolContinueButton.GetComponent<Button>().onClick.Invoke();
+            StartCoroutine(Wait());
+        }
+        else if (graphButton1.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
+        {
+            graphButton1.GetComponent<Button>().onClick.Invoke();
+        }
+        else if (graphButton2.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
+        {
+            graphButton2.GetComponent<Button>().onClick.Invoke();
+        }
+        else if (graphButton3.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
+        {
+            graphButton3.GetComponent<Button>().onClick.Invoke();
+        }
+        else if (graphButton4.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
+        {
+            graphButton4.GetComponent<Button>().onClick.Invoke();
+        }   
+        else if ((graphButton4.activeInHierarchy == true || graphButton3.activeInHierarchy == true || graphButton2.activeInHierarchy == true || graphButton1.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.RightBracket)))
+        {
+            retakeButton.GetComponent<Button>().onClick.Invoke();
+        }        
+    }
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        nameSchoolContinueButton.SetActive(true);
     }
     public void ChangeLanguage(string chosenLanguage)
     {
@@ -1221,6 +1283,7 @@ public class CBCcontroller : MonoBehaviour
     {
         if (currentRoundNumber > 10)
         {
+            canvas.GetComponent<Animator>().Play("cbctograph");
             cbcCards.SetActive(false);
             endScreen.SetActive(true);
             statPanel.SetActive(true);
@@ -1429,6 +1492,12 @@ public class CBCcontroller : MonoBehaviour
     }
     public void RetakeTest()
     {
+        cbcCards.SetActive(false);
+        endScreen.SetActive(false);
+        nameAndSchool.SetActive(false);
+        mainMenu.SetActive(true);
+        
+
         rolledChoices = new int[34];
 
         choiceRolledRecently = false;
@@ -1453,6 +1522,11 @@ public class CBCcontroller : MonoBehaviour
         resultTimes = new string[10];
 
         grayLoadingBackground.SetActive(false);
+
+        cbcCards.SetActive(false);
+        endScreen.SetActive(false);
+        nameAndSchool.SetActive(false);
+        mainMenu.SetActive(true);
     }
     public void OpenSite(int choiceOf9)
     {
