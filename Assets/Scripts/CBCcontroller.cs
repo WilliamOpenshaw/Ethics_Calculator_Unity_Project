@@ -2033,8 +2033,8 @@ public class CBCcontroller : MonoBehaviour
         kantianChoicesChinese[0] = "你給一個無家可歸的人食物因為他很飢餓";
 
         //Kantian Ethics thinks you have to do the right things though you will hurt people or yourself. Weight 1
-        kantianChoices[1] = "You kick a kid because he almost got hit by a car.";
-        kantianChoicesChinese[1] = "你一腳踢開了一位小孩因為他快被車撞到了";
+        kantianChoices[1] = "You save a kid out of a drunken driver's path, preventing him from getting in an accident.";
+        kantianChoicesChinese[1] = "您將一個孩子從酒駕司機行徑的路上救出來，防止他發生事故";
 
         //Your motivation comes from .Weight 2
         kantianChoices[2] = "You donate old toys to the local orphanage because they need it.";
