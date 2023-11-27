@@ -21859,7 +21859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &840798533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27705,7 +27705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995837817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30757,6 +30757,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c78697b7c51d14c9b7e7993b3e8fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  mainMenu: {fileID: 0}
+  nameAndSchool: {fileID: 0}
+  mainMenuPlayButton: {fileID: 0}
+  nameSchoolContinueButton: {fileID: 0}
+  graphButton1: {fileID: 0}
+  graphButton2: {fileID: 0}
+  graphButton3: {fileID: 0}
+  graphButton4: {fileID: 0}
+  retakeButton: {fileID: 0}
   currentLanguage: 
   dayXFlash: {fileID: 1894448705}
   dayYFlash: {fileID: 1120159171}

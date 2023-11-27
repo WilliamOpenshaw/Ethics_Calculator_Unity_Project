@@ -21094,7 +21094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &840798533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26999,7 +26999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995837817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30047,6 +30047,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c78697b7c51d14c9b7e7993b3e8fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  mainMenu: {fileID: 0}
+  nameAndSchool: {fileID: 0}
+  mainMenuPlayButton: {fileID: 0}
+  nameSchoolContinueButton: {fileID: 0}
+  graphButton1: {fileID: 0}
+  graphButton2: {fileID: 0}
+  graphButton3: {fileID: 0}
+  graphButton4: {fileID: 0}
+  retakeButton: {fileID: 0}
+  currentLanguage: 
+  dayXFlash: {fileID: 0}
+  dayYFlash: {fileID: 0}
+  dayZFlash: {fileID: 0}
+  dayXWholeCard: {fileID: 0}
+  dayYWholeCard: {fileID: 0}
+  dayZWholeCard: {fileID: 0}
   verticeIndicatorsCBC: []
   dataSenderScript: {fileID: 477696423}
   dayXmorningText: {fileID: 907949737}
@@ -30087,6 +30104,11 @@ MonoBehaviour:
   neoliberalChoices: []
   virtueEthicsChoices: []
   kantianChoices: []
+  utilitarianChoicesChinese: []
+  rawlsianChoicesChinese: []
+  neoliberalChoicesChinese: []
+  virtueEthicsChoicesChinese: []
+  kantianChoicesChinese: []
   utilitarianPoints: 0
   rawlsianPoints: 0
   neoliberalPoints: 0
@@ -36227,9 +36249,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d39069b77b510246afd5882168eac96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt_1: {fileID: 980953738}
-  txt_2: {fileID: 1807996112}
-  txt_3: {fileID: 1964329162}
+  pointsOfDifference: {fileID: 0}
+  xDifference: 0
+  yDifference: 0
+  x2_plus_y2: 0
+  hypotenuseLength: 0
+  CentroidA: {fileID: 0}
+  CentroidB: {fileID: 0}
   numberOfTotalResultsText: {fileID: 1094992500}
   resultNumberTextUILabelA: {fileID: 786006355}
   timeTextA: {fileID: 590183966}

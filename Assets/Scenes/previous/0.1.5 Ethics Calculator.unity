@@ -1588,7 +1588,7 @@ RectTransform:
   m_Father: {fileID: 1223488974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1663,7 +1663,7 @@ RectTransform:
   m_Father: {fileID: 256385423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2274,7 +2274,7 @@ RectTransform:
   m_Father: {fileID: 1777796079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3915,7 +3915,7 @@ RectTransform:
   m_Father: {fileID: 767415550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4168,7 +4168,7 @@ RectTransform:
   m_Father: {fileID: 1372137019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4821,7 +4821,7 @@ RectTransform:
   m_Father: {fileID: 1783166267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5089,7 +5089,7 @@ RectTransform:
   m_Father: {fileID: 423634414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5164,7 +5164,7 @@ RectTransform:
   m_Father: {fileID: 1208058723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5239,7 +5239,7 @@ RectTransform:
   m_Father: {fileID: 884506849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6131,7 +6131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &766259876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6346,7 +6346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &840798533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6902,7 +6902,7 @@ RectTransform:
   m_Father: {fileID: 935182914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7111,7 +7111,7 @@ RectTransform:
   m_Father: {fileID: 1815804680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8178,7 +8178,7 @@ RectTransform:
   m_Father: {fileID: 2041222259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8253,7 +8253,7 @@ RectTransform:
   m_Father: {fileID: 2031579496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8328,7 +8328,7 @@ RectTransform:
   m_Father: {fileID: 1227875556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8935,7 +8935,7 @@ RectTransform:
   m_Father: {fileID: 1918884667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9010,7 +9010,7 @@ RectTransform:
   m_Father: {fileID: 2106714839}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9518,6 +9518,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c78697b7c51d14c9b7e7993b3e8fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  mainMenu: {fileID: 0}
+  nameAndSchool: {fileID: 0}
+  mainMenuPlayButton: {fileID: 0}
+  nameSchoolContinueButton: {fileID: 0}
+  graphButton1: {fileID: 0}
+  graphButton2: {fileID: 0}
+  graphButton3: {fileID: 0}
+  graphButton4: {fileID: 0}
+  retakeButton: {fileID: 0}
+  currentLanguage: 
+  dayXFlash: {fileID: 0}
+  dayYFlash: {fileID: 0}
+  dayZFlash: {fileID: 0}
+  dayXWholeCard: {fileID: 0}
+  dayYWholeCard: {fileID: 0}
+  dayZWholeCard: {fileID: 0}
+  verticeIndicatorsCBC: []
+  dataSenderScript: {fileID: 0}
   dayXmorningText: {fileID: 907949737}
   dayXafternoonText: {fileID: 580076063}
   dayXeveningText: {fileID: 1541806215}
@@ -9556,6 +9575,11 @@ MonoBehaviour:
   neoliberalChoices: []
   virtueEthicsChoices: []
   kantianChoices: []
+  utilitarianChoicesChinese: []
+  rawlsianChoicesChinese: []
+  neoliberalChoicesChinese: []
+  virtueEthicsChoicesChinese: []
+  kantianChoicesChinese: []
   utilitarianPoints: 0
   rawlsianPoints: 0
   neoliberalPoints: 0
@@ -9565,7 +9589,9 @@ MonoBehaviour:
   currentEthicsChoiceTextString: 
   currentRoundNumber: 0
   userName: 
+  userGroup: 
   userNameTextDisplay: {fileID: 1650700537}
+  userGroupTextDisplay: {fileID: 0}
   weekNumberTextDisplay: {fileID: 2107930579}
   endScreen: {fileID: 766259875}
   cbcCards: {fileID: 840798532}
@@ -9579,6 +9605,36 @@ MonoBehaviour:
   sliderKtoR: {fileID: 1121979685}
   sliderRtoNL: {fileID: 1093635640}
   sliderNLtoU: {fileID: 447990868}
+  sliderRtoVE2: {fileID: 0}
+  sliderUtoR2: {fileID: 0}
+  sliderKtoU2: {fileID: 0}
+  sliderVEtoNL2: {fileID: 0}
+  sliderNLtoK2: {fileID: 0}
+  sliderUtoVE2: {fileID: 0}
+  sliderVEtoK2: {fileID: 0}
+  sliderKtoR2: {fileID: 0}
+  sliderRtoNL2: {fileID: 0}
+  sliderNLtoU2: {fileID: 0}
+  sliderRtoVE3: {fileID: 0}
+  sliderUtoR3: {fileID: 0}
+  sliderKtoU3: {fileID: 0}
+  sliderVEtoNL3: {fileID: 0}
+  sliderNLtoK3: {fileID: 0}
+  sliderUtoVE3: {fileID: 0}
+  sliderVEtoK3: {fileID: 0}
+  sliderKtoR3: {fileID: 0}
+  sliderRtoNL3: {fileID: 0}
+  sliderNLtoU3: {fileID: 0}
+  sliderRtoVE4: {fileID: 0}
+  sliderUtoR4: {fileID: 0}
+  sliderKtoU4: {fileID: 0}
+  sliderVEtoNL4: {fileID: 0}
+  sliderNLtoK4: {fileID: 0}
+  sliderUtoVE4: {fileID: 0}
+  sliderVEtoK4: {fileID: 0}
+  sliderKtoR4: {fileID: 0}
+  sliderRtoNL4: {fileID: 0}
+  sliderNLtoU4: {fileID: 0}
   statPanel: {fileID: 4959584}
   lowestEthicsSchoolScore: 0
   rawlsianPercentage: {fileID: 835095552}
@@ -9586,10 +9642,74 @@ MonoBehaviour:
   virtueEthicsPercentage: {fileID: 1287890797}
   neoliberalPercentage: {fileID: 106437419}
   kantianPercentage: {fileID: 1434420354}
+  rawlsianPercentage2: {fileID: 0}
+  utilitarianPercentage2: {fileID: 0}
+  virtueEthicsPercentage2: {fileID: 0}
+  neoliberalPercentage2: {fileID: 0}
+  kantianPercentage2: {fileID: 0}
+  rawlsianPercentage3: {fileID: 0}
+  utilitarianPercentage3: {fileID: 0}
+  virtueEthicsPercentage3: {fileID: 0}
+  neoliberalPercentage3: {fileID: 0}
+  kantianPercentage3: {fileID: 0}
+  rawlsianPercentage4: {fileID: 0}
+  utilitarianPercentage4: {fileID: 0}
+  virtueEthicsPercentage4: {fileID: 0}
+  neoliberalPercentage4: {fileID: 0}
+  kantianPercentage4: {fileID: 0}
+  rawlsianPercentage5: {fileID: 0}
+  utilitarianPercentage5: {fileID: 0}
+  virtueEthicsPercentage5: {fileID: 0}
+  neoliberalPercentage5: {fileID: 0}
+  kantianPercentage5: {fileID: 0}
+  rawlsianPercentage6: {fileID: 0}
+  utilitarianPercentage6: {fileID: 0}
+  virtueEthicsPercentage6: {fileID: 0}
+  neoliberalPercentage6: {fileID: 0}
+  kantianPercentage6: {fileID: 0}
+  R_VE_Percentage: {fileID: 0}
+  R_NL_Percentage: {fileID: 0}
+  U_R_Percentage: {fileID: 0}
+  U_VE_Percentage: {fileID: 0}
+  K_U_Percentage: {fileID: 0}
+  K_R_Percentage: {fileID: 0}
+  VE_NL_Percentage: {fileID: 0}
+  VE_K_Percentage: {fileID: 0}
+  NL_K_Percentage: {fileID: 0}
+  NL_U_Percentage: {fileID: 0}
+  VE_R_Percentage: {fileID: 0}
+  NL_R_Percentage: {fileID: 0}
+  R_U_Percentage: {fileID: 0}
+  VE_U_Percentage: {fileID: 0}
+  U_K_Percentage: {fileID: 0}
+  R_K_Percentage: {fileID: 0}
+  NL_VE_Percentage: {fileID: 0}
+  K_VE_Percentage: {fileID: 0}
+  K_NL_Percentage: {fileID: 0}
+  U_NL_Percentage: {fileID: 0}
   numberOfWeeksAtEndTextDisplay: {fileID: 1085649285}
   totalEthicsSchoolPoints: 0
   radarScript: {fileID: 1565184023}
+  radarChartObject: {fileID: 0}
+  radarRawlsianLabel: {fileID: 0}
+  radarUtilitarianLabel: {fileID: 0}
+  radarKantianLabel: {fileID: 0}
+  radarNeoliberalLabel: {fileID: 0}
+  radarVirtueEthicsLabel: {fileID: 0}
   highestEthicsSchoolPoints: 0
+  resultReferenceDisplayText: {fileID: 0}
+  resultNumber: 0
+  resultStrings: []
+  resultTimes: []
+  rolledChoices: 
+  choiceRolledRecently: 0
+  rolledChoicePlaceSaver: 0
+  runsOfDoWhileChoiceRollLoop: 0
+  loadingText: {fileID: 0}
+  grayLoadingBackground: {fileID: 0}
+  centroidCoordinateX: 0
+  centroidCoordinateY: 0
+  centroidPoint: {fileID: 0}
 --- !u!224 &1106422016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9864,7 +9984,7 @@ RectTransform:
   m_Father: {fileID: 1607709461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10548,7 +10668,7 @@ RectTransform:
   m_Father: {fileID: 1685894605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11015,7 +11135,7 @@ RectTransform:
   m_Father: {fileID: 1238744890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12810,7 +12930,7 @@ RectTransform:
   m_Father: {fileID: 1683562169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

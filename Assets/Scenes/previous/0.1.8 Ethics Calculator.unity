@@ -17721,7 +17721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &840798533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22237,7 +22237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995837817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24675,6 +24675,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c78697b7c51d14c9b7e7993b3e8fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  mainMenu: {fileID: 0}
+  nameAndSchool: {fileID: 0}
+  mainMenuPlayButton: {fileID: 0}
+  nameSchoolContinueButton: {fileID: 0}
+  graphButton1: {fileID: 0}
+  graphButton2: {fileID: 0}
+  graphButton3: {fileID: 0}
+  graphButton4: {fileID: 0}
+  retakeButton: {fileID: 0}
+  currentLanguage: 
+  dayXFlash: {fileID: 0}
+  dayYFlash: {fileID: 0}
+  dayZFlash: {fileID: 0}
+  dayXWholeCard: {fileID: 0}
+  dayYWholeCard: {fileID: 0}
+  dayZWholeCard: {fileID: 0}
+  verticeIndicatorsCBC: []
+  dataSenderScript: {fileID: 0}
   dayXmorningText: {fileID: 907949737}
   dayXafternoonText: {fileID: 580076063}
   dayXeveningText: {fileID: 1541806215}
@@ -24713,6 +24732,11 @@ MonoBehaviour:
   neoliberalChoices: []
   virtueEthicsChoices: []
   kantianChoices: []
+  utilitarianChoicesChinese: []
+  rawlsianChoicesChinese: []
+  neoliberalChoicesChinese: []
+  virtueEthicsChoicesChinese: []
+  kantianChoicesChinese: []
   utilitarianPoints: 0
   rawlsianPoints: 0
   neoliberalPoints: 0
@@ -24722,7 +24746,9 @@ MonoBehaviour:
   currentEthicsChoiceTextString: 
   currentRoundNumber: 0
   userName: 
+  userGroup: 
   userNameTextDisplay: {fileID: 1650700537}
+  userGroupTextDisplay: {fileID: 0}
   weekNumberTextDisplay: {fileID: 2107930579}
   endScreen: {fileID: 766259875}
   cbcCards: {fileID: 840798532}
@@ -24832,6 +24858,15 @@ MonoBehaviour:
   resultNumber: 0
   resultStrings: []
   resultTimes: []
+  rolledChoices: 
+  choiceRolledRecently: 0
+  rolledChoicePlaceSaver: 0
+  runsOfDoWhileChoiceRollLoop: 0
+  loadingText: {fileID: 0}
+  grayLoadingBackground: {fileID: 0}
+  centroidCoordinateX: 0
+  centroidCoordinateY: 0
+  centroidPoint: {fileID: 0}
 --- !u!4 &1106422016
 Transform:
   m_ObjectHideFlags: 0
@@ -30161,9 +30196,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d39069b77b510246afd5882168eac96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt_1: {fileID: 0}
-  txt_2: {fileID: 0}
-  txt_3: {fileID: 0}
+  pointsOfDifference: {fileID: 0}
+  xDifference: 0
+  yDifference: 0
+  x2_plus_y2: 0
+  hypotenuseLength: 0
+  CentroidA: {fileID: 0}
+  CentroidB: {fileID: 0}
+  numberOfTotalResultsText: {fileID: 0}
+  resultNumberTextUILabelA: {fileID: 0}
+  timeTextA: {fileID: 0}
+  rTextA: {fileID: 0}
+  uTextA: {fileID: 0}
+  veTextA: {fileID: 0}
+  kaTextA: {fileID: 0}
+  nlTextA: {fileID: 0}
+  resultNumberTextUILabelB: {fileID: 0}
+  timeTextB: {fileID: 0}
+  rTextB: {fileID: 0}
+  uTextB: {fileID: 0}
+  veTextB: {fileID: 0}
+  kaTextB: {fileID: 0}
+  nlTextB: {fileID: 0}
+  resultsA: []
+  resultsB: []
+  numberOfRows: 0
+  enteredName: 
+  currentResultNumber: 0
+  radarA: {fileID: 0}
+  radarB: {fileID: 0}
+  radarChartAscript: {fileID: 0}
+  radarChartBscript: {fileID: 0}
+  highestEthicsSchoolPointsA: 0
+  highestEthicsSchoolPointsB: 0
+  resultANumber: 0
+  resultBNumber: 0
+  viewStringtest: 
+  numberOfLoopsRun: 0
 --- !u!114 &1337744499
 MonoBehaviour:
   m_ObjectHideFlags: 0
