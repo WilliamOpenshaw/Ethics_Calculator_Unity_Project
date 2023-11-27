@@ -302,8 +302,7 @@ public class CBCcontroller : MonoBehaviour
         }
         else if ((nameSchoolContinueButton.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.RightBracket) || Input.GetKeyUp(KeyCode.Backslash) ) )
         {
-            nameSchoolContinueButton.GetComponent<Button>().onClick.Invoke();
-            StartCoroutine(Wait());
+            nameSchoolContinueButton.GetComponent<Button>().onClick.Invoke();            
         }
         else if (graphButton1.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
         {
