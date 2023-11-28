@@ -33,10 +33,10 @@ public class CBCcontroller : MonoBehaviour
     public GameObject[] verticeIndicatorsCBC;
     public DataSender dataSenderScript;
     public TextMeshProUGUI dayXmorningText;
-    public TextMeshProUGUI dayXafternoonText;
     public TextMeshProUGUI dayXeveningText;
     public TextMeshProUGUI dayYmorningText;
     public TextMeshProUGUI dayYafternoonText;
+    public TextMeshProUGUI dayXafternoonText;
     public TextMeshProUGUI dayYeveningText;
     public TextMeshProUGUI dayZmorningText;
     public TextMeshProUGUI dayZafternoonText;
@@ -323,6 +323,7 @@ public class CBCcontroller : MonoBehaviour
         else if ((graphButton4.activeInHierarchy == true || graphButton3.activeInHierarchy == true || graphButton2.activeInHierarchy == true || graphButton1.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.RightBracket)))
         {
             retakeButton.GetComponent<Button>().onClick.Invoke();
+            RetakeTest();
         }        
     }
     public IEnumerator Wait()
@@ -1510,6 +1511,10 @@ public class CBCcontroller : MonoBehaviour
         neoliberalPoints = 0;
         virtueEthicsPoints = 0;
         kantianPoints = 0;
+
+        lowestEthicsSchoolScore = 0;
+        highestEthicsSchoolPoints = 0;
+        totalEthicsSchoolPoints = 0;
 
         currentRoundNumber = 1;
 
