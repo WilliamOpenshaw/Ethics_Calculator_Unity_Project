@@ -9,6 +9,8 @@ using System;
 public class GS2UnityDemoScript : MonoBehaviour
 {
     
+    public int tryParseResultA;
+    public int tryParseResultB;
     public TextMeshProUGUI pointsOfDifference;
     public float xDifference;
     public float yDifference;
@@ -197,7 +199,7 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionAIncrease()
     {
-        if (resultANumber > currentResultNumber -1)
+        if (resultANumber >= currentResultNumber -1)
         {
             resultANumber = 0;
             ChangeResultsA(resultANumber);
@@ -211,7 +213,7 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionADecrease()
     {
-        if (resultANumber < 1)
+        if (resultANumber <= 1)
         {
             resultANumber = currentResultNumber;
             ChangeResultsA(resultANumber);
@@ -225,7 +227,7 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionBIncrease()
     {
-        if (resultBNumber > currentResultNumber - 1)
+        if (resultBNumber >= currentResultNumber - 1)
         {
             resultBNumber = 0;
             ChangeResultsB(resultBNumber);
@@ -239,7 +241,7 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void SelectionBDecrease()
     {
-        if (resultBNumber < 1)
+        if (resultBNumber <= 1)
         {
             resultBNumber = currentResultNumber;
             ChangeResultsB(resultBNumber);
@@ -270,18 +272,24 @@ public class GS2UnityDemoScript : MonoBehaviour
 
         Debug.Log(
             "A = " +            
-            resultsB[3].ToString() + " " +
-            resultsB[4].ToString() + " " +
-            resultsB[5].ToString() + " " +
-            resultsB[6].ToString() + " " +
-            resultsB[7].ToString() 
+            resultsA[3].ToString() + " " +
+            resultsA[4].ToString() + " " +
+            resultsA[5].ToString() + " " +
+            resultsA[6].ToString() + " " +
+            resultsA[7].ToString() 
         );
-
-        highestEthicsSchoolPointsA = Mathf.Max(int.Parse(resultsA[3]),
+        if(int.TryParse(resultsA[3], out tryParseResultA))
+        {
+            highestEthicsSchoolPointsA = Mathf.Max(int.Parse(resultsA[3]),
                                                    int.Parse(resultsA[4]),
                                                    int.Parse(resultsA[5]),
                                                    int.Parse(resultsA[6]),
                                                    int.Parse(resultsA[7]));
+        }
+        else
+        {
+            highestEthicsSchoolPointsA = 0;
+        }        
 
         radarChartAscript = GameObject.Find("RadarChart A").GetComponent<RadarChart>();
 
@@ -334,12 +342,18 @@ public class GS2UnityDemoScript : MonoBehaviour
             resultsB[7].ToString()
             
         );
-
-        highestEthicsSchoolPointsB = Mathf.Max(      int.Parse(resultsB[3]),
+        if(int.TryParse(resultsB[3], out tryParseResultB))
+        {
+            highestEthicsSchoolPointsB = Mathf.Max(      int.Parse(resultsB[3]),
                                                      int.Parse(resultsB[4]),
                                                      int.Parse(resultsB[5]),
                                                      int.Parse(resultsB[6]),
                                                      int.Parse(resultsB[7]) );
+        }
+        else
+        {
+            highestEthicsSchoolPointsB = 0;
+        }        
 
         radarChartBscript = GameObject.Find("RadarChart B").GetComponent<RadarChart>();
 
