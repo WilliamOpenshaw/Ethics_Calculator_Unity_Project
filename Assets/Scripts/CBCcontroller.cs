@@ -1555,7 +1555,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayXmorningCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1585,7 +1585,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayXafternoonCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1615,7 +1615,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayXeveningCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1645,7 +1645,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayYmorningCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1675,7 +1675,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayYafternoonCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1705,7 +1705,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayYeveningCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1735,7 +1735,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayZmorningCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1765,7 +1765,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayZafternoonCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
@@ -1795,7 +1795,7 @@ public class CBCcontroller : MonoBehaviour
                         "virtue-ethics-choice");
                         break;
                     case 3:
-                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberalism/neoliberal-choices/"
+                        Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
                         + dayZeveningCurrentChoiceNumber.ToString() +
                         "-neoliberal-choice");
                         break;
