@@ -8,6 +8,19 @@ using System;
 
 public class GS2UnityDemoScript : MonoBehaviour
 {
+    public int[][] onlineTotalChoiceTallies;
+    
+    public TextMeshProUGUI topChoice1;
+    public TextMeshProUGUI topChoice2;
+    public TextMeshProUGUI topChoice3;
+    public TextMeshProUGUI topChoice4;
+    public TextMeshProUGUI topChoice5;
+
+    public TextMeshProUGUI bottomChoice1;
+    public TextMeshProUGUI bottomChoice2;
+    public TextMeshProUGUI bottomChoice3;
+    public TextMeshProUGUI bottomChoice4;
+    public TextMeshProUGUI bottomChoice5;
     
     public int tryParseResultA;
     public int tryParseResultB;
@@ -75,6 +88,12 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void Start()
     {
+        onlineTotalChoiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
+        onlineTotalChoiceTallies[1] = new int[10]{0,0,0,0,0,0,0,0,0,0};
+        onlineTotalChoiceTallies[2] = new int[9]{0,0,0,0,0,0,0,0,0};
+        onlineTotalChoiceTallies[3] = new int[18]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        onlineTotalChoiceTallies[4] = new int[9]{0,0,0,0,0,0,0,0,0};
+        
         timeTextA.text = "x";
         rTextA.text =  "x";
         uTextA.text =  "x";
@@ -124,9 +143,26 @@ public class GS2UnityDemoScript : MonoBehaviour
     {
         int txtSheetIndex = googleSheetsDB.sheetTabNames.IndexOf("Form Responses 1");
 
-        txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];        
+        txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];
+
+        TallyBestAndWorstChoices();        
     }
 
+    public void TallyBestAndWorstChoices()
+    {
+        // 0-Uti. 1-Raw. 2-Vir.Eth. 3-NeoLib 4-Kant // Choices 1-16 each // jagged array that holds tally of how many times each choice is chosen
+        CountUtilitarian();
+        CountRawlsian();
+        CountVirtueEthics();
+        CountNeoliberal();
+        CountKantian();
+    }
+
+    CountUtilitarian()
+    {
+        
+    }
+    
     public void searchNameResults(string typedName)
     {
         resultANumber = -1;

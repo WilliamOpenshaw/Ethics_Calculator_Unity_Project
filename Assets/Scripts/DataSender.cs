@@ -21,7 +21,7 @@ public class DataSender : MonoBehaviour
     public int veScore = 50;
 
     public float centroidX = 0f;
-    public float centroidY = 0f;
+    public float centroidY = 0f;   
 
     
     public void Start()
@@ -113,6 +113,61 @@ public class DataSender : MonoBehaviour
         form.AddField("entry.1189217858", SystemInfo.deviceUniqueIdentifier);
         form.AddField("entry.1511207901", latitude);
         form.AddField("entry.1833503118", longitude);
+        form.AddField("entry.1401316779", cbcScript.choiceTallies[0][0]);
+        form.AddField("entry.1815227531", cbcScript.choiceTallies[0][1]);
+        form.AddField("entry.1392333044", cbcScript.choiceTallies[0][2]);
+        form.AddField("entry.171482940", cbcScript.choiceTallies[0][3]);
+        form.AddField("entry.1777760764", cbcScript.choiceTallies[0][4]);
+        form.AddField("entry.1760145998", cbcScript.choiceTallies[0][5]);
+        form.AddField("entry.1986807934", cbcScript.choiceTallies[0][6]);
+        form.AddField("entry.691769320", cbcScript.choiceTallies[0][7]);
+        form.AddField("entry.1630351695", cbcScript.choiceTallies[0][8]);
+        form.AddField("entry.1426186394", cbcScript.choiceTallies[1][0]);
+        form.AddField("entry.1973965609", cbcScript.choiceTallies[1][1]);
+        form.AddField("entry.1426788781", cbcScript.choiceTallies[1][2]);
+        form.AddField("entry.934354430", cbcScript.choiceTallies[1][3]);
+        form.AddField("entry.792146802", cbcScript.choiceTallies[1][4]);
+        form.AddField("entry.301350437", cbcScript.choiceTallies[1][5]);
+        form.AddField("entry.154445035", cbcScript.choiceTallies[1][6]);
+        form.AddField("entry.1958067531", cbcScript.choiceTallies[1][7]);
+        form.AddField("entry.1205890617", cbcScript.choiceTallies[1][8]);
+        form.AddField("entry.1753789035", cbcScript.choiceTallies[1][9]);
+        form.AddField("entry.326596123", cbcScript.choiceTallies[2][0]);
+        form.AddField("entry.993009290", cbcScript.choiceTallies[2][1]);
+        form.AddField("entry.1652288855", cbcScript.choiceTallies[2][2]);
+        form.AddField("entry.303178475", cbcScript.choiceTallies[2][3]);
+        form.AddField("entry.458770322", cbcScript.choiceTallies[2][4]);
+        form.AddField("entry.818540433", cbcScript.choiceTallies[2][5]);
+        form.AddField("entry.170506664", cbcScript.choiceTallies[2][6]);
+        form.AddField("entry.715334802", cbcScript.choiceTallies[2][7]);
+        form.AddField("entry.151507240", cbcScript.choiceTallies[2][8]);
+        form.AddField("entry.33018445", cbcScript.choiceTallies[3][0]);
+        form.AddField("entry.657224123", cbcScript.choiceTallies[3][1]);
+        form.AddField("entry.1450634288", cbcScript.choiceTallies[3][2]);
+        form.AddField("entry.1607819777", cbcScript.choiceTallies[3][3]);
+        form.AddField("entry.1409592019", cbcScript.choiceTallies[3][4]);
+        form.AddField("entry.2044956405", cbcScript.choiceTallies[3][5]);
+        form.AddField("entry.821353146", cbcScript.choiceTallies[3][6]);
+        form.AddField("entry.1442384448", cbcScript.choiceTallies[3][7]);
+        form.AddField("entry.769722693", cbcScript.choiceTallies[3][8]);
+        form.AddField("entry.2116383366", cbcScript.choiceTallies[3][9]);
+        form.AddField("entry.1823269810", cbcScript.choiceTallies[3][10]);
+        form.AddField("entry.1914070060", cbcScript.choiceTallies[3][11]);
+        form.AddField("entry.335181392", cbcScript.choiceTallies[3][12]);
+        form.AddField("entry.1331130476", cbcScript.choiceTallies[3][13]);
+        form.AddField("entry.872011412", cbcScript.choiceTallies[3][14]);
+        form.AddField("entry.1788472008", cbcScript.choiceTallies[3][15]);
+        form.AddField("entry.376861715", cbcScript.choiceTallies[3][16]);
+        form.AddField("entry.1691971700", cbcScript.choiceTallies[3][17]);
+        form.AddField("entry.1816457745", cbcScript.choiceTallies[4][0]);
+        form.AddField("entry.176344882", cbcScript.choiceTallies[4][1]);
+        form.AddField("entry.1557485531", cbcScript.choiceTallies[4][2]);
+        form.AddField("entry.110101234", cbcScript.choiceTallies[4][3]);
+        form.AddField("entry.1487595523", cbcScript.choiceTallies[4][4]);
+        form.AddField("entry.1745039299", cbcScript.choiceTallies[4][5]);
+        form.AddField("entry.926731459", cbcScript.choiceTallies[4][6]);
+        form.AddField("entry.494625668", cbcScript.choiceTallies[4][7]);
+        form.AddField("entry.397602160", cbcScript.choiceTallies[4][8]);
 
         UnityWebRequest www = UnityWebRequest.Post(URL, form);
 

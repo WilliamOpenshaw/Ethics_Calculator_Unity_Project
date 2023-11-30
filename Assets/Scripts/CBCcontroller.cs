@@ -13,7 +13,7 @@ using Random = UnityEngine.Random;
 public class CBCcontroller : MonoBehaviour
 {    
     public GameObject canvas;
-
+    public int[][] choiceTallies; // 0-Uti. 1-Raw. 2-Vir.Eth. 3-NeoLib 4-Kant // Choices 1-16 each // jagged array that holds tally of how many times each choice is chosen
     public GameObject mainMenu;
     public GameObject nameAndSchool;
     public GameObject mainMenuPlayButton;
@@ -236,18 +236,24 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
+        choiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
+        choiceTallies[1] = new int[10]{0,0,0,0,0,0,0,0,0,0};
+        choiceTallies[2] = new int[9]{0,0,0,0,0,0,0,0,0};
+        choiceTallies[3] = new int[18]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        choiceTallies[4] = new int[9]{0,0,0,0,0,0,0,0,0};
+        
         currentLanguage = "eng";
 
         utilitarianChoices = new string[9];
         rawlsianChoices = new string[10];
-        neoliberalChoices = new string[18];
         virtueEthicsChoices = new string[9];
+        neoliberalChoices = new string[18];
         kantianChoices = new string[9];
 
         utilitarianChoicesChinese = new string[9];
         rawlsianChoicesChinese = new string[10];
-        neoliberalChoicesChinese = new string[18];
         virtueEthicsChoicesChinese = new string[9];
+        neoliberalChoicesChinese = new string[18];
         kantianChoicesChinese = new string[9];
 
         rolledChoices = new int[34];
@@ -837,15 +843,15 @@ public class CBCcontroller : MonoBehaviour
             switch (currentEthicsSchoolNumber)
             {
                 case 0:
-                    currentChoiceNumber = Random.Range(0, 8);
+                    currentChoiceNumber = Random.Range(0, 9);
                     currentEthicsChoiceTextString = utilitarianChoices[currentChoiceNumber];
                     break;
                 case 1:
-                    currentChoiceNumber = Random.Range(0, 8);
+                    currentChoiceNumber = Random.Range(0, 10);
                     currentEthicsChoiceTextString = rawlsianChoices[currentChoiceNumber];
                     break;
                 case 2:
-                    currentChoiceNumber = Random.Range(0, 8);
+                    currentChoiceNumber = Random.Range(0, 9);
                     currentEthicsChoiceTextString = virtueEthicsChoices[currentChoiceNumber];
                     break;
                 case 3:
@@ -853,7 +859,7 @@ public class CBCcontroller : MonoBehaviour
                     currentEthicsChoiceTextString = neoliberalChoices[currentChoiceNumber];
                     break;
                 case 4:
-                    currentChoiceNumber = Random.Range(0, 8);
+                    currentChoiceNumber = Random.Range(0, 9);
                     currentEthicsChoiceTextString = kantianChoices[currentChoiceNumber];
                     break;
             }
@@ -886,6 +892,7 @@ public class CBCcontroller : MonoBehaviour
     }
     public void PlusPoints(int schoolToPlusPointsTo, int chosenChoiceNumber)
     {
+        choiceTallies[schoolToPlusPointsTo][chosenChoiceNumber] += 1;
         switch (schoolToPlusPointsTo)
         {
             case 0:
@@ -1492,6 +1499,12 @@ public class CBCcontroller : MonoBehaviour
     }
     public void RetakeTest()
     {
+        choiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
+        choiceTallies[1] = new int[10]{0,0,0,0,0,0,0,0,0,0};
+        choiceTallies[2] = new int[9]{0,0,0,0,0,0,0,0,0};
+        choiceTallies[3] = new int[18]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        choiceTallies[4] = new int[9]{0,0,0,0,0,0,0,0,0};
+        
         cbcCards.SetActive(false);
         endScreen.SetActive(false);
         nameAndSchool.SetActive(false);
