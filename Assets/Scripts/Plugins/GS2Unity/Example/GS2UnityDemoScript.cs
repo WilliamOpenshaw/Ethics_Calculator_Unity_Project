@@ -9,15 +9,16 @@ using System.Linq;
 
 public class GS2UnityDemoScript : MonoBehaviour
 {
+    public CBCcontroller cbcScript;
     public int[][] onlineTotalChoiceTallies;
 
-    public int[][] allVoteScoresNotSorted;
-    public int[] allVoteScoresSorted; 
-    
+    public int[][] allVoteScoresSorted;
+
+
     public int[][] topChoiceAndVotes; // top choices 1 - 5 and each one has 3 spots, 0-school 1-choiceNumber 2-voteScore
 
     public int[][] bottomChoiceAndVotes; // bottom choices 1 - 5 and each one has 3 spots, 0-school 1-choiceNumber 2-voteScore    
-    
+
     public TextMeshProUGUI topChoice1;
     public TextMeshProUGUI topChoice2;
     public TextMeshProUGUI topChoice3;
@@ -29,7 +30,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     public TextMeshProUGUI bottomChoice3;
     public TextMeshProUGUI bottomChoice4;
     public TextMeshProUGUI bottomChoice5;
-    
+
     public int tryParseResultA;
     public int tryParseResultB;
     public TextMeshProUGUI pointsOfDifference;
@@ -43,7 +44,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     public GameObject CentroidA;
     public GameObject CentroidB;
     GoogleSheetsDB googleSheetsDB;
-    public GoogleSheet txtSheet;    
+    public GoogleSheet txtSheet;
 
     public TextMeshProUGUI numberOfTotalResultsText;
 
@@ -63,7 +64,6 @@ public class GS2UnityDemoScript : MonoBehaviour
     public TextMeshProUGUI veTextB;
     public TextMeshProUGUI kaTextB;
     public TextMeshProUGUI nlTextB;
-
 
     public string[][] googleSheetDataResultsForName;
 
@@ -97,49 +97,47 @@ public class GS2UnityDemoScript : MonoBehaviour
     public void Start()
     {
         onlineTotalChoiceTallies = new int[5][];
-        onlineTotalChoiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
-        onlineTotalChoiceTallies[1] = new int[10]{0,0,0,0,0,0,0,0,0,0};
-        onlineTotalChoiceTallies[2] = new int[9]{0,0,0,0,0,0,0,0,0};
-        onlineTotalChoiceTallies[3] = new int[18]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-        onlineTotalChoiceTallies[4] = new int[9]{0,0,0,0,0,0,0,0,0};
+        onlineTotalChoiceTallies[0] = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        onlineTotalChoiceTallies[1] = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        onlineTotalChoiceTallies[2] = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        onlineTotalChoiceTallies[3] = new int[18] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        onlineTotalChoiceTallies[4] = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         topChoiceAndVotes = new int[5][];
-        topChoiceAndVotes[0] = new int[3]{0,0,0}; 
-        topChoiceAndVotes[1] = new int[3]{0,0,0};
-        topChoiceAndVotes[2] = new int[3]{0,0,0};
-        topChoiceAndVotes[3] = new int[3]{0,0,0};
-        topChoiceAndVotes[4] = new int[3]{0,0,0};
+        topChoiceAndVotes[0] = new int[3] { 0, 0, 0 };
+        topChoiceAndVotes[1] = new int[3] { 0, 0, 0 };
+        topChoiceAndVotes[2] = new int[3] { 0, 0, 0 };
+        topChoiceAndVotes[3] = new int[3] { 0, 0, 0 };
+        topChoiceAndVotes[4] = new int[3] { 0, 0, 0 };
 
         bottomChoiceAndVotes = new int[5][];
-        bottomChoiceAndVotes[0] = new int[3]{0,0,0}; // 0-ethicalSchool 1-choiceNumber 2-voteScore
-        bottomChoiceAndVotes[1] = new int[3]{0,0,0};
-        bottomChoiceAndVotes[2] = new int[3]{0,0,0};
-        bottomChoiceAndVotes[3] = new int[3]{0,0,0};
-        bottomChoiceAndVotes[4] = new int[3]{0,0,0};
+        bottomChoiceAndVotes[0] = new int[3] { 0, 0, 0 }; // 0-ethicalSchool 1-choiceNumber 2-voteScore
+        bottomChoiceAndVotes[1] = new int[3] { 0, 0, 0 };
+        bottomChoiceAndVotes[2] = new int[3] { 0, 0, 0 };
+        bottomChoiceAndVotes[3] = new int[3] { 0, 0, 0 };
+        bottomChoiceAndVotes[4] = new int[3] { 0, 0, 0 };
 
-        allVoteScoresNotSorted  = new int[55][];
+        allVoteScoresSorted = new int[55][];
 
         for (int i = 0; i <= 54; i++)
         {
-            allVoteScoresNotSorted[i]  = new int[3]{0,0,0};
-        }      
-        
-        allVoteScoresSorted     = new int[55];
-        
-        timeTextA.text = "x";
-        rTextA.text =  "x";
-        uTextA.text =  "x";
-        veTextA.text =  "x";
-        kaTextA.text =  "x";
-        nlTextA.text =  "x";
+            allVoteScoresSorted[i] = new int[3] { 0, 0, 0 };
+        }
 
-         timeTextB.text = "x";
-        rTextB.text =  "x";
-        uTextB.text =  "x";
-        veTextB.text =  "x";
-        kaTextB.text =  "x";
-        nlTextB.text =  "x";
-        
+        timeTextA.text = "x";
+        rTextA.text = "x";
+        uTextA.text = "x";
+        veTextA.text = "x";
+        kaTextA.text = "x";
+        nlTextA.text = "x";
+
+        timeTextB.text = "x";
+        rTextB.text = "x";
+        uTextB.text = "x";
+        veTextB.text = "x";
+        kaTextB.text = "x";
+        nlTextB.text = "x";
+
         currentResultNumber = 0;
         enteredName = "empty";
 
@@ -177,35 +175,22 @@ public class GS2UnityDemoScript : MonoBehaviour
 
         txtSheet = googleSheetsDB.dataSheets[txtSheetIndex];
 
-        TallyBestAndWorstChoices();        
+        TallyBestAndWorstChoices();
     }
 
     public void TallyBestAndWorstChoices()
     {
-        // 0-Uti. 1-Raw. 2-Vir.Eth. 3-NeoLib 4-Kant // Choices 106 each // jagged array that holds tally of how many times each choice is chosen
-        AddUpChoiceTallies();   
-        PlaceAllScoresInTwoArrays();
-        IfThereAreDuplicatesMinus_iplusplus_ToAllScores();                    
-        /*
-        for (int i = 0; i < 4; i++)
-        {
-            if(onlineTotalChoiceTallies[i].Max() > topChoiceAndVotes[0][2])
-            {
-                topChoiceAndVotes[0][2] = onlineTotalChoiceTallies[i].Max();
-                //choiceNumber
-                topChoiceAndVotes[0][1] = Array.IndexOf(onlineTotalChoiceTallies[i],onlineTotalChoiceTallies[i].Max());
-                //school
-                topChoiceAndVotes[0][0] = i;
-            }
-        }
-        */              
+        // 0-Uti. 1-Raw. 2-Vir.Eth. 3-NeoLib 4-Kant // Choices 8-17 each // jagged array that holds tally of how many times each choice is chosen
+        AddUpChoiceTallies();
+        PlaceAllScoresInArrayAndSort();
+        SetTopAndBottomChoicesDisplayText();
     }
 
     public void AddUpChoiceTallies()
     {
         for (int i = 1; i < 1000; i++)
         {
-            if(int.TryParse(txtSheet.GetRowData(i, "u0"), out _))
+            if (int.TryParse(txtSheet.GetRowData(i, "u0"), out _))
             {
                 onlineTotalChoiceTallies[0][0] += int.Parse(txtSheet.GetRowData(i, "u0"));
                 onlineTotalChoiceTallies[0][1] += int.Parse(txtSheet.GetRowData(i, "u1"));
@@ -238,16 +223,16 @@ public class GS2UnityDemoScript : MonoBehaviour
                 onlineTotalChoiceTallies[2][7] += int.Parse(txtSheet.GetRowData(i, "ve7"));
                 onlineTotalChoiceTallies[2][8] += int.Parse(txtSheet.GetRowData(i, "ve8"));
 
-                onlineTotalChoiceTallies[3][0]  += int.Parse(txtSheet.GetRowData(i, "nl0"));
-                onlineTotalChoiceTallies[3][1]  += int.Parse(txtSheet.GetRowData(i, "nl1"));
-                onlineTotalChoiceTallies[3][2]  += int.Parse(txtSheet.GetRowData(i, "nl2"));
-                onlineTotalChoiceTallies[3][3]  += int.Parse(txtSheet.GetRowData(i, "nl3"));
-                onlineTotalChoiceTallies[3][4]  += int.Parse(txtSheet.GetRowData(i, "nl4"));
-                onlineTotalChoiceTallies[3][5]  += int.Parse(txtSheet.GetRowData(i, "nl5"));
-                onlineTotalChoiceTallies[3][6]  += int.Parse(txtSheet.GetRowData(i, "nl6"));
-                onlineTotalChoiceTallies[3][7]  += int.Parse(txtSheet.GetRowData(i, "nl7"));
-                onlineTotalChoiceTallies[3][8]  += int.Parse(txtSheet.GetRowData(i, "nl8"));
-                onlineTotalChoiceTallies[3][9]  += int.Parse(txtSheet.GetRowData(i, "nl9"));
+                onlineTotalChoiceTallies[3][0] += int.Parse(txtSheet.GetRowData(i, "nl0"));
+                onlineTotalChoiceTallies[3][1] += int.Parse(txtSheet.GetRowData(i, "nl1"));
+                onlineTotalChoiceTallies[3][2] += int.Parse(txtSheet.GetRowData(i, "nl2"));
+                onlineTotalChoiceTallies[3][3] += int.Parse(txtSheet.GetRowData(i, "nl3"));
+                onlineTotalChoiceTallies[3][4] += int.Parse(txtSheet.GetRowData(i, "nl4"));
+                onlineTotalChoiceTallies[3][5] += int.Parse(txtSheet.GetRowData(i, "nl5"));
+                onlineTotalChoiceTallies[3][6] += int.Parse(txtSheet.GetRowData(i, "nl6"));
+                onlineTotalChoiceTallies[3][7] += int.Parse(txtSheet.GetRowData(i, "nl7"));
+                onlineTotalChoiceTallies[3][8] += int.Parse(txtSheet.GetRowData(i, "nl8"));
+                onlineTotalChoiceTallies[3][9] += int.Parse(txtSheet.GetRowData(i, "nl9"));
                 onlineTotalChoiceTallies[3][10] += int.Parse(txtSheet.GetRowData(i, "nl10"));
                 onlineTotalChoiceTallies[3][11] += int.Parse(txtSheet.GetRowData(i, "nl11"));
                 onlineTotalChoiceTallies[3][12] += int.Parse(txtSheet.GetRowData(i, "nl12"));
@@ -257,79 +242,296 @@ public class GS2UnityDemoScript : MonoBehaviour
                 onlineTotalChoiceTallies[3][16] += int.Parse(txtSheet.GetRowData(i, "nl16"));
                 onlineTotalChoiceTallies[3][17] += int.Parse(txtSheet.GetRowData(i, "nl17"));
 
-                onlineTotalChoiceTallies[4][0]  += int.Parse(txtSheet.GetRowData(i, "k0"));
-                onlineTotalChoiceTallies[4][1]  += int.Parse(txtSheet.GetRowData(i, "k1"));
-                onlineTotalChoiceTallies[4][2]  += int.Parse(txtSheet.GetRowData(i, "k2"));
-                onlineTotalChoiceTallies[4][3]  += int.Parse(txtSheet.GetRowData(i, "k3"));
-                onlineTotalChoiceTallies[4][4]  += int.Parse(txtSheet.GetRowData(i, "k4"));
-                onlineTotalChoiceTallies[4][5]  += int.Parse(txtSheet.GetRowData(i, "k5"));
-                onlineTotalChoiceTallies[4][6]  += int.Parse(txtSheet.GetRowData(i, "k6"));
-                onlineTotalChoiceTallies[4][7]  += int.Parse(txtSheet.GetRowData(i, "k7"));
-                onlineTotalChoiceTallies[4][8]  += int.Parse(txtSheet.GetRowData(i, "k8"));                
+                onlineTotalChoiceTallies[4][0] += int.Parse(txtSheet.GetRowData(i, "k0"));
+                onlineTotalChoiceTallies[4][1] += int.Parse(txtSheet.GetRowData(i, "k1"));
+                onlineTotalChoiceTallies[4][2] += int.Parse(txtSheet.GetRowData(i, "k2"));
+                onlineTotalChoiceTallies[4][3] += int.Parse(txtSheet.GetRowData(i, "k3"));
+                onlineTotalChoiceTallies[4][4] += int.Parse(txtSheet.GetRowData(i, "k4"));
+                onlineTotalChoiceTallies[4][5] += int.Parse(txtSheet.GetRowData(i, "k5"));
+                onlineTotalChoiceTallies[4][6] += int.Parse(txtSheet.GetRowData(i, "k6"));
+                onlineTotalChoiceTallies[4][7] += int.Parse(txtSheet.GetRowData(i, "k7"));
+                onlineTotalChoiceTallies[4][8] += int.Parse(txtSheet.GetRowData(i, "k8"));
             }
         }
     }
 
-    public void PlaceAllScoresInTwoArrays() //one sorted and one not sorted
+    public void PlaceAllScoresInArrayAndSort() //one sorted and one not sorted
     {
         for (int i = 0; i <= 8; i++)
         {
-            allVoteScoresNotSorted[i][2] = onlineTotalChoiceTallies[0][i];
-            allVoteScoresNotSorted[i][1] = i;
-            allVoteScoresNotSorted[i][0] = 0;
-        } 
+            allVoteScoresSorted[i][2] = onlineTotalChoiceTallies[0][i];
+            allVoteScoresSorted[i][1] = i;
+            allVoteScoresSorted[i][0] = 0;
+        }
 
         for (int i = 9; i <= 18; i++)
         {
-            allVoteScoresNotSorted[i][2] = onlineTotalChoiceTallies[1][i-9];
-            allVoteScoresNotSorted[i][1] = i-9;
-            allVoteScoresNotSorted[i][0] = 1;
-        }    
+            allVoteScoresSorted[i][2] = onlineTotalChoiceTallies[1][i - 9];
+            allVoteScoresSorted[i][1] = i - 9;
+            allVoteScoresSorted[i][0] = 1;
+        }
 
         for (int i = 19; i <= 27; i++)
         {
-            allVoteScoresNotSorted[i][2] = onlineTotalChoiceTallies[2][i-19];
-            allVoteScoresNotSorted[i][1] = i-19;
-            allVoteScoresNotSorted[i][0] = 2;
+            allVoteScoresSorted[i][2] = onlineTotalChoiceTallies[2][i - 19];
+            allVoteScoresSorted[i][1] = i - 19;
+            allVoteScoresSorted[i][0] = 2;
         }
 
         for (int i = 28; i <= 45; i++)
         {
-            allVoteScoresNotSorted[i][2] = onlineTotalChoiceTallies[3][i-28];
-            allVoteScoresNotSorted[i][1] = i-28;
-            allVoteScoresNotSorted[i][0] = 3;
+            allVoteScoresSorted[i][2] = onlineTotalChoiceTallies[3][i - 28];
+            allVoteScoresSorted[i][1] = i - 28;
+            allVoteScoresSorted[i][0] = 3;
         }
 
         for (int i = 46; i <= 54; i++)
         {
-            allVoteScoresNotSorted[i][2] = onlineTotalChoiceTallies[4][i-46];
-            allVoteScoresNotSorted[i][1] = i-46;
-            allVoteScoresNotSorted[i][0] = 4;
-        }  
+            allVoteScoresSorted[i][2] = onlineTotalChoiceTallies[4][i - 46];
+            allVoteScoresSorted[i][1] = i - 46;
+            allVoteScoresSorted[i][0] = 4;
+        }
+
+        var columnIdx = 2;
+        Array.Sort(allVoteScoresSorted, (x, y) => x[columnIdx].CompareTo(y[columnIdx]));
+
+        // Check sort array output
         /*
         for (int i = 0; i <= 54; i++)
         {
-            allVoteScoresSorted[i] = allVoteScoresNotSorted[i][0];
-        }  
-        */
-        //var columnIdx = 0;
-        //Array.Sort(allVoteScoresNotSorted, (x, y) => x[columnIdx].CompareTo(y[columnIdx]));
-        
-        for (int i = 0; i <= 54; i++)
-        {
-            Debug.Log("Choice Place " + i.ToString() + " is school " + allVoteScoresNotSorted[i][0].ToString() + ",    choice " + allVoteScoresNotSorted[i][1].ToString() + ",  score " + allVoteScoresNotSorted[i][2].ToString());
+            Debug.Log("Choice Place " + i.ToString() + " is school " + allVoteScoresSorted[i][0].ToString() + ",    choice " + allVoteScoresSorted[i][1].ToString() + ",  score " + allVoteScoresSorted[i][2].ToString());
         }
-                   
+        */
     }
 
-    public void IfThereAreDuplicatesMinus_iplusplus_ToAllScores()
+    public void SetTopAndBottomChoicesDisplayText()
     {
-        if (allVoteScoresSorted.Length != allVoteScoresSorted.Distinct().Count())
+
+        switch (allVoteScoresSorted[54][0])
         {
-            
-        }   
+            case 0:
+                topChoice1.text = cbcScript.utilitarianChoices[allVoteScoresSorted[54][1]] + " (Utilitarian) " + allVoteScoresSorted[54][2].ToString() + "↑";
+                break;
+            case 1:
+                topChoice1.text = cbcScript.rawlsianChoices[allVoteScoresSorted[54][1]] + " (Rawlsian) " + allVoteScoresSorted[54][2].ToString() + "↑";
+                break;
+            case 2:
+                topChoice1.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[54][1]] + " (Virtue Ethics) " + allVoteScoresSorted[54][2].ToString() + "↑";
+                break;
+            case 3:
+                topChoice1.text = cbcScript.neoliberalChoices[allVoteScoresSorted[54][1]] + " (Neoliberal) " + allVoteScoresSorted[54][2].ToString() + "↑";
+                break;
+            case 4:
+                topChoice1.text = cbcScript.kantianChoices[allVoteScoresSorted[54][1]] + " (Kantian) " + allVoteScoresSorted[54][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[53][0])
+        {
+            case 0:
+                topChoice2.text = cbcScript.utilitarianChoices[allVoteScoresSorted[53][1]] + " (Utilitarian) " + allVoteScoresSorted[53][2].ToString() + "↑";
+                break;
+            case 1:
+                topChoice2.text = cbcScript.rawlsianChoices[allVoteScoresSorted[53][1]] + " (Rawlsian) " + allVoteScoresSorted[53][2].ToString() + "↑";
+                break;
+            case 2:
+                topChoice2.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[53][1]] + " (Virtue Ethics) " + allVoteScoresSorted[53][2].ToString() + "↑";
+                break;
+            case 3:
+                topChoice2.text = cbcScript.neoliberalChoices[allVoteScoresSorted[53][1]] + " (Neoliberal) " + allVoteScoresSorted[53][2].ToString() + "↑";
+                break;
+            case 4:
+                topChoice2.text = cbcScript.kantianChoices[allVoteScoresSorted[53][1]] + " (Kantian) " + allVoteScoresSorted[53][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[52][0])
+        {
+            case 0:
+                topChoice3.text = cbcScript.utilitarianChoices[allVoteScoresSorted[52][1]] + " (Utilitarian) " + allVoteScoresSorted[52][2].ToString() + "↑";
+                break;
+            case 1:
+                topChoice3.text = cbcScript.rawlsianChoices[allVoteScoresSorted[52][1]] + " (Rawlsian) " + allVoteScoresSorted[52][2].ToString() + "↑";
+                break;
+            case 2:
+                topChoice3.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[52][1]] + " (Virtue Ethics) " + allVoteScoresSorted[52][2].ToString() + "↑";
+                break;
+            case 3:
+                topChoice3.text = cbcScript.neoliberalChoices[allVoteScoresSorted[52][1]] + " (Neoliberal) " + allVoteScoresSorted[52][2].ToString() + "↑";
+                break;
+            case 4:
+                topChoice3.text = cbcScript.kantianChoices[allVoteScoresSorted[52][1]] + " (Kantian) " + allVoteScoresSorted[52][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[51][0])
+        {
+            case 0:
+                topChoice4.text = cbcScript.utilitarianChoices[allVoteScoresSorted[51][1]] + " (Utilitarian) " + allVoteScoresSorted[51][2].ToString() + "↑";
+                break;
+            case 1:
+                topChoice4.text = cbcScript.rawlsianChoices[allVoteScoresSorted[51][1]] + " (Rawlsian) " + allVoteScoresSorted[51][2].ToString() + "↑";
+                break;
+            case 2:
+                topChoice4.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[51][1]] + " (Virtue Ethics) " + allVoteScoresSorted[51][2].ToString() + "↑";
+                break;
+            case 3:
+                topChoice4.text = cbcScript.neoliberalChoices[allVoteScoresSorted[51][1]] + " (Neoliberal) " + allVoteScoresSorted[51][2].ToString() + "↑";
+                break;
+            case 4:
+                topChoice4.text = cbcScript.kantianChoices[allVoteScoresSorted[51][1]] + " (Kantian) " + allVoteScoresSorted[51][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[50][0])
+        {
+            case 0:
+                topChoice5.text = cbcScript.utilitarianChoices[allVoteScoresSorted[50][1]] + " (Utilitarian) " + allVoteScoresSorted[50][2].ToString() + "↑";
+                break;
+            case 1:
+                topChoice5.text = cbcScript.rawlsianChoices[allVoteScoresSorted[50][1]] + " (Rawlsian) " + allVoteScoresSorted[50][2].ToString() + "↑";
+                break;
+            case 2:
+                topChoice5.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[50][1]] + " (Virtue Ethics) " + allVoteScoresSorted[50][2].ToString() + "↑";
+                break;
+            case 3:
+                topChoice5.text = cbcScript.neoliberalChoices[allVoteScoresSorted[50][1]] + " (Neoliberal) " + allVoteScoresSorted[50][2].ToString() + "↑";
+                break;
+            case 4:
+                topChoice5.text = cbcScript.kantianChoices[allVoteScoresSorted[50][1]] + " (Kantian) " + allVoteScoresSorted[50][2].ToString() + "↑";
+                break;
+        }
+
+        // BOTTOM 5
+
+        switch (allVoteScoresSorted[0][0])
+        {
+            case 0:
+                bottomChoice5.text = cbcScript.utilitarianChoices[allVoteScoresSorted[0][1]] + " (Utilitarian) " + allVoteScoresSorted[0][2].ToString() + "↑";
+                break;
+            case 1:
+                bottomChoice5.text = cbcScript.rawlsianChoices[allVoteScoresSorted[0][1]] + " (Rawlsian) " + allVoteScoresSorted[0][2].ToString() + "↑";
+                break;
+            case 2:
+                bottomChoice5.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[0][1]] + " (Virtue Ethics) " + allVoteScoresSorted[0][2].ToString() + "↑";
+                break;
+            case 3:
+                bottomChoice5.text = cbcScript.neoliberalChoices[allVoteScoresSorted[0][1]] + " (Neoliberal) " + allVoteScoresSorted[0][2].ToString() + "↑";
+                break;
+            case 4:
+                bottomChoice5.text = cbcScript.kantianChoices[allVoteScoresSorted[0][1]] + " (Kantian) " + allVoteScoresSorted[0][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[1][0])
+        {
+            case 0:
+                bottomChoice4.text = cbcScript.utilitarianChoices[allVoteScoresSorted[1][1]] + " (Utilitarian) " + allVoteScoresSorted[1][2].ToString() + "↑";
+                break;
+            case 1:
+                bottomChoice4.text = cbcScript.rawlsianChoices[allVoteScoresSorted[1][1]] + " (Rawlsian) " + allVoteScoresSorted[1][2].ToString() + "↑";
+                break;
+            case 2:
+                bottomChoice4.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[1][1]] + " (Virtue Ethics) " + allVoteScoresSorted[1][2].ToString() + "↑";
+                break;
+            case 3:
+                bottomChoice4.text = cbcScript.neoliberalChoices[allVoteScoresSorted[1][1]] + " (Neoliberal) " + allVoteScoresSorted[1][2].ToString() + "↑";
+                break;
+            case 4:
+                bottomChoice4.text = cbcScript.kantianChoices[allVoteScoresSorted[1][1]] + " (Kantian) " + allVoteScoresSorted[1][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[2][0])
+        {
+            case 0:
+                bottomChoice3.text = cbcScript.utilitarianChoices[allVoteScoresSorted[2][1]] + " (Utilitarian) " + allVoteScoresSorted[2][2].ToString() + "↑";
+                break;
+            case 1:
+                bottomChoice3.text = cbcScript.rawlsianChoices[allVoteScoresSorted[2][1]] + " (Rawlsian) " + allVoteScoresSorted[2][2].ToString() + "↑";
+                break;
+            case 2:
+                bottomChoice3.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[2][1]] + " (Virtue Ethics) " + allVoteScoresSorted[2][2].ToString() + "↑";
+                break;
+            case 3:
+                bottomChoice3.text = cbcScript.neoliberalChoices[allVoteScoresSorted[2][1]] + " (Neoliberal) " + allVoteScoresSorted[2][2].ToString() + "↑";
+                break;
+            case 4:
+                bottomChoice3.text = cbcScript.kantianChoices[allVoteScoresSorted[2][1]] + " (Kantian) " + allVoteScoresSorted[2][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[3][0])
+        {
+            case 0:
+                bottomChoice2.text = cbcScript.utilitarianChoices[allVoteScoresSorted[3][1]] + " (Utilitarian) " + allVoteScoresSorted[3][2].ToString() + "↑";
+                break;
+            case 1:
+                bottomChoice2.text = cbcScript.rawlsianChoices[allVoteScoresSorted[3][1]] + " (Rawlsian) " + allVoteScoresSorted[3][2].ToString() + "↑";
+                break;
+            case 2:
+                bottomChoice2.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[3][1]] + " (Virtue Ethics) " + allVoteScoresSorted[3][2].ToString() + "↑";
+                break;
+            case 3:
+                bottomChoice2.text = cbcScript.neoliberalChoices[allVoteScoresSorted[3][1]] + " (Neoliberal) " + allVoteScoresSorted[3][2].ToString() + "↑";
+                break;
+            case 4:
+                bottomChoice2.text = cbcScript.kantianChoices[allVoteScoresSorted[3][1]] + " (Kantian) " + allVoteScoresSorted[3][2].ToString() + "↑";
+                break;
+        }
+
+        switch (allVoteScoresSorted[4][0])
+        {
+            case 0:
+                bottomChoice1.text = cbcScript.utilitarianChoices[allVoteScoresSorted[4][1]] + " (Utilitarian) " + allVoteScoresSorted[4][2].ToString() + "↑";
+                break;
+            case 1:
+                bottomChoice1.text = cbcScript.rawlsianChoices[allVoteScoresSorted[4][1]] + " (Rawlsian) " + allVoteScoresSorted[4][2].ToString() + "↑";
+                break;
+            case 2:
+                bottomChoice1.text = cbcScript.virtueEthicsChoices[allVoteScoresSorted[4][1]] + " (Virtue Ethics) " + allVoteScoresSorted[4][2].ToString() + "↑";
+                break;
+            case 3:
+                bottomChoice1.text = cbcScript.neoliberalChoices[allVoteScoresSorted[4][1]] + " (Neoliberal) " + allVoteScoresSorted[4][2].ToString() + "↑";
+                break;
+            case 4:
+                bottomChoice1.text = cbcScript.kantianChoices[allVoteScoresSorted[4][1]] + " (Kantian) " + allVoteScoresSorted[4][2].ToString() + "↑";
+                break;
+        }
     }
-    
+
+    public void OpenChoiceSitePage(int rank)
+    {
+        switch (allVoteScoresSorted[rank][0])
+        {
+            case 0:
+                Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/utilitarianism/utilitarian-choices/"
+                + (allVoteScoresSorted[rank][1] + 1).ToString() +
+                "-utilitarian-choice");
+                break;
+            case 1:
+                Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/rawlsian-ethics/rawlsian-choices/"
+                + (allVoteScoresSorted[rank][1] + 1).ToString() +
+                "-rawlsian-choice");
+                break;
+            case 2:
+                Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/virtue-ethics/virtue-ethics-choices/"
+                + (allVoteScoresSorted[rank][1] + 1).ToString() +
+                "virtue-ethics-choice");
+                break;
+            case 3:
+                Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/neoliberal-ethics/neoliberal-choices/"
+                + (allVoteScoresSorted[rank][1] + 1).ToString() +
+                "-neoliberal-choice");
+                break;
+            case 4:
+                Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools/kantian-ethics/kantian-choices/"
+                + (allVoteScoresSorted[rank][1] + 1).ToString() +
+                "-kantian-choice");
+                break;
+        }
+    }
+
     public void searchNameResults(string typedName)
     {
         resultANumber = 0;
@@ -337,25 +539,25 @@ public class GS2UnityDemoScript : MonoBehaviour
         ClearResultsAandB();
 
         timeTextA.text = "x";
-        rTextA.text =  "x";
-        uTextA.text =  "x";
-        veTextA.text =  "x";
-        kaTextA.text =  "x";
-        nlTextA.text =  "x";
+        rTextA.text = "x";
+        uTextA.text = "x";
+        veTextA.text = "x";
+        kaTextA.text = "x";
+        nlTextA.text = "x";
 
         timeTextB.text = "x";
-        rTextB.text =  "x";
-        uTextB.text =  "x";
-        veTextB.text =  "x";
-        kaTextB.text =  "x";
-        nlTextB.text =  "x";
-        
+        rTextB.text = "x";
+        uTextB.text = "x";
+        veTextB.text = "x";
+        kaTextB.text = "x";
+        nlTextB.text = "x";
+
         resultNumberTextUILabelA.text = "x";
         resultNumberTextUILabelB.text = "x";
 
-        resultsA = new string[] {"","","","","","","","","",""};
-        resultsB = new string[] {"","","","","","","","","",""};
-        
+        resultsA = new string[] { "", "", "", "", "", "", "", "", "", "" };
+        resultsB = new string[] { "", "", "", "", "", "", "", "", "", "" };
+
         radarA = GameObject.Find("RadarChart A");
         radarB = GameObject.Find("RadarChart B");
 
@@ -387,17 +589,16 @@ public class GS2UnityDemoScript : MonoBehaviour
                 currentResultNumber += 1;
             }
             numberOfLoopsRun += 1;
-            if(txtSheet.GetRowData(i.ToString(), "Timestamp") == "")
+            if (txtSheet.GetRowData(i.ToString(), "Timestamp") == "")
             {
                 break;
             }
-            
         }
-        numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";        
+        numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
 
         SelectionAIncrease();
         SelectionBIncrease();
-        SelectionBIncrease();        
+        SelectionBIncrease();
     }
 
     public void SelectionAIncrease()
@@ -435,7 +636,7 @@ public class GS2UnityDemoScript : MonoBehaviour
             resultBNumber = 0;
             ChangeResultsB(resultBNumber);
         }
-        else 
+        else
         {
             resultBNumber += 1;
             ChangeResultsB(resultBNumber);
@@ -449,7 +650,7 @@ public class GS2UnityDemoScript : MonoBehaviour
             resultBNumber = currentResultNumber;
             ChangeResultsB(resultBNumber);
         }
-        else 
+        else
         {
             resultBNumber -= 1;
             ChangeResultsB(resultBNumber);
@@ -474,14 +675,14 @@ public class GS2UnityDemoScript : MonoBehaviour
         //viewStringtest = resultsA[3];
 
         Debug.Log(
-            "A = " +            
+            "A = " +
             resultsA[3].ToString() + " " +
             resultsA[4].ToString() + " " +
             resultsA[5].ToString() + " " +
             resultsA[6].ToString() + " " +
-            resultsA[7].ToString() 
+            resultsA[7].ToString()
         );
-        if(int.TryParse(resultsA[3], out tryParseResultA))
+        if (int.TryParse(resultsA[3], out tryParseResultA))
         {
             highestEthicsSchoolPointsA = Mathf.Max(int.Parse(resultsA[3]),
                                                    int.Parse(resultsA[4]),
@@ -492,7 +693,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         else
         {
             highestEthicsSchoolPointsA = 0;
-        }        
+        }
 
         radarChartAscript = GameObject.Find("RadarChart A").GetComponent<RadarChart>();
 
@@ -516,7 +717,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         nlTextA.text = resultsA[6];
 
         resultNumberTextUILabelA.text = (resultNumberA + 1).ToString();
-        
+
         StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
 
@@ -538,25 +739,25 @@ public class GS2UnityDemoScript : MonoBehaviour
 
         Debug.Log(
             "B = " +
-            
+
             resultsB[4].ToString() + " " +
             resultsB[5].ToString() + " " +
             resultsB[6].ToString() + " " +
             resultsB[7].ToString()
-            
+
         );
-        if(int.TryParse(resultsB[3], out tryParseResultB))
+        if (int.TryParse(resultsB[3], out tryParseResultB))
         {
-            highestEthicsSchoolPointsB = Mathf.Max(      int.Parse(resultsB[3]),
+            highestEthicsSchoolPointsB = Mathf.Max(int.Parse(resultsB[3]),
                                                      int.Parse(resultsB[4]),
                                                      int.Parse(resultsB[5]),
                                                      int.Parse(resultsB[6]),
-                                                     int.Parse(resultsB[7]) );
+                                                     int.Parse(resultsB[7]));
         }
         else
         {
             highestEthicsSchoolPointsB = 0;
-        }        
+        }
 
         radarChartBscript = GameObject.Find("RadarChart B").GetComponent<RadarChart>();
 
@@ -589,7 +790,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         xDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.x - CentroidB.GetComponent<RectTransform>().anchoredPosition.x);
         yDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.y - CentroidB.GetComponent<RectTransform>().anchoredPosition.y);
         x2_plus_y2 = Mathf.Pow(xDifference, 2) + Mathf.Pow(yDifference, 2);
-        hypotenuseLength = Mathf.Sqrt(x2_plus_y2);        
+        hypotenuseLength = Mathf.Sqrt(x2_plus_y2);
         pointsOfDifference.text = hypotenuseLength.ToString("0.0") + " Points of Difference";
         //Debug.Log("Centroid A x coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
         //Debug.Log("Centroid A y coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
@@ -600,7 +801,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     {
         for (int i = 0; i < googleSheetDataResultsForName.Length; i++)
         {
-            googleSheetDataResultsForName[i] = new string[10] {"","","","","","","","","",""};
+            googleSheetDataResultsForName[i] = new string[10] { "", "", "", "", "", "", "", "", "", "" };
         }
     }
 

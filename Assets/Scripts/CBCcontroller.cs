@@ -22,6 +22,7 @@ public class CBCcontroller : MonoBehaviour
     public GameObject graphButton2;
     public GameObject graphButton3;
     public GameObject graphButton4;
+    public GameObject graphButton5;
     public GameObject retakeButton;
     public string currentLanguage;
     public GameObject dayXFlash;
@@ -236,6 +237,7 @@ public class CBCcontroller : MonoBehaviour
 
     void Start()
     {
+        choiceTallies = new int[5][];
         choiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
         choiceTallies[1] = new int[10]{0,0,0,0,0,0,0,0,0,0};
         choiceTallies[2] = new int[9]{0,0,0,0,0,0,0,0,0};
@@ -325,8 +327,12 @@ public class CBCcontroller : MonoBehaviour
         else if (graphButton4.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
         {
             graphButton4.GetComponent<Button>().onClick.Invoke();
-        }   
-        else if ((graphButton4.activeInHierarchy == true || graphButton3.activeInHierarchy == true || graphButton2.activeInHierarchy == true || graphButton1.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.RightBracket)))
+        }
+        else if (graphButton5.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
+        {
+            graphButton5.GetComponent<Button>().onClick.Invoke();
+        }      
+        else if ((graphButton5.activeInHierarchy == true || graphButton4.activeInHierarchy == true || graphButton3.activeInHierarchy == true || graphButton2.activeInHierarchy == true || graphButton1.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.RightBracket)))
         {
             retakeButton.GetComponent<Button>().onClick.Invoke();
             RetakeTest();
@@ -1293,7 +1299,7 @@ public class CBCcontroller : MonoBehaviour
             canvas.GetComponent<Animator>().Play("cbctograph");
             cbcCards.SetActive(false);
             endScreen.SetActive(true);
-            statPanel.SetActive(true);
+            statPanel.SetActive(true);            
 
             lowestEthicsSchoolScore = Mathf.Min(utilitarianPoints,
                                                 rawlsianPoints,
