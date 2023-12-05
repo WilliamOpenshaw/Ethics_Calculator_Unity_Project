@@ -1467,6 +1467,7 @@ public class CBCcontroller : MonoBehaviour
             centroidPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(centroidCoordinateX, centroidCoordinateY);
 
             dataSenderScript.Send();
+            canvas.GetComponent<Animator>().StopPlayback();
         }
     }
     public void SetRadarChartLabelColors()
@@ -1824,6 +1825,9 @@ public class CBCcontroller : MonoBehaviour
                         "-kantian-choice");
                         break;
                 }
+                break;
+            case 9:
+                Application.OpenURL("https://sites.google.com/vis.tp.edu.tw/2023-g10a-pbl-legible-values/ethical-schools");
                 break;
         }       
     }
