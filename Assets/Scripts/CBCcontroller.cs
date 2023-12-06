@@ -23,6 +23,9 @@ public class CBCcontroller : MonoBehaviour
     public GameObject graphButton3;
     public GameObject graphButton4;
     public GameObject graphButton5;
+
+    public GameObject graphButton6;
+    
     public GameObject retakeButton;
     public string currentLanguage;
     public GameObject dayXFlash;
@@ -32,6 +35,8 @@ public class CBCcontroller : MonoBehaviour
     public GameObject dayYWholeCard;
     public GameObject dayZWholeCard;
     public GameObject[] verticeIndicatorsCBC;
+
+    public GameObject[] verticeIndicatorsCBCB;
     public DataSender dataSenderScript;
     public TextMeshProUGUI dayXmorningText;
     public TextMeshProUGUI dayXeveningText;
@@ -235,6 +240,10 @@ public class CBCcontroller : MonoBehaviour
     public float centroidCoordinateY;
     public GameObject centroidPoint;
 
+    public float centroidCoordinateXB;
+    public float centroidCoordinateYB;
+    public GameObject centroidPointB;
+
     void Start()
     {
         choiceTallies = new int[5][];
@@ -286,6 +295,7 @@ public class CBCcontroller : MonoBehaviour
         grayLoadingBackground.SetActive(false);
 
         verticeIndicatorsCBC = new GameObject[5];
+        verticeIndicatorsCBCB = new GameObject[5];
 
     }
     void Update()
@@ -302,7 +312,7 @@ public class CBCcontroller : MonoBehaviour
         {
                 ChooseDayZ();
         }
-        else if (mainMenuPlayButton.activeInHierarchy == true && Input.anyKey)
+        else if (mainMenuPlayButton.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.RightBracket) || Input.GetKeyUp(KeyCode.Backslash) ))
         {
             mainMenuPlayButton.GetComponent<Button>().onClick.Invoke();
             nameSchoolContinueButton.SetActive(false);
@@ -331,8 +341,12 @@ public class CBCcontroller : MonoBehaviour
         else if (graphButton5.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
         {
             graphButton5.GetComponent<Button>().onClick.Invoke();
-        }      
-        else if ((graphButton5.activeInHierarchy == true || graphButton4.activeInHierarchy == true || graphButton3.activeInHierarchy == true || graphButton2.activeInHierarchy == true || graphButton1.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.RightBracket)))
+        }
+        else if (graphButton6.activeInHierarchy == true && (Input.GetKeyUp(KeyCode.LeftBracket) || Input.GetKeyUp(KeyCode.Backslash)))
+        {
+            graphButton6.GetComponent<Button>().onClick.Invoke();
+        }   
+        else if ((graphButton6.activeInHierarchy == true || graphButton5.activeInHierarchy == true || graphButton4.activeInHierarchy == true || graphButton3.activeInHierarchy == true || graphButton2.activeInHierarchy == true || graphButton1.activeInHierarchy == true) && (Input.GetKeyUp(KeyCode.RightBracket)))
         {
             retakeButton.GetComponent<Button>().onClick.Invoke();
             RetakeTest();
@@ -876,7 +890,7 @@ public class CBCcontroller : MonoBehaviour
                     &&
                     rolledChoices[i + 1] == currentChoiceNumber)
                 {
-                    choiceRolledRecently = true;
+                    choiceRolledRecently = true; //enable this when done testing
                 }
             }
 
@@ -1446,11 +1460,17 @@ public class CBCcontroller : MonoBehaviour
 
             SetRadarChartLabelColors();
 
-            verticeIndicatorsCBC[0] = GameObject.Find("Vertice1");
-            verticeIndicatorsCBC[1] = GameObject.Find("Vertice2");
-            verticeIndicatorsCBC[2] = GameObject.Find("Vertice3");
-            verticeIndicatorsCBC[3] = GameObject.Find("Vertice4");
-            verticeIndicatorsCBC[4] = GameObject.Find("Vertice5");
+            verticeIndicatorsCBC[0] = GameObject.Find("RadarChart A").transform.GetChild(1).gameObject;
+            verticeIndicatorsCBC[1] = GameObject.Find("RadarChart A").transform.GetChild(2).gameObject;
+            verticeIndicatorsCBC[2] = GameObject.Find("RadarChart A").transform.GetChild(3).gameObject;
+            verticeIndicatorsCBC[3] = GameObject.Find("RadarChart A").transform.GetChild(4).gameObject;
+            verticeIndicatorsCBC[4] = GameObject.Find("RadarChart A").transform.GetChild(5).gameObject;
+
+            verticeIndicatorsCBCB[0] = GameObject.Find("RadarChart B").transform.GetChild(1).gameObject;
+            verticeIndicatorsCBCB[1] = GameObject.Find("RadarChart B").transform.GetChild(2).gameObject;
+            verticeIndicatorsCBCB[2] = GameObject.Find("RadarChart B").transform.GetChild(3).gameObject;
+            verticeIndicatorsCBCB[3] = GameObject.Find("RadarChart B").transform.GetChild(4).gameObject;
+            verticeIndicatorsCBCB[4] = GameObject.Find("RadarChart B").transform.GetChild(5).gameObject;
 
             centroidCoordinateX = (verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.x
                                         + verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.x
@@ -1466,8 +1486,22 @@ public class CBCcontroller : MonoBehaviour
 
             centroidPoint.GetComponent<RectTransform>().anchoredPosition = new Vector2(centroidCoordinateX, centroidCoordinateY);
 
+            centroidCoordinateXB = (verticeIndicatorsCBCB[0].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBCB[1].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBCB[2].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBCB[3].GetComponent<RectTransform>().anchoredPosition.x
+                                        + verticeIndicatorsCBCB[4].GetComponent<RectTransform>().anchoredPosition.x) / 5f;
+
+            centroidCoordinateYB = (verticeIndicatorsCBCB[0].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBCB[1].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBCB[2].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBCB[3].GetComponent<RectTransform>().anchoredPosition.y
+                                        + verticeIndicatorsCBCB[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
+
+            centroidPointB.GetComponent<RectTransform>().anchoredPosition = new Vector2(centroidCoordinateXB, centroidCoordinateYB);
+
             dataSenderScript.Send();
-            canvas.GetComponent<Animator>().StopPlayback();
+            canvas.GetComponent<Animator>().enabled = false;
         }
     }
     public void SetRadarChartLabelColors()
@@ -1506,6 +1540,8 @@ public class CBCcontroller : MonoBehaviour
     }
     public void RetakeTest()
     {
+        canvas.GetComponent<Animator>().enabled = true;
+
         choiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
         choiceTallies[1] = new int[10]{0,0,0,0,0,0,0,0,0,0};
         choiceTallies[2] = new int[9]{0,0,0,0,0,0,0,0,0};
@@ -1840,16 +1876,16 @@ public class CBCcontroller : MonoBehaviour
         //(Utilitarianism)I help people to push the gold across and she give
         //me some gold and i help her and we are equal happiness.weight 3 //
         utilitarianChoices[0] = "You help an old person carry gold across the street. You do it because they will be safe, give you gold, and you will both be happy.";
-        utilitarianChoicesChinese[0] = "你幫助一位老人將黃金推過馬路。 你這樣做是因為他們會安全，給你黃金，你們都會幸福。";
+        utilitarianChoicesChinese[0] = "你幫助一位老人將黃金推過馬路。 你這樣做是因為他們會安全，給你黃金，你們都會幸福。";        
 
+        //Even though he might still get hurt, you make sure there’s the least harm possible.weight 3//
+        utilitarianChoices[1] = "You save a person by pushing him off his bike when he's about to be hit by a car.";
+        utilitarianChoicesChinese[1] = "當一個人即將被汽車撞到時，你可以透過將他從自行車上推下來來拯救他。";
 
         //Utilitarianism means you do things that make you most happy.weight 4 //
         utilitarianChoices[2] = "You kill 1 person to save 5 people. Because 5 people have more value than 1 person.";
         utilitarianChoicesChinese[2] = "你殺了 1 個人救了 5 個人。因為5個人比1個人更有價值。";
 
-        //Even though he might still get hurt, you make sure there’s the least harm possible.weight 3//
-        utilitarianChoices[1] = "You save a person by pushing him off his bike when he's about to be hit by a car.";
-        utilitarianChoicesChinese[1] = "當一個人即將被汽車撞到時，你可以透過將他從自行車上推下來來拯救他。";
         //We should maximize happiness for ourselves and others.weight 3 //          
         utilitarianChoices[3] = "You go order a drink and instead of only buying for yourself, you also buy for 5 other people. Buying drinks for 5 people brings more happiness to them.";
         utilitarianChoicesChinese[3] = "你去點一杯飲料，不只給自己買，還買給其他 5 個人。為5個人購買飲料會為他們帶來更多的快樂。";
@@ -1857,7 +1893,7 @@ public class CBCcontroller : MonoBehaviour
         //the more your actions are worth.weight 5// 
         //third test comment
         utilitarianChoices[4] = "You perform in front of 200 people instead of 100. 200 people's happiness combined is more important than 100.";
-        utilitarianChoicesChinese[4] = "你在200人面前表演，而不是在100人面前表演。200人的幸福加起來比100人的幸福更重要。";
+        utilitarianChoicesChinese[4] = "你在200人面前表演,而不是在100人面前表演。200人的幸福加起來比100人的幸福更重要。";
         //You do this because you want everyone to be happy.
         utilitarianChoices[5] = "You buy food and share it with people that want it.";
         utilitarianChoicesChinese[5] = "您購買食物並與需要的人分享。";

@@ -16432,6 +16432,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515795938}
   m_CullTransparentMesh: 1
+--- !u!1 &533457020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1878707619184448, guid: 6e971bf8ca9fc411f9c5e3143f837319, type: 3}
+  m_PrefabInstance: {fileID: 1498922874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534737741
 GameObject:
   m_ObjectHideFlags: 0
@@ -19983,6 +19988,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1894777339}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2097863410}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 755906858}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 533457020}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1589243820}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658880219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22057,7 +22122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.1.0
+  m_text: 1.2.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bcc53b47fe51334ba7cfd1f3ec0cb6b, type: 2}
   m_sharedMaterial: {fileID: 7867620514489350920, guid: 4bcc53b47fe51334ba7cfd1f3ec0cb6b, type: 2}
@@ -35233,7 +35298,8 @@ MonoBehaviour:
   graphButton2: {fileID: 872041660}
   graphButton3: {fileID: 1651003725}
   graphButton4: {fileID: 755906858}
-  graphButton5: {fileID: 986000998}
+  graphButton5: {fileID: 1589243820}
+  graphButton6: {fileID: 986000998}
   retakeButton: {fileID: 658880216}
   currentLanguage: 
   dayXFlash: {fileID: 1894448705}
@@ -35243,6 +35309,7 @@ MonoBehaviour:
   dayYWholeCard: {fileID: 1902507493}
   dayZWholeCard: {fileID: 1603885305}
   verticeIndicatorsCBC: []
+  verticeIndicatorsCBCB: []
   dataSenderScript: {fileID: 477696423}
   dayXmorningText: {fileID: 907949737}
   dayXeveningText: {fileID: 1541806215}
@@ -35417,6 +35484,9 @@ MonoBehaviour:
   centroidCoordinateX: 52.996887
   centroidCoordinateY: -10.97217
   centroidPoint: {fileID: 819191736}
+  centroidCoordinateXB: 0
+  centroidCoordinateYB: 0
+  centroidPointB: {fileID: 0}
 --- !u!4 &1106422016
 Transform:
   m_ObjectHideFlags: 0
@@ -41712,7 +41782,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114276083778822308, guid: 6e971bf8ca9fc411f9c5e3143f837319, type: 3}
   m_PrefabInstance: {fileID: 1498922874}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 533457020}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75776818b803742a6799c6952a290e, type: 3}

@@ -288,20 +288,41 @@ namespace UCharts
 					//verticeIndicators[i].GetComponent<RectTransform>().anchoredPosition = pos2;
 				}
 			}
-			cbcScript = GameObject.Find("CBCcontrollerScript").GetComponent<CBCcontroller>();
-			cbcScript.centroidCoordinateX = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.x
-										+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.x
-										+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.x
-										+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.x
-										+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.x) / 5f;
 
-			cbcScript.centroidCoordinateY = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.y
-										+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.y
-										+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.y
-										+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.y
-										+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
+			if (gameObject.name == "RadarChart B")
+			{
+				cbcScript = GameObject.Find("CBCcontrollerScript").GetComponent<CBCcontroller>();
+				cbcScript.centroidCoordinateXB = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.x) / 5f;
 
-			transform.Find("Centroid").gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(cbcScript.centroidCoordinateX, cbcScript.centroidCoordinateY);			
+				cbcScript.centroidCoordinateYB = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
+
+				transform.Find("Centroid").gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(cbcScript.centroidCoordinateXB, cbcScript.centroidCoordinateYB);
+			}
+			else if (gameObject.name == "RadarChart A")
+			{
+				cbcScript = GameObject.Find("CBCcontrollerScript").GetComponent<CBCcontroller>();
+				cbcScript.centroidCoordinateX = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.x
+											+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.x) / 5f;
+
+				cbcScript.centroidCoordinateY = (verticeIndicators[0].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[1].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[2].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[3].GetComponent<RectTransform>().anchoredPosition.y
+											+ verticeIndicators[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
+
+				transform.Find("Centroid").gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(cbcScript.centroidCoordinateX, cbcScript.centroidCoordinateY);
+			}
 
 		}
 

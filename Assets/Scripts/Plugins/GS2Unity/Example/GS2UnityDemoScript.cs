@@ -534,8 +534,11 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void searchNameResults(string typedName)
     {
+        radarB.SetActive(true);
+        radarA.SetActive(true);
+
         resultANumber = 0;
-        resultBNumber = 0;
+        resultBNumber = 1;
         ClearResultsAandB();
 
         timeTextA.text = "x";
@@ -596,11 +599,14 @@ public class GS2UnityDemoScript : MonoBehaviour
         }
         numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
 
-        SelectionAIncrease();
-        SelectionBIncrease();
-        SelectionBIncrease();
+        ChangeResultsA(resultANumber);
+        ChangeResultsB(resultBNumber);
+        radarB.SetActive(false);
+        radarA.SetActive(false);
+        radarB.SetActive(true);
+        radarA.SetActive(true);
+        StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
-
     public void SelectionAIncrease()
     {
         if (resultANumber >= currentResultNumber - 1)
@@ -614,10 +620,9 @@ public class GS2UnityDemoScript : MonoBehaviour
             ChangeResultsA(resultANumber);
         }
     }
-
     public void SelectionADecrease()
     {
-        if (resultANumber <= 1)
+        if (resultANumber <= 0)
         {
             resultANumber = currentResultNumber;
             ChangeResultsA(resultANumber);
@@ -628,7 +633,6 @@ public class GS2UnityDemoScript : MonoBehaviour
             ChangeResultsA(resultANumber);
         }
     }
-
     public void SelectionBIncrease()
     {
         if (resultBNumber >= currentResultNumber - 1)
@@ -642,10 +646,9 @@ public class GS2UnityDemoScript : MonoBehaviour
             ChangeResultsB(resultBNumber);
         }
     }
-
     public void SelectionBDecrease()
     {
-        if (resultBNumber <= 1)
+        if (resultBNumber <= 0)
         {
             resultBNumber = currentResultNumber;
             ChangeResultsB(resultBNumber);
@@ -659,7 +662,6 @@ public class GS2UnityDemoScript : MonoBehaviour
     public void ChangeResultsA(int resultNumberA)
     {
         radarA = GameObject.Find("RadarChart A");
-        radarB = GameObject.Find("RadarChart B");
 
         resultsA[0] = googleSheetDataResultsForName[resultNumberA][0];  //timestamp
         resultsA[1] = googleSheetDataResultsForName[resultNumberA][1];  //name
@@ -682,7 +684,7 @@ public class GS2UnityDemoScript : MonoBehaviour
             resultsA[6].ToString() + " " +
             resultsA[7].ToString()
         );
-        if (int.TryParse(resultsA[3], out tryParseResultA))
+        if (int.TryParse(resultsA[3], out _))
         {
             highestEthicsSchoolPointsA = Mathf.Max(int.Parse(resultsA[3]),
                                                    int.Parse(resultsA[4]),
@@ -697,17 +699,16 @@ public class GS2UnityDemoScript : MonoBehaviour
 
         radarChartAscript = GameObject.Find("RadarChart A").GetComponent<RadarChart>();
 
+
         radarChartAscript.m_Data = new List<float>
             {
-                (float.Parse(resultsA[3]) / (float)(highestEthicsSchoolPointsA)),
-                (float.Parse(resultsA[4]) / (float)(highestEthicsSchoolPointsA)),
-                (float.Parse(resultsA[7]) / (float)(highestEthicsSchoolPointsA)),
-                (float.Parse(resultsA[6]) / (float)(highestEthicsSchoolPointsA)),
-                (float.Parse(resultsA[5]) / (float)(highestEthicsSchoolPointsA)),
-                (float.Parse(resultsA[3]) / (float)(highestEthicsSchoolPointsA))      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
+                    (float.Parse(resultsA[3]) / (float)(highestEthicsSchoolPointsA)),
+                    (float.Parse(resultsA[4]) / (float)(highestEthicsSchoolPointsA)),
+                    (float.Parse(resultsA[7]) / (float)(highestEthicsSchoolPointsA)),
+                    (float.Parse(resultsA[6]) / (float)(highestEthicsSchoolPointsA)),
+                    (float.Parse(resultsA[5]) / (float)(highestEthicsSchoolPointsA)),
+                    (float.Parse(resultsA[3]) / (float)(highestEthicsSchoolPointsA))      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
             };
-        radarA.SetActive(false);
-        radarA.SetActive(true);
 
         timeTextA.text = resultsA[0];
         rTextA.text = resultsA[3];
@@ -716,14 +717,16 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextA.text = resultsA[7];
         nlTextA.text = resultsA[6];
 
-        resultNumberTextUILabelA.text = (resultNumberA + 1).ToString();
-
+        resultNumberTextUILabelA.text = (resultNumberA).ToString();
+        radarB.SetActive(false);
+        radarA.SetActive(false);
+        radarB.SetActive(true);
+        radarA.SetActive(true);
         StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
 
     public void ChangeResultsB(int resultNumberB)
     {
-        radarA = GameObject.Find("RadarChart A");
         radarB = GameObject.Find("RadarChart B");
 
         resultsB[0] = googleSheetDataResultsForName[resultNumberB][0];  //timestamp
@@ -740,6 +743,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         Debug.Log(
             "B = " +
 
+            resultsB[3].ToString() + " " +
             resultsB[4].ToString() + " " +
             resultsB[5].ToString() + " " +
             resultsB[6].ToString() + " " +
@@ -770,8 +774,6 @@ public class GS2UnityDemoScript : MonoBehaviour
                 (float.Parse(resultsB[5]) / (float)(highestEthicsSchoolPointsB)),
                 (float.Parse(resultsB[3]) / (float)(highestEthicsSchoolPointsB))      // added a arbitrary 6th value to list because otherwise radar chart doesn't show value for 5th axis VE
             };
-        radarB.SetActive(false);
-        radarB.SetActive(true);
 
         timeTextB.text = resultsB[0];
         rTextB.text = resultsB[3];
@@ -780,22 +782,21 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextB.text = resultsB[7];
         nlTextB.text = resultsB[6];
 
-        resultNumberTextUILabelB.text = (resultNumberB + 1).ToString();
-
+        resultNumberTextUILabelB.text = (resultNumberB).ToString();
+        radarB.SetActive(false);
+        radarA.SetActive(false);
+        radarB.SetActive(true);
+        radarA.SetActive(true);
         StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
     public IEnumerator CalculateAndDisplayHypotenuseLength()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         xDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.x - CentroidB.GetComponent<RectTransform>().anchoredPosition.x);
         yDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.y - CentroidB.GetComponent<RectTransform>().anchoredPosition.y);
         x2_plus_y2 = Mathf.Pow(xDifference, 2) + Mathf.Pow(yDifference, 2);
         hypotenuseLength = Mathf.Sqrt(x2_plus_y2);
         pointsOfDifference.text = hypotenuseLength.ToString("0.0") + " Points of Difference";
-        //Debug.Log("Centroid A x coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
-        //Debug.Log("Centroid A y coord = " + CentroidA.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
-        //Debug.Log("Centroid B x coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.x.ToString("F0"));
-        //Debug.Log("Centroid B y coord = " + CentroidB.GetComponent<RectTransform>().anchoredPosition.y.ToString("F0"));
     }
     public void ClearResultsAandB()
     {
