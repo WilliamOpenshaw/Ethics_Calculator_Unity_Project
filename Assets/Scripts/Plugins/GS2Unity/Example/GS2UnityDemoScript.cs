@@ -534,6 +534,9 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void searchNameResults(string typedName)
     {
+        radarA = GameObject.Find("RadarChart A");
+        radarB = GameObject.Find("RadarChart B");
+        
         radarB.SetActive(true);
         radarA.SetActive(true);
 
@@ -599,8 +602,19 @@ public class GS2UnityDemoScript : MonoBehaviour
         }
         numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
 
-        ChangeResultsA(resultANumber);
-        ChangeResultsB(resultBNumber);
+        SelectionAIncrease();
+        SelectionADecrease();
+        SelectionBIncrease();
+        SelectionBDecrease();
+        radarB.SetActive(false);
+        radarA.SetActive(false);
+        radarB.SetActive(true);
+        radarA.SetActive(true);
+        StartCoroutine(CalculateAndDisplayHypotenuseLength());
+        SelectionAIncrease();
+        SelectionADecrease();
+        SelectionBIncrease();
+        SelectionBDecrease();
         radarB.SetActive(false);
         radarA.SetActive(false);
         radarB.SetActive(true);
@@ -791,7 +805,7 @@ public class GS2UnityDemoScript : MonoBehaviour
     }
     public IEnumerator CalculateAndDisplayHypotenuseLength()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         xDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.x - CentroidB.GetComponent<RectTransform>().anchoredPosition.x);
         yDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.y - CentroidB.GetComponent<RectTransform>().anchoredPosition.y);
         x2_plus_y2 = Mathf.Pow(xDifference, 2) + Mathf.Pow(yDifference, 2);
