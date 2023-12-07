@@ -23631,7 +23631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &766259876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31265,7 +31265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &995837817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42806,6 +42806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d39069b77b510246afd5882168eac96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aIncreaseButton: {fileID: 2106951600}
+  aDecreaseButton: {fileID: 204472855}
+  bIncreaseButton: {fileID: 613545469}
+  bDecreaseButton: {fileID: 1061096263}
   cbcScript: {fileID: 1106422015}
   topChoice1: {fileID: 1452110453}
   topChoice2: {fileID: 1302526384}

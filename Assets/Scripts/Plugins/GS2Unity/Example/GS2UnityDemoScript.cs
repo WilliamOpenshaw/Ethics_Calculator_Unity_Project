@@ -9,6 +9,13 @@ using System.Linq;
 
 public class GS2UnityDemoScript : MonoBehaviour
 {
+    public GameObject aIncreaseButton;
+
+    public GameObject aDecreaseButton;
+
+    public GameObject bIncreaseButton;
+
+    public GameObject bDecreaseButton;
     public CBCcontroller cbcScript;
     public int[][] onlineTotalChoiceTallies;
 
@@ -536,12 +543,12 @@ public class GS2UnityDemoScript : MonoBehaviour
     {
         radarA = GameObject.Find("RadarChart A");
         radarB = GameObject.Find("RadarChart B");
-        
+
         radarB.SetActive(true);
         radarA.SetActive(true);
 
         resultANumber = 0;
-        resultBNumber = 1;
+        resultBNumber = 0;
         ClearResultsAandB();
 
         timeTextA.text = "x";
@@ -602,23 +609,10 @@ public class GS2UnityDemoScript : MonoBehaviour
         }
         numberOfTotalResultsText.text = "There are " + currentResultNumber + " results for this name.";
 
-        SelectionAIncrease();
-        SelectionADecrease();
-        SelectionBIncrease();
-        SelectionBDecrease();
-        radarB.SetActive(false);
-        radarA.SetActive(false);
-        radarB.SetActive(true);
-        radarA.SetActive(true);
-        StartCoroutine(CalculateAndDisplayHypotenuseLength());
-        SelectionAIncrease();
-        SelectionADecrease();
-        SelectionBIncrease();
-        SelectionBDecrease();
-        radarB.SetActive(false);
-        radarA.SetActive(false);
-        radarB.SetActive(true);
-        radarA.SetActive(true);
+        aIncreaseButton.GetComponent<Button>().onClick.Invoke();
+        aDecreaseButton.GetComponent<Button>().onClick.Invoke();
+        bIncreaseButton.GetComponent<Button>().onClick.Invoke();
+        
         StartCoroutine(CalculateAndDisplayHypotenuseLength());
     }
     public void SelectionAIncrease()
@@ -636,9 +630,9 @@ public class GS2UnityDemoScript : MonoBehaviour
     }
     public void SelectionADecrease()
     {
-        if (resultANumber <= 0)
+        if (resultANumber < 1)
         {
-            resultANumber = currentResultNumber;
+            resultANumber = currentResultNumber - 1;
             ChangeResultsA(resultANumber);
         }
         else
@@ -662,9 +656,9 @@ public class GS2UnityDemoScript : MonoBehaviour
     }
     public void SelectionBDecrease()
     {
-        if (resultBNumber <= 0)
+        if (resultBNumber < 1)
         {
-            resultBNumber = currentResultNumber;
+            resultBNumber = currentResultNumber - 1;
             ChangeResultsB(resultBNumber);
         }
         else
@@ -731,7 +725,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextA.text = resultsA[7];
         nlTextA.text = resultsA[6];
 
-        resultNumberTextUILabelA.text = (resultNumberA).ToString();
+        resultNumberTextUILabelA.text = (resultNumberA + 1).ToString();
         radarB.SetActive(false);
         radarA.SetActive(false);
         radarB.SetActive(true);
@@ -796,7 +790,7 @@ public class GS2UnityDemoScript : MonoBehaviour
         kaTextB.text = resultsB[7];
         nlTextB.text = resultsB[6];
 
-        resultNumberTextUILabelB.text = (resultNumberB).ToString();
+        resultNumberTextUILabelB.text = (resultNumberB + 1).ToString();
         radarB.SetActive(false);
         radarA.SetActive(false);
         radarB.SetActive(true);
@@ -805,7 +799,8 @@ public class GS2UnityDemoScript : MonoBehaviour
     }
     public IEnumerator CalculateAndDisplayHypotenuseLength()
     {
-        yield return new WaitForSeconds(0.1f);
+        
+        yield return new WaitForSeconds(0.2f);
         xDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.x - CentroidB.GetComponent<RectTransform>().anchoredPosition.x);
         yDifference = Mathf.Abs(CentroidA.GetComponent<RectTransform>().anchoredPosition.y - CentroidB.GetComponent<RectTransform>().anchoredPosition.y);
         x2_plus_y2 = Mathf.Pow(xDifference, 2) + Mathf.Pow(yDifference, 2);
