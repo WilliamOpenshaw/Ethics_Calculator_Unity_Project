@@ -1311,6 +1311,8 @@ public class CBCcontroller : MonoBehaviour
         if (currentRoundNumber > 10)
         {
             
+            
+            
             canvas.GetComponent<Animator>().Play("cbctograph");
             cbcCards.SetActive(false);
             endScreen.SetActive(true);

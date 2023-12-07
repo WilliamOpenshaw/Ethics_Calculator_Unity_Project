@@ -22122,7 +22122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.2.0
+  m_text: 1.2.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4bcc53b47fe51334ba7cfd1f3ec0cb6b, type: 2}
   m_sharedMaterial: {fileID: 7867620514489350920, guid: 4bcc53b47fe51334ba7cfd1f3ec0cb6b, type: 2}
@@ -23631,7 +23631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &766259876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31265,7 +31265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995837817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35486,7 +35486,7 @@ MonoBehaviour:
   centroidPoint: {fileID: 819191736}
   centroidCoordinateXB: 0
   centroidCoordinateYB: 0
-  centroidPointB: {fileID: 0}
+  centroidPointB: {fileID: 63305438}
 --- !u!4 &1106422016
 Transform:
   m_ObjectHideFlags: 0
@@ -67180,7 +67180,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 63305438}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

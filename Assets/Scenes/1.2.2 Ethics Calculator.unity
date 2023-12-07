@@ -2463,7 +2463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85.99039, y: -118.355606}
+  m_AnchoredPosition: {x: -85.99048, y: -118.355606}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42646879
@@ -2949,7 +2949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.996887, y: -10.97217}
+  m_AnchoredPosition: {x: 52.996826, y: -10.97217}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63305440
@@ -23884,7 +23884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.783844, y: 11.301955}
+  m_AnchoredPosition: {x: -34.783936, y: 11.301955}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785762518
@@ -35484,8 +35484,8 @@ MonoBehaviour:
   centroidCoordinateX: 52.996887
   centroidCoordinateY: -10.97217
   centroidPoint: {fileID: 819191736}
-  centroidCoordinateXB: 52.996887
-  centroidCoordinateYB: -10.97217
+  centroidCoordinateXB: 0
+  centroidCoordinateYB: 0
   centroidPointB: {fileID: 63305438}
 --- !u!4 &1106422016
 Transform:
@@ -42806,6 +42806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d39069b77b510246afd5882168eac96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aIncreaseButton: {fileID: 2106951600}
+  aDecreaseButton: {fileID: 204472855}
+  bIncreaseButton: {fileID: 613545469}
+  bDecreaseButton: {fileID: 1061096263}
   cbcScript: {fileID: 1106422015}
   topChoice1: {fileID: 1452110453}
   topChoice2: {fileID: 1302526384}
@@ -55533,7 +55537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 107.487946, y: -147.9445}
+  m_AnchoredPosition: {x: 107.48804, y: -147.9445}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1715630722
