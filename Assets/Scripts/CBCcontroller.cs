@@ -1310,9 +1310,11 @@ public class CBCcontroller : MonoBehaviour
     {
         if (currentRoundNumber > 10)
         {
+            
             canvas.GetComponent<Animator>().Play("cbctograph");
             cbcCards.SetActive(false);
             endScreen.SetActive(true);
+            GameObject.Find("RadarChart B").SetActive(true);
             statPanel.SetActive(true);            
 
             lowestEthicsSchoolScore = Mathf.Min(utilitarianPoints,
