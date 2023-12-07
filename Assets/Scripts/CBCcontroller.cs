@@ -1309,10 +1309,7 @@ public class CBCcontroller : MonoBehaviour
     public void EndScreenCheck()
     {
         if (currentRoundNumber > 10)
-        {
-            
-            
-            
+        {          
             canvas.GetComponent<Animator>().Play("cbctograph");
             cbcCards.SetActive(false);
             endScreen.SetActive(true);
