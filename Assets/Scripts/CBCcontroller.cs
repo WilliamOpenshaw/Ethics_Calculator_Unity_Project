@@ -12,6 +12,8 @@ using Random = UnityEngine.Random;
 
 public class CBCcontroller : MonoBehaviour
 {    
+        public GameObject drawnArrow;
+
     public GameObject canvas;
     public int[][] choiceTallies; // 0-Uti. 1-Raw. 2-Vir.Eth. 3-NeoLib 4-Kant // Choices 1-16 each // jagged array that holds tally of how many times each choice is chosen
     public GameObject mainMenu;
@@ -1541,6 +1543,8 @@ public class CBCcontroller : MonoBehaviour
     }
     public void RetakeTest()
     {
+        drawnArrow.SetActive(false);
+        
         canvas.GetComponent<Animator>().enabled = true;
 
         choiceTallies[0] = new int[9]{0,0,0,0,0,0,0,0,0};
