@@ -53,5 +53,5 @@
     },
     "csharpier.enableDebugLogs": true,
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "David.sln"
+    "dotnet.defaultSolution": "Ethics_Calculator_Unity_Project.sln"
 }

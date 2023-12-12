@@ -269,7 +269,15 @@ public class CBCcontroller : MonoBehaviour
         neoliberalChoicesChinese = new string[18];
         kantianChoicesChinese = new string[9];
 
-        rolledChoices = new int[34];
+        rolledChoices = new int[34] {
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, 
+                                    };
 
         choiceRolledRecently = false;
 
@@ -890,7 +898,7 @@ public class CBCcontroller : MonoBehaviour
             {
                 if (rolledChoices[i] == currentEthicsSchoolNumber
                     &&
-                    rolledChoices[i + 1] == currentChoiceNumber)
+                    rolledChoices[i+1] == currentChoiceNumber)
                 {
                     choiceRolledRecently = true; //enable this when done testing
                 }
@@ -1312,6 +1320,7 @@ public class CBCcontroller : MonoBehaviour
     {
         if (currentRoundNumber > 10)
         {          
+            
             canvas.GetComponent<Animator>().Play("cbctograph");
             cbcCards.SetActive(false);
             endScreen.SetActive(true);
@@ -1475,6 +1484,12 @@ public class CBCcontroller : MonoBehaviour
             verticeIndicatorsCBCB[3] = GameObject.Find("RadarChart B").transform.GetChild(4).gameObject;
             verticeIndicatorsCBCB[4] = GameObject.Find("RadarChart B").transform.GetChild(5).gameObject;
 
+            verticeIndicatorsCBCB[0].SetActive(false);
+            verticeIndicatorsCBCB[1].SetActive(false);
+            verticeIndicatorsCBCB[2].SetActive(false);
+            verticeIndicatorsCBCB[3].SetActive(false);
+            verticeIndicatorsCBCB[4].SetActive(false);
+
             centroidCoordinateX = (verticeIndicatorsCBC[0].GetComponent<RectTransform>().anchoredPosition.x
                                         + verticeIndicatorsCBC[1].GetComponent<RectTransform>().anchoredPosition.x
                                         + verticeIndicatorsCBC[2].GetComponent<RectTransform>().anchoredPosition.x
@@ -1502,6 +1517,8 @@ public class CBCcontroller : MonoBehaviour
                                         + verticeIndicatorsCBCB[4].GetComponent<RectTransform>().anchoredPosition.y) / 5f;
 
             centroidPointB.GetComponent<RectTransform>().anchoredPosition = new Vector2(centroidCoordinateXB, centroidCoordinateYB);
+
+            centroidPointB.SetActive(false);
 
             dataSenderScript.Send();
             canvas.GetComponent<Animator>().enabled = false;
@@ -1543,6 +1560,7 @@ public class CBCcontroller : MonoBehaviour
     }
     public void RetakeTest()
     {
+        centroidPointB.SetActive(false);
         drawnArrow.SetActive(false);
         
         canvas.GetComponent<Animator>().enabled = true;
@@ -1592,6 +1610,16 @@ public class CBCcontroller : MonoBehaviour
         endScreen.SetActive(false);
         nameAndSchool.SetActive(false);
         mainMenu.SetActive(true);
+
+        rolledChoices = new int[34] {
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, -1,
+                                        -1, -1, -1, -1, 
+                                    };
     }
     public void OpenSite(int choiceOf9)
     {
