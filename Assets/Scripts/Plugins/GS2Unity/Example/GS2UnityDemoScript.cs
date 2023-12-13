@@ -195,7 +195,7 @@ public class GS2UnityDemoScript : MonoBehaviour
 
     public void AddUpChoiceTallies()
     {
-        for (int i = 1; i < 1000; i++)
+        for (int i = 640; i < 1000; i++) // CHANGE TO i = 1 if not just calculating exhibition
         {
             if (int.TryParse(txtSheet.GetRowData(i, "u0"), out _))
             {
@@ -306,9 +306,10 @@ public class GS2UnityDemoScript : MonoBehaviour
         /*
         for (int i = 0; i <= 54; i++)
         {
-            Debug.Log("Choice Place " + i.ToString() + " is school " + allVoteScoresSorted[i][0].ToString() + ",    choice " + allVoteScoresSorted[i][1].ToString() + ",  score " + allVoteScoresSorted[i][2].ToString());
+            Debug.Log("Choice Place " + i.ToString() + " is school " + allVoteScoresSorted[i][0].ToString() + " //    choice " + allVoteScoresSorted[i][1].ToString() + " //  score " + allVoteScoresSorted[i][2].ToString());
         }
         */
+        
     }
 
     public void SetTopAndBottomChoicesDisplayText()
@@ -505,6 +506,32 @@ public class GS2UnityDemoScript : MonoBehaviour
                 bottomChoice1.text = cbcScript.kantianChoices[allVoteScoresSorted[4][1]] + " (Kantian) " + allVoteScoresSorted[4][2].ToString() + "↑";
                 break;
         }
+
+        // PRINT ALL IN DEBUG LOG CONSOLE IN ORDER
+        /*
+        for (int i = 0; i <= 54; i++)
+        {
+            
+            switch (allVoteScoresSorted[i][0])
+            {
+                case 0:
+                    Debug.Log(cbcScript.utilitarianChoices[allVoteScoresSorted[i][1]] + " (Utilitarian) " + allVoteScoresSorted[i][2].ToString() + "↑");
+                    break;
+                case 1:
+                    Debug.Log(cbcScript.rawlsianChoices[allVoteScoresSorted[i][1]] + " (Rawlsian) " + allVoteScoresSorted[i][2].ToString() + "↑");
+                    break;
+                case 2:
+                    Debug.Log(cbcScript.virtueEthicsChoices[allVoteScoresSorted[i][1]] + " (Virtue Ethics) " + allVoteScoresSorted[i][2].ToString() + "↑");
+                    break;
+                case 3:
+                    Debug.Log(cbcScript.neoliberalChoices[allVoteScoresSorted[i][1]] + " (Neoliberal) " + allVoteScoresSorted[i][2].ToString() + "↑");
+                    break;
+                case 4:
+                    Debug.Log(cbcScript.kantianChoices[allVoteScoresSorted[i][1]] + " (Kantian) " + allVoteScoresSorted[i][2].ToString() + "↑");
+                    break;
+            }
+        }
+        */
     }
 
     public void OpenChoiceSitePage(int rank)
